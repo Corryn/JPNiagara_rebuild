@@ -1,0 +1,113 @@
+label {
+   display: inline-block;
+}
+
+body {
+  background-color:#e8e8e8;
+
+}
+.ui-dialog-titlebar-close { /* hides the close button on dialog */
+  visibility: hidden;
+}
+.description {
+  overflow:hidden;
+  max-height:100px;
+}
+#page_number,#pageselect{
+  padding:20px 20px;
+  margin:0;
+  background-image:url("/images/wood_header.png");
+  color:white;
+}
+label,strong {
+  font-size:125%;
+}
+.resultsPage {
+  display:none;
+}
+#searchresults {
+  background-image:url('/images/texture-hd-green-wall.jpg') ;
+  position:relative;
+}
+.result_line {
+  position:relative;
+  overflow:hidden;
+  height:120px;
+  padding:10px 20px;
+}
+.park_image{
+  width:100px;
+  height:100px;
+  float:left;
+  padding:10px;
+}
+form select, #search_locationName, #search_parkname {
+  max-width:190px;
+}
+#booknow_details_box{
+  float:right;
+  height:120px;
+  width:60px;
+  margin-left:10px;
+  text-align:center;
+  position:relative;
+}
+.byslogo {
+  height:auto;
+  width:100%;
+}
+.byslogo:hover, .details_button:hover{
+  width:95%;
+}
+.absolute_bottom {
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+#sort_bar {
+  padding:20px 20px;
+  float:right;
+}
+#left-bar{
+  /*background-color:rgb(200,200,200);*/
+  background-image:url('/images/texture-hd-green-wall.jpg') ;
+  width:210px;
+  float:left;
+  clear:left;
+}
+#left-bar form {
+  padding-left:10px;
+  background-image:url('/images/whiteAlpha50.png');
+}
+
+.alpha30 {
+background-image:url('/images/whiteAlpha30.png');
+}
+.alpha50 {
+background-image:url('/images/whiteAlpha50.png');
+}
+#right-bar {
+  min-width:400px;
+  float:left;
+  position:relative;
+  overflow:hidden;
+}
+#body-content {
+  width:200%; /* makes the user scroll left if screen size is tooooooooo small*/
+  min-width:1300px; 
+}
+#mid-content {
+  margin:0 25px;
+  width:550px;/* fallback for browsers without support for javascript.  The width is now set with JS */
+  overflow:hidden;
+  float:left;
+}
+
+#map_canvas { /* google map pane configurations*/
+  height: 300px;
+  width:400px;
+  background-color:lightgreen;
+}
+.clearboth {
+  clear:both;
+}

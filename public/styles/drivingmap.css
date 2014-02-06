@@ -1,0 +1,431 @@
+/*
+
+body 
+{
+text-align: center; padding:0; margin:0; background: #fff url("../images/background.gif") repeat-x scroll top center;
+}
+		
+
+{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	background: #fff; url("../images/background.gif"); repeat-x;
+	 background-image:  
+	background-repeat: repeat-x;
+	background-position: top center;
+	color: #000000;
+	font: 24px "Lucida Grande", "Lucida Sans Unicode", verdana, lucida, helvetica, sans-serif;
+	 position: relative; 
+}
+
+*/
+#wrapper750 {
+	position:relative; 
+	top: 0px; 
+	left: 0px; 
+	margin: 0px auto; 
+	width: 750px; 
+	text-align: left;
+
+}
+
+
+/******
+		 styles for vacation planner title  */
+
+.monthyearfont {
+
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color:#348427;
+	font-size: 18px;
+	margin:0;
+
+}
+
+/******
+		 styles for vacation planner left bottom table cell  */
+
+.vp_tableCellOutlineLeft
+{
+
+	background-image: url(../images/vp_leftbar-repeat.gif); background-repeat: repeat-y right;
+}
+
+/******
+		 styles for vacation planner right table cell  */
+
+.vp_tableCellOutlineRight
+{
+
+	background-image: url(../images/vp_rightsidebg.gif); background-repeat: repeat-y right;
+}
+
+/******
+		 styles for vacation planner middle content  */
+
+.vp_mainContentCell
+{
+	background-color: #F5F9EC;
+	font-family: verdana , arial, helvetica, sans-serif;
+	color:#666666;
+	font-size: 10px;
+	margin:0;
+}
+.vp_mainContentCellBodyFont
+{
+	font-family: verdana , arial, helvetica, sans-serif;
+	color:#666666;
+	font-size: 10px;
+	margin:0;
+	list-style-image: url(../images/facilities-bullet.gif);
+
+}
+.vp_mainContentCellBodyFontBold
+{
+	font-family: verdana , arial, helvetica, sans-serif;
+	color:#666666;
+	font-size: 10px;
+	font-style: bold;
+	margin:0;
+	list-style-image: url(../images/facilities-bullet.gif);
+
+}
+.vp_mainContentCellDateTitleFont
+{
+	font-family: verdana , arial, helvetica, sans-serif;
+	color:#666666;
+	font-size: 10px;
+	float: right;
+	margin:0;
+
+}
+.vp_mainContentCellEventNameTitleFont
+{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color:#348427;
+	font-size: 12px;
+	font-style: bold;
+	float: left;
+	margin:0;
+
+}
+
+.vp_mainContentCellHeaderFont
+{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color:#348427;
+	font-size: 18px;
+	margin:0;
+
+}
+
+/******
+		 styles for main content on facilities.shtml */
+.f_mainContentCell
+{
+	font-family: verdana , arial, helvetica, sans-serif;
+	color:#666666;
+	font-size: 10px;
+	margin:0;
+	list-style-image: url(../images/facilities-bullet.gif);
+}
+
+
+/******
+		 styles for prices left table cell  */
+		 
+.p_cr_tableCellOutlineLeft
+{
+
+	background-image: url(../images/p_cr_leftbg.gif); background-repeat: repeat-y right;
+}
+
+/******
+		 styles for prices right table cell  */
+		 
+.p_cr_tableCellOutlineRight
+{
+
+	background-image: url(../images/p_cr_rightbg.gif); background-repeat: repeat-y right;
+}
+
+.p_cr_ratesTitle
+{
+
+	font-family: verdana , arial, helvetica, sans-serif;
+	color:#348427;
+	font-size: 11px;
+	margin:0;
+
+}
+.p_cr_subheader
+{
+
+	font-family: verdana , arial, helvetica, sans-serif;
+	color:#348427;
+	font-size: 10px;
+	margin:0;
+
+}
+
+
+.bubble_bg
+{
+
+	background-color: #F5F9EC
+
+}
+
+/*
+.cu_input { 
+  font-size: 12px; 
+  background-color: #F8FCF7; 
+  border: 1px solid #666666; 
+ }
+*/
+
+.fieldcell { 
+  background-color: #F2F7FB; 
+  color: #000000; 
+  text-align: right; 
+  margin-right: 0px; 
+  padding-right: 0px; 
+ } 
+
+
+.fieldcell input { 
+  width: 200px; 
+  font: 11px Verdana, Geneva, Arial, Helvetica, sans-serif; 
+  background-color: #ccc; 
+  color: #102132; 
+  border: 1px solid #284279; 
+  margin-right: 0px; 
+ } 
+
+/*
+input 
+{
+	background-color: #F8FCF7
+	border: border-width 0px;
+	border-style: border-width 0px;
+}
+*/
+
+/*
+body#facilities li
+{
+	list-style-image: url(images/facilities-bullet.gif);
+
+}
+*/
+
+/******
+		 styles for header navigation on index.shtml */
+
+.toptopnavfont {
+
+	font-family: verdana , arial, helvetica, sans-serif;
+	color:#519F42;
+	font-size: 10px;
+	margin:0;
+
+}
+
+/******
+		 styles for header links */
+
+a#toptopnav:link,
+a#toptopnav:active,
+a#toptopnav:visited
+{
+	color:#fff;
+	text-decoration:underline;
+
+}
+
+a#contactus:link,
+a#contactus:active,
+a#contactus:visited
+{
+	color:#348427;
+	text-decoration:underline;
+
+}
+
+/*a:link, a:active, a:visited{color:#fff;text-decoration:underline;} */
+
+a#toptopnav:hover
+{
+	color:#519F42;
+	text-decoration:underline;
+}
+
+
+
+/****** bodygraysmallfont
+*/
+
+.bodygraysmallfont
+{
+	font-family: arial, verdana, helvetica, sans-serif;
+	color:#6F6F6F;
+	font-size: 10px;
+	margin:0;
+	text-align:left;
+	
+}
+
+.footernavfont {
+
+	font-family: arial, verdana, helvetica, sans-serif;
+	color:#6F6F6F;
+	font-size: 10px;
+	margin:0;
+}
+
+
+/******
+		styles for footer links */
+
+a#footernav:link,
+a#footernav:active,
+a#footernav:visited
+{
+	color:#6F6F6F;
+	text-decoration:underline;
+
+}
+/*a:link, a:active, a:visited{color:#fff;text-decoration:underline;} */
+
+a#footernav:hover
+{
+	color:#6F6F6F;
+	text-decoration:underline;
+}
+
+
+		#content_container {
+			position: absolute;
+			top: 75px;
+			left:20px;
+			width: 750px;
+			height: 27px;
+			padding: 5px;
+			margin: 0;
+		}
+
+
+
+		#container {
+			position: absolute;
+			top: 75px;
+			left:20px;
+			width: 707px;
+			height: 27px;
+			padding: 5px;
+			margin: 0;
+		}
+
+		#menu {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 707px;
+			height: 27px;
+			margin: 0;
+			padding: 0;
+			display: inline;
+			overflow: hidden;
+			list-style: none;
+		}
+
+		#menu LI {
+			margin: 0;
+			padding: 0;
+			display: inline; /* duplicated for IE 5/Win */
+			list-style-type: none; /* duplicated for IE 5/Win */
+		}
+
+		#menu A {
+			float: left;
+			height: 0px !important;
+			height /**/:27px; /* IE 5/Win hack */ 
+			padding: 27px 0 0 0;
+			overflow: hidden;
+		}
+
+		#menu A:hover {
+			background-position: 0 -27px;
+		}
+
+		#menu A:active, #menu A.selected {
+			background-position: 0 -54px;
+		}
+
+		#item0 A {
+			width: 97px;
+			background: url(../images/nav/words_01.gif) top left no-repeat;
+		}
+
+		#item1 A {
+			width: 93px;
+			background: url(../images/nav/reservations_02.gif) top left no-repeat;
+		}
+
+		#item2 A {
+			width: 56px;
+			background: url(../images/nav/prices_03.gif) top left no-repeat;
+		}
+
+		#item3 A {
+			width: 112px;
+			background: url(../images/nav/vacation_04.gif) top left no-repeat;
+		}
+
+		#item4 A {
+			width: 62px;
+			background: url(../images/nav/awards_05.gif) top left no-repeat;
+		}
+
+		#item5 A {
+			width: 65px;
+			background: url(../images/nav/facilities_06.gif) top left no-repeat;
+		}
+
+		#item6 A {
+			width: 61px;
+			background: url(../images/nav/gallery_07.gif) top left no-repeat;
+		}
+
+		#item7 A {
+			width: 71px;
+			background: url(../images/nav/activities_08.gif) top left no-repeat;
+		}
+
+		#item8 A {
+			width: 90px;
+			background: url(../images/nav/kids_corner_09.gif) top left no-repeat;
+		}
+
+		#item22 a {
+			width: 103px;
+			background: url(../images/nav/special_10.gif) top left no-repeat;
+		}
+		#item101 a {
+			width: 103px;
+			background: url(../images/nav/special_11.gif) top left no-repeat;
+		}
+
+
+body#words a#wordsnav {background-position: 0 -54px;}
+body#reservations a#reservationsnav {background-position: 0 -54px;}
+body#prices a#pricesnav {background-position: 0 -54px;}
+body#vacation a#vacationnav {background-position: 0 -54px;}
+body#awards a#awardsnav {background-position: 0 -54px;}
+body#facilities a#facilitiesnav {background-position: 0 -54px;}
+body#gallery a#gallerynav {background-position: 0 -54px;}
+body#activities a#activitiesnav {background-position: 0 -54px;}
+body#kidscorner a#kidscornernav {background-position: 0 -54px;}
+body#special a#specialnav {background-position: 0 -54px;}
+body#discounts a#discountsnav {background-position: 0 -54px;}

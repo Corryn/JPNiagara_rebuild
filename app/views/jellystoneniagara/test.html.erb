@@ -1,0 +1,38 @@
+<style>
+div#nav {
+	margin: 20px 0px;
+}
+div#innernav {
+	display: table;
+	margin: 0 auto;
+}
+#nav li {
+	display: inline;
+	list-style-type: none;
+	background: green;
+	padding: 0px 10px;
+	margin: 0px 5px;
+}
+</style>
+
+<div id="nav">
+	<div id="innernav">
+		<ul>
+			<li>Home</li>
+			<li>Rates</li>
+			<li>Events</li>
+			<li>Lodging</li>
+			<li>Facilities</li>
+		</ul>
+	</div>
+</div>
+
+<div id="output" width="100%" style="background-color:magenta">
+	<% if @currMonthEvents != nil %>
+	<% @currMonthEvents.each do |testdbitems| %>
+	<p><%= "Event Name: " + testdbitems[:event_name] + " Event Date Start: " + testdbitems[:event_start_date].to_s + " Event Date Finish " + testdbitems[:event_end_date].to_s %></p>
+	<% end %>
+	<% else %>
+	<p><%= "NOTHING" %> </p>
+	<% end %>
+</div>

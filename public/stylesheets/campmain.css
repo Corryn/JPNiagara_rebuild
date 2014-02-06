@@ -1,0 +1,34 @@
+body {
+	background-color: brown;
+}
+
+/* Header rules */
+
+header {
+	background: linear-gradient(to left, #FF9933, #FFAD5C);
+	background: -webkit-linear-gradient(left, #FF9933, #FFAD5C);
+	background: -o-linear-gradient(left, #FF9933, #FFAD5C);
+	background: -moz-linear-gradient(left, #FF9933, #FFAD5C);
+	border-top: 10px dashed peru;
+	border-bottom: 10px dashed peru;
+}
+
+/* Nav rules */
+
+nav {
+	width: 675px;
+}
+
+/* Footer rules */
+
+footer {
+	background: linear-gradient(to right, #FF9933, #FFAD5C);
+	background: -webkit-linear-gradient(right, #FF9933, #FFAD5C);
+	background: -o-linear-gradient(right, #FF9933, #FFAD5C);
+	background: -moz-linear-gradient(right, #FF9933, #FFAD5C);
+	border-top: 10px dashed peru;
+	border-bottom: 10px dashed peru;
+}
+
+/* Page content rules (direction refers to image location */
+

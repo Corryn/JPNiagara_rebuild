@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+<TITLE>Jellystone Niagara - Last Minute Specials</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<meta name="keywords" content="niagara falls tour,niagra falls tour,niagara falls tours,niagra falls tours,tour niagara falls,vacation niagara falls,niagara falls attractions,niagara falls adventure,niagara falls tourism,falls attractions,falls tours,niagra falls">
+<meta name="description" content="Tour Niagara Falls Attractions - Jellystone Park is the jumping off point for many great Niagara Falls adventures.">
+<link rel="stylesheet" href="styles/main.css" type="text/css" />
+
+
+
+<script language="JavaScript"><!--
+function createWindow(URL, width, height) {
+ 
+    var windowName = 'Jellystone Park Niagara Falls - Map';
+
+    var features = 
+	
+	'width=' + width +
+	',height=' + height +	
+	',toolbar=no,status=no' ;
+
+    window.open (URL, windowName, features);
+}
+
+
+//--><!-- Begin
+
+image1 = new Image();
+image1.src = "images/nav/activities_08.gif";
+
+image2 = new Image();
+image2.src = "images/nav/awards_05.gif";
+
+image3 = new Image();
+image3.src = "images/nav/facilities_06.gif";
+
+image4 = new Image();
+image4.src = "images/nav/gallery_07.gif";
+
+image5 = new Image();
+image5.src = "images/nav/kids_corner_09.gif";
+
+image6 = new Image();
+image6.src = "images/nav/prices_03.gif";
+
+image7 = new Image();
+image7.src = "images/nav/reservations_02.gif";
+
+image8 = new Image();
+image8.src = "images/nav/vacation_04.gif";
+
+image9 = new Image();
+image9.src = "images/nav/words_01.gif";
+
+// End -->
+
+
+</SCRIPT>
+</HEAD>
+<BODY BGCOLOR=#FFFFFF LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+	<!--#include file="include/jellystoneheader.html"-->
+    <!-- ImageReady Slices (contactus-content.psd) -->
+ 
+
+
+
+
+
+
+
+
+
+<table border=0 cellspacing=0 cellpadding=0 width=702>
+	<tr valign=top>
+		<td colspan=5></td>
+		<td height=20></td>
+	</tr>
+	<tr valign=top>
+		<td rowspan=2><img src="images/contact_ranger.gif" border=0 width=159 height=312 alt=""></td>
+		<td rowspan=2></td>
+		<td rowspan=4 class="maincontent">
+		<p>                  
+          <h1>Last Minute Deals...</h1>
+				  <p>Long weekend Cottage, Cabin and Trailer dates still available.</p>
+				  <p>Yogi Cottage (sleeps 8) available:<BR>
+				  June 30 thru July 2, 2005 - 3 night stay only $625 Canadian plus taxes</p>
+				  <p>Boo Boo Cabins (sleeps 6) available:<br>
+				  June 30 thru July 2, 2005 - 3 night stay only $525 Canadian plus taxes<br>
+				  July 7 thru July 9, 2005 - 3 night stay only $525 Canadian plus taxes</p>
+				  <p>Brand New 40' Rental Trailers (sleeps 6) available:<br>
+				  June 30 thru July 2, 2005 - 3 night stay only $475 Canadian plus taxes<br>
+				  July 2 thru July 4, 2005 - 3 night stay only $475 Canadian plus taxes<br>
+				  July 4 thru July 5, 2005 - 2 night stay only $250 Canadian plus taxes<br>
+				  July 4, 1 night stay only $125 Canadian plus taxes</p>
+				  <p>Please call immediately to reserve 
+1-800-558-2954, Press 2 for Canada, then 5 for Jellystone Niagara. </p>
+				  <p>&nbsp;</p>
+				</p></td>
+		<td colspan=2></td>
+		<td height=1></td>
+	</tr>
+</table>
+</td>
+		<td height=311></td>
+	</tr>
+	<tr valign=top>
+		<td colspan=2 rowspan=2></td>
+		<td height=112></td>
+	</tr>
+	<tr valign=top>
+		<td colspan=2></td>
+		<td height=3></td>
+	</tr>
+	<tr>
+		<td width=159><img src="images/_clear.gif" border=0 width=159 height=1 alt=""></td>
+		<td width=3><img src="images/_clear.gif" border=0 width=3 height=1 alt=""></td>
+		<td width=322><img src="images/_clear.gif" border=0 width=322 height=1 alt=""></td>
+		<td width=11><img src="images/_clear.gif" border=0 width=11 height=1 alt=""></td>
+		<td width=205><img src="images/_clear.gif" border=0 width=205 height=1 alt=""></td>
+		<td width=2 height=1><img src="images/_clear.gif" border=0 width=2 height=1 alt=""></td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+    <!-- End ImageReady Slices -->
+    <!--#include file="include/jellystonefooter.html"-->
+</BODY>
+</HTML>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+
+	<meta name="keywords" content="Jellystone, Niagara, Falls, Campground, RV, Trailer, Park">
+	<meta name="description" content="Website redesign page for Jellystone Park Niagara">
+
+	<title><%= @title %> - Jellystone Park Niagara</title>
+
+	<script src="/javascript/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/styles/sliding_banner.css">
+	<script src="/scripts/miniSlider.js"></script> 
+	<link rel="stylesheet" href="/stylesheets/main.css">
+	<link rel="stylesheet" href="/stylesheets/navbar.css">
+	<!--[if lt IE 9]>
+	<script src="/javascripts/html5shiv.js"></script>
+	<link rel="stylesheet" href="/stylesheets/IE.css">
+	<![endif]-->
+
+	<script>
+		function showElement(id) {
+			document.getElementById(id).style.visibility = 'visible'; 
+		}
+		function hideElement(id) {
+			document.getElementById(id).style.visibility = 'hidden';
+		}
+	</script> 
+
+	<!-- Registration box animation -->
+
+	<script>
+	function toggleRegistration(id) {
+		if($(id).height() == 25){
+			$(id).animate({height:'332px'},"slow");
+			$('#BYSframe').css('visibility','visible');
+		} else {
+			$(id).animate({height:'25px'},"slow");
+			setTimeout(function() {
+				$('#BYSframe').css('visibility','hidden');
+			},600);
+		
+	}
+	}
+	</script>
+
+	<!-- Image slider script -->
+
+	<script type="text/javascript">
+		$(function() {
+		  $('.slider').miniSlider({
+		  	delay:8000,
+		  	transitionSpeed: 1500
+		  });
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<script> $('#BYSframe').css('visibility','hidden'); </script>
+
+	<noscript><div>JavaScript is not enabled.  Some page elements may not function correctly.</div></noscript>
+
+	<%= render :partial => '/layouts/header' %>
+
+	<% if @renderSlider == true %>
+	<%= render :partial => '/layouts/slider' %>
+	<% end %>
+
+	<%= yield %>
+
+	<%= render :partial => '/layouts/content' %>
+
+	<%= render :partial => '/layouts/footer' %>
+
+</body>

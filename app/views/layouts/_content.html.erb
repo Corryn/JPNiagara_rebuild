@@ -1,0 +1,29 @@
+<% if @renderContent == true %>
+	<% switch = false %>
+	<% @contentRecs.each do |contentRec|%> 
+		<div class="content">			
+				<% if switch == true %>
+					<div class="contentright">
+						<% puts contentRec.inspect %>
+						<h2><%= contentRec[:content_name] %></h2>
+						<img src= <%= contentRec.picture.picture_file %> alt=<% contentRec.picture.picture_description %>>
+						<p><%= contentRec[:content_text] %></p> 
+					</div>
+				<% else %>
+					<div class="contentleft">
+						<% puts contentRec.inspect %>
+						<h2><%= contentRec[:content_name] %></h2>
+						<img src= <%= contentRec.picture.picture_file %> alt=<% contentRec.picture.picture_description %>>
+						<p><%= contentRec[:content_text] %></p> 
+					</div>
+				<% end %>
+				<% if @alternate == true %>
+					<% if switch == true %>
+						<% switch = false %>
+					<% else %>
+						<% switch = true %>
+					<% end %>
+				<% end %>	
+		</div>
+	<% end %>
+<% end %>

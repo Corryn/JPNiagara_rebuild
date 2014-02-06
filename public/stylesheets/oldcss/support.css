@@ -1,0 +1,191 @@
+/*support.erb stylesheet*/
+
+p.container{margin:0 0 0 3em;}
+
+
+#wrapper{
+width:900px;
+height:800px;
+padding:0;
+margin:0 3% 0 2%;
+border:5px outset #a6a6a6;
+}
+
+#subheader{
+border:3px hidden #CCC;
+margin:5px 0 20px 10px;
+padding:5px 15px 5px 10px;
+}
+
+/*------------tabs-----------------*/
+#tab_section{
+width:100%;
+height:30px;
+padding:0 0 4px 0;
+margin:0;
+border-bottom:3px solid #a6a6a6;
+background-color:lightgray;
+}
+
+
+#contact_tab
+
+
+#FAQ_tab
+
+
+#bug_report_tab
+
+
+#demo_tab
+
+
+#pics_tab
+
+
+.tab{
+width:;
+height:;
+padding:0;
+margin:0;
+border:0;
+display:inline;
+}
+/*-----------tabs end-------------*/
+
+/*----------buttons----------*/
+#contact_button{
+
+}
+
+
+#bug_report_button{
+
+}
+
+
+#FAQ_button{
+
+}
+
+
+#demo_button{
+
+}
+
+
+#pics_button{
+
+}
+
+
+.buttons{
+float:left;
+display:inline;
+margin:0;
+padding:0;
+width:20%;
+height:30px;
+border:none;
+border-left:3px solid lightgray;
+border-right:3px solid lightgray;
+border-radius:0;
+background-color:lightgray;
+}
+.buttons:hover{
+border-left:1px solid lightgray;
+border-right:1px solid lightgray;
+}
+.buttons:active{
+border-left:1px solid lightgray;
+border-right:1px solid lightgray;
+}
+/*--------buttons end--------*/
+
+
+#content_section{
+width:inherit;
+height:auto;
+padding:0;
+margin:0;
+border:;
+}
+
+/*----------------pages-----------------*/
+#contact_page{
+z-index:;
+}
+
+#FAQ_page{
+z-index:;
+}
+
+#bug_report_page{
+z-index:;
+}
+
+#demo_page{
+z-index:;
+}
+
+#pics_page{
+z-index:;
+}
+
+.pages{
+position:absolute;
+width:inherit;
+height:762px;
+padding:0;
+margin:0;
+border:none;
+overflow-y:auto;
+}
+/*----------------pages end-------------*/
+
+.info_border{
+border:0.5em solid #CCC;
+margin:1em;
+padding:0.5em 0.5em 2em 0.5em;
+/*background-color:#E1E1E1*/
+}
+
+#youtube_wrap{
+width:700px;
+height:auto;
+padding:0;
+border:5px outset #DC0000;
+margin:10px 0 0 90px;
+}
+
+
+#youtube_embed{
+}
+
+#photo_wrap{
+margin: 10px 0 0 90px;
+overflow-x:scroll;
+overflow-y:hidden;
+height:650px;
+width:700px;
+padding:0;
+border:5px outset #CCC;
+}
+
+
+#photo_window{
+/*margin:50px 10px 0 10px;*/
+height:650px;
+width:2120px;
+/*border:1px ridge #CCC;*/
+}
+
+
+img.photo{
+float:left;
+padding:0px;
+margin:15px 10px 10px 10px;
+height:600px; 
+width:400px;
+border:1px outset #E1E1E1
+}

@@ -1,0 +1,205 @@
+body {
+	background-color: #f7f7f7;
+}
+
+a {
+	color: #dc0000;
+	text-decoration: none;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: "Georgia","Garamond","Times New Roman";
+	color: #6a6a6a;
+	border: 0;
+}
+/*
+#header {
+	background-color: #504f4f;
+	padding: 5px 0;
+	margin-bottom: 10px;
+}
+*/
+.container { background-color: #fff;}
+
+#front-top {  }
+#topbar { height: 49px; background: url('/images/topbar-bg.jpg') top left repeat-x; text-align: right; }
+#fptopbar { height: 49px; background: url('/images/fp-topbar.jpg') top left no-repeat; text-align: right; }
+#nav { float: right; margin-top: 10px; margin-right: 15px; }
+#nav ul li a { color: #fff; }
+#separationbar { height: 25px; background: url('/images/top-separation-bar.jpg') top left repeat-x; }
+#fp-main { height: 402px; background: url('/images/fp-main.jpg') top left no-repeat; }
+#fp-logo { float: left; margin: -55px 0 0 80px; }
+#searchform {
+	float:right;
+	margin-top: 150px;
+	width: 240px;
+	text-align: left;
+	color: #fff;
+}
+#fp-content { margin-top: 20px; }
+#searchform label { font-weight: normal; }
+
+#footer {
+	margin-top: 10px;
+	/* background-color: #504f4f; */
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #ccc;
+}
+
+div#nav a {
+	color: #fff;
+	margin-left: 15px;
+	margin-right: 5px;
+	padding-top: 5px;
+}
+
+ul.nav {
+        margin: 0; padding: 0;
+        list-style-type: none;
+        display: inline;
+}
+
+ul.nav{
+	display: table;
+}
+ul.nav>li{
+	display: table-cell;
+	position: relative;
+	padding: 2px 7px;
+}
+ul.nav li a:hover {
+	text-decoration: underline;
+}
+
+
+/* park name */
+
+h1.park_name { 
+	font-family: "Georgia","Garamond","Times New Roman";
+	font-size: 24px;
+	color: #6a6a6a;
+	margin: 10px;
+}
+
+span.park_info {
+	font-size: 12px;
+}
+
+/* park description */
+
+.description-box {
+	color: #504f4f;
+	max-height: 285px;
+	min-height: 285px;
+	height: 285px;
+	background: #e1e1e1 url('/images/bottom-grey.png') bottom right no-repeat;
+}
+/* Social media stufff              */
+#facebook_icon, #twitter_icon{
+	width:32px;
+	height:32px;
+	position:absolute;
+	top:11px;
+	background-position:top;
+}#facebook_icon{
+	right:320px;
+	background-image:url("/images/facebook_icon.png");
+}#twitter_icon{
+	right:278px;
+	background-image:url("/images/twitter_icon.png");
+}
+#facebook_icon:hover, #twitter_icon:hover{
+	background-position:bottom;
+}
+/* state listings */
+
+#state-listings {
+	background-color: #e1e1e1;
+}
+
+#state-listings h3 {
+	font-size: 22px;
+	margin-bottom: 5px;
+}
+
+#state-listings ul {
+        margin: 0; padding: 0;
+        list-style-type: none;
+}
+
+#state-listings li {
+
+}
+
+#state-listings ul li a {
+	color: #6a6a6a;
+	padding: 0 3px;
+}
+
+#state-listings ul li a:hover {
+	background-color: #6a6a6a;
+	color: #ffffff;
+}
+
+/* story */
+
+.story {
+	padding: 10px 20px;
+}
+
+.story img {
+	padding: 10px;
+}
+
+.navlinks {
+	padding: 3px 10px;
+}
+
+/* alignments */
+
+.alignright {
+	text-align: right;
+}
+
+.alignleft {
+	text-align: left;
+}
+
+.vmiddle {
+	vertical-align: middle;
+}
+
+.hcenter {
+	text-align: center;
+}
+
+.allpadding-10 {
+	padding: 10px;
+}
+
+.allpadding-5 {
+	padding: 5px;
+}
+
+.bottompadding-5 {
+	padding-bottom: 5px;
+}
+
+.toppadding-5 {
+	padding-top: 5px;
+}
+
+.bottompadding-10 {
+	padding-bottom: 10px;
+}
+
+.toppadding-10 {
+	padding-top: 10px;
+}
+
+.bottomborder {
+	border-bottom: 1px dotted #ccc;
+}

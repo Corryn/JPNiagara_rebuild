@@ -1,0 +1,9 @@
+content/more.html.erb:<!--<iframe height="90px" width="875px" src="https://v3.bookyoursite.com/jellystoneniagara/reservation_smallhorz_lp" scrolling="no">
+content/more.html.erb:            <a href="https://secure.bookyoursite.com/go/<%= @byspark.bounce_code %>" target="_blank">
+content/search.html.erb:                        <strong><%= link_to park.name, :action => 'home', :id => park.id %></strong> - <%= park.city %> - <strong><a href="https://secure.bookyoursite.com/Go?park=<%= byspark.bounce_code %>">BOOK NOW</a></strong>
+content/campgrounds.html.erb:                     <strong><%= link_to park.name, :action => 'home', :id => park.id %></strong> - <%= park.city %> - <strong><a href="https://secure.bookyoursite.com/Go?park=<%= byspark.bounce_code %>">BOOK NOW</a></strong>
+content/home.html.erb:            <a href="https://secure.bookyoursite.com/go/<%= @byspark.bounce_code %>" target="_blank">
+content/campingplaces.html.erb:					<strong><%= link_to park.name, :action => 'home', :id => park.bounce_code %></strong> - <%= park.city %> - <strong><a href="https://secure.bookyoursite.com/Go?park=<%= park.bounce_code %>">BOOK NOW</a></strong>
+mailer/upgrade_email.rhtml:Please click on http://secure2.bookyoursite.com/<%= @bounce_code %> to see your new landing pages!
+mailer/upgrade_email.rhtml:If we do not hear from you, we will assume there are no changes to be made and the information will go up as it is.  If you have changes please address them to upgrade@bookyoursite.com.  Make sure you include your park name in the email.  
+support/iphone.erb:        <strong>E_mail: </strong>helpiBYS@bookyoursite.com

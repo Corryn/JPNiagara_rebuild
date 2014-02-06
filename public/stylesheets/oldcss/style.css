@@ -1,0 +1,69 @@
+body {
+	background-color:#fff;
+	margin: 0;
+	padding: 0;
+	font-family: Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #9a9b98;
+}
+
+img {
+	border: 0; margin: 0;
+}
+
+div#wrapper {
+	width: 900px;
+	margin: 0 auto;
+	padding: 10px;
+	overflow: hidden;
+}
+
+div#header {
+	padding-bottom: 10px;
+	background-color: #504f4f;
+	color: #fff;
+	margin-bottom: 10px;
+}
+
+div#sidebar {
+	width: 250px;
+	float: left;
+}
+
+div#main {
+	width: 600px;
+	float: left;
+}
+
+/* header tags */
+
+h1,h2,h3,h4,h5 {
+	padding: 0; margin: 0;
+}
+
+/* form tags */
+
+input {
+	font-size: 14px;
+}
+
+textarea {
+	font-size: 14px;
+}
+
+/* park details */
+div#parkdetails { clear: both; margin-bottom: 10px; overflow: hidden; }
+div#parkdetails div.name { float: left; }
+div#parkdetails div.name h1 { font-family: Georgia, Garamond, 'Times New Roman'; font-size: 22px; }
+div#parkdetails div.contact { float: right; text-align: right; font-size: 10px; }
+
+/* topsection */
+
+div#topsection 					{ clear: both; font-size: 11px; color: #464645; }
+div#topsection div#pictures 	{ float: left; width: 400px; }
+div#topsection div#pictures div#bigpicture 	{ float: left; width: 400px; height: 250px; }
+div#topsection div#pictures div#smallpictures { float: left; width: 400px; height: 100px; margin-top: 5px; }
+div#topsection div#pictures	img { margin: 0; padding: 0; border:0; }
+div#topsection div#description 	{ float: left; width: 455px; padding: 20px; background-color: #e1e1e1; margin-left: 5px; height: 275px; }
+div#topsection div#description div.footer { height: 100px; background: url('/images/top_bg_footer.gif'); width: 495px; }
+
+div#bottomsection { clear: both; }

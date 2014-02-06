@@ -1,0 +1,160 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 72.38.165.178 at 2014-01-02 22:01:25 +0000
+Processing by JellystoneniagaraController#index as HTML
+Redirected to http://www.byswebservices.com:3200/home
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 72.38.165.178 at 2014-01-02 22:01:26 +0000
+Processing by JellystoneniagaraController#home as HTML
+  Rendered jellystoneniagara/_header.html.erb (8.7ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.4ms)
+  Rendered jellystoneniagara/home.html.erb within layouts/jellystoneniagara (93.2ms)
+Completed 200 OK in 158ms (Views: 149.8ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 72.38.165.178 at 2014-01-03 15:02:51 +0000
+Processing by JellystoneniagaraController#index as HTML
+Redirected to http://www.byswebservices.com:3100/home
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 72.38.165.178 at 2014-01-03 15:02:51 +0000
+Processing by JellystoneniagaraController#home as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.7ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.4ms)
+  Rendered jellystoneniagara/home.html.erb within layouts/jellystoneniagara (51.9ms)
+Completed 200 OK in 101ms (Views: 96.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/prices-campingnightlyrates" for 72.38.165.178 at 2014-01-03 15:02:56 +0000
+Processing by JellystoneniagaraController#prices-campingnightlyrates as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.0ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.0ms)
+  Rendered jellystoneniagara/prices-campingnightlyrates.html.erb within layouts/jellystoneniagara (1.1ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/prices-campingnightlyrates" for 72.38.165.178 at 2014-01-03 15:06:47 +0000
+Processing by JellystoneniagaraController#prices-campingnightlyrates as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.5ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.5ms)
+  Rendered jellystoneniagara/prices-campingnightlyrates.html.erb within layouts/jellystoneniagara (7.9ms)
+Completed 200 OK in 123ms (Views: 122.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 72.38.165.178 at 2014-01-03 15:08:20 +0000
+Processing by JellystoneniagaraController#index as HTML
+Redirected to http://www.byswebservices.com:3100/home
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 72.38.165.178 at 2014-01-03 15:08:20 +0000
+Processing by JellystoneniagaraController#home as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.1ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.0ms)
+  Rendered jellystoneniagara/home.html.erb within layouts/jellystoneniagara (1.7ms)
+Completed 200 OK in 12ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/prices-campingnightlyrates" for 72.38.165.178 at 2014-01-03 15:08:25 +0000
+Processing by JellystoneniagaraController#prices-campingnightlyrates as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.0ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.0ms)
+  Rendered jellystoneniagara/prices-campingnightlyrates.html.erb within layouts/jellystoneniagara (0.7ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/prices-campingnightlyrates" for 72.38.165.178 at 2014-01-03 15:14:46 +0000
+Processing by JellystoneniagaraController#prices-campingnightlyrates as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.6ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.6ms)
+  Rendered jellystoneniagara/prices-campingnightlyrates.html.erb within layouts/jellystoneniagara (12.9ms)
+Completed 200 OK in 200ms (Views: 199.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/vacationplanner-apr" for 72.38.165.178 at 2014-01-03 15:15:04 +0000
+Processing by JellystoneniagaraController#vacationplanner-apr as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.1ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.1ms)
+  Rendered jellystoneniagara/vacationplanner-apr.html.erb within layouts/jellystoneniagara (10.0ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/_clear.gif" for 72.38.165.178 at 2014-01-03 15:15:04 +0000
+
+ActionController::RoutingError (No route matches [GET] "/images/_clear.gif"):
+  actionpack (3.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.6) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.6) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.6) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/static.rb:62:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.6) lib/rails/engine.rb:479:in `call'
+  railties (3.2.6) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.6) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /usr/local/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /usr/local/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+
+
+Started GET "/prices-campingnightlyrates" for 72.38.165.178 at 2014-01-03 15:15:06 +0000
+Processing by JellystoneniagaraController#prices-campingnightlyrates as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.0ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.0ms)
+  Rendered jellystoneniagara/prices-campingnightlyrates.html.erb within layouts/jellystoneniagara (0.5ms)
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/prices-campingnightlyrates" for 72.38.165.178 at 2014-01-03 15:18:35 +0000
+Processing by JellystoneniagaraController#prices-campingnightlyrates as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.0ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.0ms)
+  Rendered jellystoneniagara/prices-campingnightlyrates.html.erb within layouts/jellystoneniagara (0.5ms)
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/prices-campingnightlyrates" for 72.38.165.178 at 2014-01-03 15:27:17 +0000
+Processing by JellystoneniagaraController#prices-campingnightlyrates as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.7ms)
+  Rendered jellystoneniagara/_footer.html.erb (4.8ms)
+  Rendered jellystoneniagara/prices-campingnightlyrates.html.erb within layouts/jellystoneniagara (215.0ms)
+Completed 200 OK in 239ms (Views: 238.7ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/prices-campingnightlyrates" for 72.38.165.178 at 2014-01-03 15:28:59 +0000
+Processing by JellystoneniagaraController#prices-campingnightlyrates as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.5ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.4ms)
+  Rendered jellystoneniagara/prices-campingnightlyrates.html.erb within layouts/jellystoneniagara (65.0ms)
+Completed 200 OK in 77ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/prices-campingnightlyrates" for 72.38.165.178 at 2014-01-03 15:29:06 +0000
+Processing by JellystoneniagaraController#prices-campingnightlyrates as HTML
+  Rendered jellystoneniagara/_header.html.erb (0.0ms)
+  Rendered jellystoneniagara/_footer.html.erb (0.0ms)
+  Rendered jellystoneniagara/prices-campingnightlyrates.html.erb within layouts/jellystoneniagara (0.8ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml

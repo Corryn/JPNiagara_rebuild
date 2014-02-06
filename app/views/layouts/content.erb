@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" /> 
+  <title><% if @title %><%= @title %><% elsif @park %><%=raw @park.name.split(/\s+/).each{ |word| word.capitalize! }.join(' ') { |a| a.upcase } %> at BookYourSite.com <% end %></title>
+  <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection"/>
+  <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print"/> 
+  <link rel="stylesheet" href="/stylesheets/bys.css" type="text/css" media="screen"/> 
+  <link rel="stylesheet" href="/stylesheets/miniSliderBar.css" type="text/css" media="screen"/> 
+  
+  <link rel="shortcut icon" href="/images/bys.ico" /> <!-- picture in browser tab -->
+  <!--[if IE]>
+    <link rel="stylesheet" href="/stylesheets/css/blueprint/ie.css" type="text/css" media="screen, projection"/>
+  <![endif]-->
+
+ 
+ 
+  <%= stylesheet_link_tag 'calendariffic/calendar-win2k-cold-2.css' %>
+  <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.24/themes/ui-darkness/jquery-ui.css" rel="stylesheet"><!-- this is temporary, need a new theme -->
+  <%= javascript_include_tag 'calendariffic/calendar.js', 'calendariffic/calendar-setup.js', 'calendariffic/lang/calendar-en.js' %>
+  
+  <%= javascript_include_tag :application %>
+  <%= javascript_include_tag 'bys.js' %>
+  <script src="/assets/miniSlider.js" type="text/javascript"></script>
+  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=AIzaSyAd2QRY0JvIhzgjIaDCEPQllk-jXcnpgJo" type="text/javascript"></script>
+
+ 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26690223-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<%= yield :head %>
+</head>
+<body>
+  
+		
+    <div id="header" class="shadowed">
+      <div id="headerspacer_right">
+        <% puts "not rending bys login"# render :partial => 'content/bys_login' %>
+      </div>
+        <div id="headerBanner">
+          <img src="/images/bysheaderpic.png" />
+        </div><!-- header banner -->
+
+    </div> <!-- header -->
+    
+		<%= yield %>
+  
+    
+		<div id="footer" class="last" >
+              
+   <div class="clearboth"></div>
+                        <ul id="socialmedia">
+                          <li>
+                            <a href="http://www.twitter.com/Bookyoursite" target="_blank">  <img src="/images/twitter-follow-us.jpg" alt="Twitter" class="social" /></a>
+                            </li><li>
+                            <a href="http://www.facebook.com/bookyoursite" target="_blank"> <img src="/images/facebook-like-us.jpg" alt="Facebook" class="social" /></a>
+                            </li><li>
+                            <a href="/sales/camp_owners" target="_blank">                   <img src="/images/campgroundOperator.png" alt="Camp logo" class="social" /></a>
+                            </li><li>
+                            <a href="http://www.bysres.com" target="_blank">                <img src="/images/appstore.png" alt="iPhone Logo" class="social" /></a>
+                            </li><li>
+                            <a href="http://www.bysres.com" target="_blank">                <img src="/images/googlePlay.jpg" alt="Android logo" class="social" /></a>
+                          </li>
+                        </ul>
+
+   
+                        <hr />
+                        <a href="/sitemap.html">Sitemap</a> &nbsp;&nbsp; | &nbsp;&nbsp;
+                        <a href="/BYS_TermsAndConditions.html">Terms and Conditions</a>&nbsp;&nbsp; | &nbsp;&nbsp;
+                        <a href="/BYS_PrivacyPolicy.xhtml">Privacy Policy</a><br/>
+
+			&copy; 2009 - 2013 BookYourSite.com and Mission Management Information Systems Inc.  All Rights Reserved.<br/>
+			Trademarks are property of their respective owners.
+      
+		</div> <!-- footer -->
+ 
+  <%= render :partial => '/inc/hubspot_tracker' %>
+</body>
+</html>

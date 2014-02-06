@@ -1,0 +1,38 @@
+nav ul {
+	background: #efefef; 
+	background: linear-gradient(to bottom, #CC7A00 0%, #FF9900 40%);
+	background: -moz-linear-gradient(to bottom, #CC7A00 0%, #FF9900 40%);
+	background: -webkit-linear-gradient(top, #CC7A00 0%, #FF9900 40%);
+}
+
+nav ul li:hover {
+	background: #E68A00;
+	background: linear-gradient(to bottom, #E68A00 0%, #B26B00 40%);
+	background: -moz-linear-gradient(to bottom, #E68A00 0%, #B26B00 40%);
+	background: -webkit-linear-gradient(top, #E68A00 0%, #B26B00 40%);
+}
+
+nav ul li:hover a {
+	color: #fff;
+	}
+
+nav ul li a {
+	color: #757575;
+}
+
+nav ul ul {
+	background: #B26B00;
+}
+
+nav ul ul li {
+	border-top: 1px solid #B26B00;
+	border-bottom: 1px solid #B26B00;
+}
+
+nav ul ul li a {
+	color: #fff;
+}
+
+nav ul ul li a:hover {
+	background: #FFBD5C;
+}

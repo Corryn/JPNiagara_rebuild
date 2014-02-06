@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML>
+<HEAD>
+<TITLE>Niagara Falls Winter Photos - Jellystone Niagara Camping In Niagara Falls</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="styles/main.css" type="text/css" />
+
+
+
+<script language="JavaScript"><!--
+function createWindow(URL, width, height) {
+ 
+    var windowName = 'Jellystone Park Niagara Falls - Map';
+
+    var features = 
+	
+	'width=' + width +
+	',height=' + height +	
+	',toolbar=no,status=no' ;    window.open (URL, windowName, features);
+}
+//--><!-- Begin
+
+image1 = new Image();
+image1.src = "images/nav/activities_08.gif";
+
+image2 = new Image();
+image2.src = "images/nav/awards_05.gif";
+
+image3 = new Image();
+image3.src = "images/nav/facilities_06.gif";
+
+image4 = new Image();
+image4.src = "images/nav/gallery_07.gif";
+
+image5 = new Image();
+image5.src = "images/nav/kids_corner_09.gif";
+
+image6 = new Image();
+image6.src = "images/nav/prices_03.gif";
+
+image7 = new Image();
+image7.src = "images/nav/reservations_02.gif";
+
+image8 = new Image();
+image8.src = "images/nav/vacation_04.gif";
+
+image9 = new Image();
+image9.src = "images/nav/words_01.gif";
+
+// End -->
+
+
+</SCRIPT>
+</HEAD>
+<BODY id="activities" BGCOLOR=#FFFFFF LEFTMARGIN=0 TOPMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0>
+<!-- ImageReady Slices (yogiswords-content.psd) -->
+<!--#include file="include/jellystoneheader.html"-->
+    <TABLE WIDTH=730 BORDER=0 CELLPADDING=0 CELLSPACING=0>
+      
+      <TR> 
+        <TD WIDTH=730 class="maincontent" valign="top"> 
+<div style="margin-right: 20px; margin-top: 20px;">          
+<h1>Niagara Falls Winter Photos</h1>
+<p>Here at Jellystone Niagara, we're closed for the winter season but that doesn't mean Niagara Falls stops being a great place to visit.  Check out some shots we snapped of the Falls this winter -- our campers don't usually get to see them like this.</p>
+<p>During the summer we have lots fun with people camping and rv'ing here in Niagara Falls, and we invite you to explore our website to find out more about visiting our family campground.</p>
+<center>
+<iframe align="center" src="http://www.flickr.com/slideShow/index.gne?user_id=24781875@N05&tags=winter" frameBorder="0" width="640" scrolling="no" height="600"></iframe></center>
+
+</div>
+          
+        </TD>
+      </TR>
+    </TABLE>
+    <!-- End ImageReady Slices -->
+    <!--#include file="include/jellystonefooter.html"-->
+</BODY>
+</HTML>

@@ -1,0 +1,156 @@
+/* Z-index values:
+	header: 10
+	noscript: 11
+*/
+
+.hidden {
+	visibility: hidden;
+}
+
+.removed {
+	display: none;
+}
+
+noscript div {
+	position: fixed;
+	z-index: 11;
+	background: red;
+	text-align: center;
+}
+
+* {
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+}
+
+body {
+	background: blue repeat url("/images/test.png");
+	min-width: 700px;
+}
+
+/* Header rules */
+
+header {
+	background: linear-gradient(to left, rgb(0,163,82), rgb(51,214,133));
+	background: -webkit-linear-gradient(left, rgb(0,163,82), rgb(51,214,133));
+	background: -o-linear-gradient(left, rgb(0,163,82), rgb(51,214,133));
+	background: -moz-linear-gradient(left, rgb(0,163,82), rgb(51,214,133));
+	border-top: 10px dashed chartreuse;
+	border-bottom: 10px dashed chartreuse;
+	z-index: 10; 	
+	width: 100%;
+	height: 110px;
+	position: fixed;
+}
+
+header h1 {
+	text-align: center;
+}
+
+div#headerpadding {
+	width: 100%;
+	height: 130px;
+}
+
+/* Nav rules */
+
+nav { 
+	display: table;
+	margin: 0 auto;
+	width: 550px;
+}
+
+div#registration {
+	position: fixed;
+	float: right;
+	background-color: red;
+	border-radius: 10px;
+	text-align: center;
+	z-index: 1000;
+	width: 255px;
+	height: 25px;
+	top: 117px; /* 98px without dashed borders */
+	right: 0px;
+	overflow: hidden;
+}
+
+/* Page content rules (direction refers to image location */
+
+div.content {
+	display: table;
+	margin: 0 auto;
+	background-color:red;
+	border: 5px outset black;
+	width: 1200px;
+	height: 300px;
+}
+
+.content h2 {
+	text-align: center;
+}
+
+div.contentleft, .contentright {
+	display: table;
+	margin: 0 auto;
+	min-width: 700px;
+	max-width: 1200px;
+}
+
+.contentleft p, .contentleft img {
+	float: left;
+	margin: 25px;
+	width: 250px;
+	height: 250px;
+
+}
+
+.contentright p, .contentright img {
+	float: right;
+	margin: 25px;
+	width: 250px;
+	height: 250px;
+}
+
+/* Footer rules */
+
+footer {
+	min-width: 1240px;
+	background: linear-gradient(to right, rgb(0,163,82), rgb(51,214,133));
+	background: -webkit-linear-gradient(right, rgb(0,163,82), rgb(51,214,133));
+	background: -o-linear-gradient(right, rgb(0,163,82), rgb(51,214,133));
+	background: -moz-linear-gradient(right, rgb(0,163,82), rgb(51,214,133));
+	clear:both;
+	border-top: 10px dashed chartreuse;
+	border-bottom: 10px dashed chartreuse;
+}
+
+footer p {
+	text-align: center;
+	padding: 10px 0px;
+}
+
+footer .icon {
+	position: relative;
+	overflow: hidden;
+	float: left;
+	width: 45px;
+	height: 45px;
+	top: 15px;
+	left: 45px;
+}
+
+#fbicon {
+	position: relative;
+	bottom: 45px;
+}
+
+#twicon {
+	position: relative;
+	bottom: 45px;
+	right: 45px;
+}
+
+
+
+

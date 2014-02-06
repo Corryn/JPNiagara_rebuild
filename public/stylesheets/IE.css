@@ -1,0 +1,15 @@
+header {
+	background-color: green;
+}
+
+nav ul, nav ul li {
+	background-color: #33CC33;
+}
+
+nav ul li a {
+	display: default; 
+}
+
+footer, footer p {
+	background: green;
+}

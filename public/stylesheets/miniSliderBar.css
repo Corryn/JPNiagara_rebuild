@@ -1,0 +1,55 @@
+/*-------------------------------SLIDER/BANNER------------------------------------*/
+/* SLIDER CONTAINER */
+.slider-container, .slider{
+	position:relative;
+    
+    width: 400px;
+	height: 300px;
+    
+     overflow:hidden; /* IE 8 */
+}
+.slider p{
+    margin:0;
+}.slider p img{
+    
+    max-width:400px;
+    max-height:300px;
+}
+
+
+/* PREV & NEXT*/
+.previous-btn, .next-btn {
+    position: absolute;
+    top: 138px;
+    width: 30px;
+    height: 30px;
+    font-size: 50px;
+    font-weight: 100;
+    font-style:normal;
+    line-height: 21px;
+    color: #fff;
+	text-decoration:none;
+    text-align: center;
+    background: #222;
+    border: 2px solid #fff;
+    /*border-radius: 13px;*/
+    opacity: 0.4;
+    -moz-opacity: 0.4;
+    filter:alpha(opacity=40);
+}
+
+.previous-btn:hover, .next-btn:hover {
+    opacity: 0.8;
+    -moz-opacity: 0.8;
+    filter:alpha(opacity=80);
+}
+.previous-btn:active, .next-btn:active {
+    color:white;
+}
+
+.previous-btn {
+    left: 5px;
+}
+.next-btn {
+    right: 5px;
+}

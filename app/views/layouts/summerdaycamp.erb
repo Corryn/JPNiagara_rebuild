@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+	<script src="/javascript/jquery.min.js"></script>
+	<link rel="stylesheet" href="/stylesheets/main.css">
+	<link rel="stylesheet" href="/stylesheets/campmain.css">
+	<link rel="stylesheet" href="/stylesheets/navbar.css">
+	<link rel="stylesheet" href="/stylesheets/campnavbar.css">
+	<!--[if lt IE 9]>
+	<script src="/javascripts/html5shiv.js"></script>
+	<link rel="stylesheet" href="/stylesheets/campIE.css">
+	<![endif]-->
+</head>
+
+<body>
+
+<%= render :partial => '/layouts/campheader' %>
+
+<% if @renderSlider == true %>
+	<%= render :partial => '/layouts/slider' %>
+<% end %>
+
+<%= yield %>
+
+<%= render :partial => '/layouts/content' %>
+
+<%= render :partial => '/layouts/campfooter' %>
+
+</body>

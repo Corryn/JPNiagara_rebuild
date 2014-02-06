@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gallery>
+    <album id="ssp" lgPath="gallery/img/" tnPath="gallery/tn/" title="Album One" description="Description of Album One" tn="gallery/album1/preview.jpg">
+        		<img src="01.jpg" title="Ranger Station" caption="Register, shop, stop for breakfast and plan your Niagara adventure at the Ranger Station!" link="" target="_blank" pause="" vidpreview="" />
+        		<img src="011.jpg" title="Yogi Bear" caption="Yogi Bear welcomes you and your family to the Jellystone in Niagara Falls!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="031.jpg" title="Trailer Sites" caption="Our full service sites are perfect for your RV!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="0311.jpg" title="Trailer Sites" caption="If you're camping with a big rig, our red carpet pull-thru sites are for you!" link="" target="_blank" pause="" vidpreview="" />
+                            <img src="031a.jpg" title="Pop-up Campers" caption="Our electric and water red carpet sites have concrete pads to make setting up easy!" link="" target="_blank" pause="" vidpreview="" />
+                            <img src="032.jpg" title="Tent Camping" caption="Our rustic tent sites provide beautiful scenery for your vacation!" link="" target="_blank" pause="" vidpreview="" />
+                            <img src="033.jpg" title="Tent Camping" caption="We have plenty of tent sites and can often acomoddate groups!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="yc01.jpg" title="Yogi Cottage" caption="Our fully furnished deluxe Yogi Cottages can sleep up to eight people!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="yc02.jpg" title="Yogi Cottage" caption="All cottages have a full sized fridge, microwave, coffee pot and include all pots, pans, dishes and utensils!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="yc03.jpg" title="Yogi Cottage" caption="Relax in the living room area, equipped with satellite television!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="yc04.jpg" title="Yogi Cottage" caption="With two large bedrooms, there's plenty of room!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="bb01.jpg" title="BooBoo Cabin" caption="Our luxury BooBoo Cabins sleep up to six and come with all the amenities you need for a comfortable vacation!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="bb02.jpg" title="BooBoo Cabin" caption="The cabins come with a bar-sized fridge, microwave, coffee pot, pots, pans and untensils!!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="bb03.jpg" title="BooBoo Cabin" caption="Inside the cabin are two bedrooms. Linens are included." link="" target="_blank" pause="" vidpreview="" />
+		<img src="022.jpg" title="Rental Trailers" caption="Enjoy all the luxuries that camping has to offer by renting one of our 40ft park model trailers!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="02a.jpg" title="Rental Trailers" caption="Trailers can sleep up to six, with a master bedroom plus two pull-out sofas! Linens are included." link="" target="_blank" pause="" vidpreview="" />
+		<img src="02b.jpg" title="Rental Trailers" caption="All trailer rentals have a full kitchen that includes pots, pans, dishes and utensils!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="habitat.jpg" title="Habitat" caption="Habitats are a great way to get a camping feel with some of the basic amenities!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="03.jpg" title="Bare Bones" caption="Experience the fun of rustic camping by staying in the Bare Bones cabin!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="04.jpg" title="Pool" caption="Take a refreshing dip in our large, outdoor heated swimming pool!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="041.jpg" title="Wading Pool" caption="The younger campers will love cooling off in the wading pool!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="05.jpg" title="Mini-Putt" caption="The whole family will enjoy playing a round of mini-putt!" link="" target="_blank" pause="" vidpreview="" />
+                            <img src="051.jpg" title="Playground" caption="The kids will love spending time on the playground!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="06.jpg" title="Halloween Weekend" caption="Ranger Smith, BooBoo and Yogi Bear celebrate Halloween! Bring your costume if you're visiting on Halloween weekend!" link="" target="_blank" pause="" vidpreview="" />
+		<img src="aa3.jpg" title="Halloween Weekend" caption="Ranger Smith, BooBoo and Yogi Bear celebrate Halloween! Bring your costume if you're visiting on Halloween weekend!" link="" target="_blank" pause="" vidpreview="" />
+                            <img src="061.jpg" title="" caption="Ranger Smith and BooBoo lead campers in our Canada Day Parade!" link="" target="_blank" pause="" vidpreview="" />
+    </album>
+</gallery>

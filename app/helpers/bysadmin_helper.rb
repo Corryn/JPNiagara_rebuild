@@ -1,0 +1,2 @@
+module BysadminHelper
+end

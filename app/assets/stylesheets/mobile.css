@@ -1,0 +1,424 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+
+body{
+	font-size:90%;
+}
+
+#about{
+	height:100px;
+}
+
+#images_wrapper{
+	height:155px;
+}
+
+.bookable_img_wrapper{
+	width:15%;
+}
+
+.dropdown_arrow{
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #7C4;
+}
+
+}
+
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+
+body{
+	font-size:150%;
+}
+
+#about{
+	height:200px;
+}
+
+#images_wrapper{
+	height:600px;
+}
+
+.bookable_img_wrapper{
+	width:70px;
+}
+
+.dropdown_arrow{
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid #7C4;
+}
+
+}
+
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+
+body{
+	font-size:150%;
+}
+
+#about{
+	height:200px;
+}
+
+#images_wrapper{
+	height:500px;
+}
+
+.bookable_img_wrapper{
+	width:70px;
+}
+
+.dropdown_arrow{
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid #7C4;
+}
+
+}
+
+
+body{
+	margin:0;
+	padding:0;
+	font-family:arial;
+	/*font-size:90%;*/
+	color:black;
+	background:url("/images/BYS_Wallpaper3.jpg");
+}
+a{
+	font-family:arial;
+	font-size:100%;
+	color:#613906;
+}
+li{
+	 list-style-type:circle;
+	 padding:1% 0;
+}
+
+/*--------------------------- BYS HEADER/LOGO FORMATTING ---------------------------*/
+#bys_logo_header{
+	width:100%;
+	padding:0;
+	margin:0;
+	background-color:black;
+}
+
+.bys_logo{
+	width:100%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------- CONTENT HEADER FORMATTING ---------------------------*/
+.content_header{
+	width:100%;
+	background-color:#EAFFDE;
+	border-bottom: 1px solid black;
+	text-align:center;
+	margin: 0 auto;
+}
+.content_header h3{
+	margin:0;
+	padding:.5em;
+
+}
+
+/*--------------------------- CONTENT ---------------------------*/
+#content{
+	width:96%;
+	margin:0 0 0 2%;
+	padding:5% 0 10% 0;
+}
+
+/*--------------------------- MAIN CONTENT ---------------------------*/
+#main_content{
+	width:100%;
+}
+
+#secondary_content{
+	padding-top:5%;
+}
+
+.instructions{
+	text-align:center;
+	font-weight:bold;
+	font-family:inherit;
+	font-size:110%;
+	font-style:italic;
+}
+
+.content_section{
+	margin:2% 0;
+	/*padding:1em 1.5em;*/
+	background-color:rgba(255, 255, 255, .75);
+	border:1px solid #a6a6a6;
+	border-radius:5px;
+}
+
+.content_section_table{
+	width:90%;
+	margin:5%;
+	font-family:inherit;
+	font-size:inherit;
+	border-collapse:collapse;
+}
+
+.content_section_tr > td{
+	padding:3% 0;
+
+}
+
+.content_section_header_wrapper{
+	border-bottom:2px solid #E8E8E8;
+}
+
+.content_section_header{
+	width:100%;
+	padding-bottom:5%;
+	text-align:center;
+	font-weight:bold;
+	font-size:110%;
+}
+
+.content_section_dropdown_header{
+	width:100%;
+	font-weight:bold;
+	font-size:110%;
+}
+
+.contact_label{
+	vertical-align:top;
+}
+
+.dropdown_arrow{
+	/*creates an arrow using CSS only*/
+	width:0;
+	height:0;
+
+	float:right;
+}
+
+.input_wrapper{
+	width:92%;
+	border-bottom:1px solid #41cc26;
+}
+
+.user_input{
+	width:100%;
+	font-size:inherit;
+	border:none;
+	background:none;
+}
+
+.text_input{
+	margin-bottom:-2%;
+}
+
+.search_submit {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #41cc26), color-stop(1, #41cc26) );
+	background:-moz-linear-gradient( center top, #41cc26 5%, #41cc26 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#41cc26', endColorstr='#41cc26');
+	background-color:#41cc26;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	border:1px solid #a6a6a6;
+	/*border:none;*/
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:120%;
+	font-weight:bold;
+	padding:7px 18px;
+	text-decoration:none;
+	text-shadow:0px 0px 2px #404040;
+	float:right;
+}
+
+/*--------------------------- SECONDARY CONTENT ---------------------------*/
+#secondary_content{
+
+}
+
+#camp_owners_section{
+	padding:1%;
+	border:1px solid #a6a6a6;
+	border-radius:5px;
+	background: rgba(255, 255, 255, .25);
+}
+
+#camp_owners_link{
+	text-decoration:none;
+	color:black;
+}
+#camp_owners_img{
+	width:19%;
+}
+
+#app_store_section{
+	width:50%;
+	padding-top:7%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#app_store_img{
+	width:100%;
+}
+
+/*--------------------------- FOOTER ---------------------------*/
+#footer{
+	width:96%;
+	padding-bottom:1%;
+	margin:0 0 0 2%;
+	font-size:75%;
+}
+
+#legal{
+	width:66%;
+}
+
+#social_media{
+	float:right;
+}
+#facebook_section, #twitter_section{
+	padding:2%;
+	display:block;
+}
+#facebook_section{
+	padding-bottom:4%;
+}
+#facebook_img, #twitter_img{
+	width:100px;
+}
+
+/*--------------------------- SELECT PARK TABLE ---------------------------*/
+.content_section_list_table{
+	width:100%;
+	font-family:inherit;
+	font-size:inherit;
+	border-collapse:collapse;
+}
+.cs_header_td{
+	padding-top:5%;
+}
+.cs_td{
+	padding:5%;
+}
+
+.list_item_table{
+	width:100%;
+	border-spacing: 5px;
+}
+
+.park_label_td{
+	width:70%;
+	color:#613906;
+}
+
+.park_info_td{
+}
+.park_list_details{
+	color:rgb(150,150,150);
+	font-size: 70%;
+}
+.bookable_img_wrapper{
+	display:inline-block;
+	padding-left:5%;
+	vertical-align:middle;
+}
+.bookable_img{
+	width:100%;
+}
+
+.park_img_td{
+	width:30%;
+}
+.park_img_wrapper{
+	width:100%;
+	border-radius:4px;
+	border: 1px solid #a6a6a6;
+	overflow:hidden;
+}
+.park_thumb_img{
+	width:100%;
+}
+
+.new_search_link{
+	text-decoration:underline;
+	color:#7C4;
+}
+
+/*--------------------------- PARK ABOUT & GALLERY, BOOK NOW SECTION ---------------------------*/
+#about{
+	/*height:100px;*/
+	overflow:hidden;
+}
+#images_wrapper{
+	width:85%;
+	/*height:155px;*/
+	overflow:scroll;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+	background-color: black;
+}
+.park_img{
+	width:100%;
+	padding-bottom:2px;
+}
+
+#book_now_section{
+	width:100%;
+	padding:1% 25%;
+	position:fixed;
+	bottom:0;
+	background-color: rgba(0,0,0,1);
+}
+#book_now_button{
+	width:50%;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #77d42a), color-stop(1, #3d7a0b) );
+	background:-moz-linear-gradient( center top, #77d42a 5%, #3d7a0b 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77d42a', endColorstr='#3d7a0b');
+	background-color:#77d42a;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	display:inline-block;
+	color:#ffffff;
+	font-family:inherit;
+	font-size:inherit;
+	font-weight:bold;
+	padding:5px 24px;
+	text-decoration:none;
+}
+
+/*--------------------------- CAMP OWNERS PAGE ---------------------------*/
+.learn_more_header_section{
+	border-bottom-left-radius:0;
+	border-bottom-right-radius:0;
+}
+
+.learn_more_section{
+	border-top-left-radius:0;
+	border-top-right-radius:0;
+}
+.section_header{
+	margin:0;
+}
+#learn_more_select{
+	font-size:inherit;
+}

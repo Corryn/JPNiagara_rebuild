@@ -1,0 +1,277 @@
+body {
+	background-color: #f7f7f7;
+}
+
+a {
+	color: #dc0000;
+	text-decoration: none;
+}
+
+h1,h2,h3,h4,h5 {
+	font-family: "Georgia","Garamond","Times New Roman";
+	color: #6a6a6a;
+	border: 0;
+}
+.shadowed {
+  -webkit-box-shadow: 	5px 3px 3px 0px rgba(0,0,0,.2);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:		5px 3px 3px 0px rgba(0,0,0,.2);  /* Firefox 3.5 - 3.6 */
+  box-shadow:			5px 3px 3px 0px rgba(0,0,0,.2);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+}
+#header{
+	background-color: #504f4f;
+  	background-image:url('/images/headerbg.png');
+  	background-repeat:repeat-x;
+  	height:190px;
+  	width:100%;
+  	padding-bottom:27px; /*this is the width of the red band*/
+  	margin-bottom:15px; 
+  	
+	padding-top: 5px;
+	margin-bottom: 10px;
+  	background-position:left bottom;
+  	overflow:hidden;
+
+}
+#headerBanner {
+  /*
+	background-image:url('/images/bysheaderpic.png');
+	background-repeat:no-repeat;
+	background-position:right bottom;
+	background-size:100% auto;
+	*/
+	height:191px;
+	max-width:1080px;
+	min-width:980px;
+	width:80%;
+	margin-top:0px;
+	margin-left:auto;
+	margin-right:auto;
+	/*
+	overflow:hidden;
+	this is to offset by the top right ... 
+	*/
+	position:relative;
+  }
+  #headerBanner img {
+	width:100%;
+	height:auto;
+	position:absolute;
+	bottom:0;
+  }
+  #headerspacer_right {
+	float:right;
+	/*width:30%;*/
+	height:240px;
+  }
+  #headerspacer_left {
+	/* width:20%; */
+	max-width:300px;
+	margin-left:10px;
+	height:200px;
+	float:left;
+  }
+  #pageTitle h1 { /* not in use */
+	background-image:url('/images/translucentSquare.png');
+	color:lightgreen;
+	font-size:5em;
+  }
+  #byslogin {
+	float:right;
+	border: 2px groove;
+  }
+  img.social{
+        
+  max-height:60px;  
+}
+#socialmedia {
+  text-align:center;
+}
+#socialmedia li{
+  display:inline-block;
+  margin-right:30px;
+}
+.spacer_20 {
+	height:20px;
+}
+.container { background-color: #fff;}
+
+#front-top {  }
+#topbar { height: 49px; background: url('/images/topbar-bg.jpg') top left repeat-x; text-align: right; }
+#fptopbar { height: 49px; background: url('/images/fp-topbar.jpg') top left no-repeat; text-align: right; }
+#nav { float: right; margin-top: 10px; margin-right: 15px; }
+#nav ul li a { color: #fff; }
+#separationbar { height: 25px; background: url('/images/top-separation-bar.jpg') top left repeat-x; }
+#fp-main { height: 402px; background: url('/images/fp-main.jpg') top left no-repeat; }
+#fp-logo { float: left; margin: -55px 0 0 80px; }
+#searchform {
+	float:right;
+	margin-top: 150px;
+	width: 240px;
+	text-align: left;
+	color: #fff;
+}
+#fp-content { margin-top: 20px; }
+#searchform label { font-weight: normal; }
+
+#footer {
+	margin: 10px 0px;
+	/* background-color: #504f4f; */
+	padding:20px;
+  min-width:1100px;
+  text-align:center;
+  clear:both;
+	color: #ccc;
+}
+
+div#nav a {
+	color: #fff;
+	margin-left: 15px;
+	margin-right: 5px;
+	padding-top: 5px;
+}
+
+ul.nav {
+		margin: 0; padding: 0;
+		list-style-type: none;
+		display: inline;
+}
+
+ul.nav{
+	display: table;
+}
+ul.nav>li{
+	display: table-cell;
+	position: relative;
+	padding: 2px 7px;
+}
+ul.nav li a:hover {
+	text-decoration: underline;
+}
+
+
+/* park name */
+
+h1.park_name { 
+	font-family: "Georgia","Garamond","Times New Roman";
+	font-size: 24px;
+	color: #6a6a6a;
+	margin: 10px;
+}
+
+span.park_info {
+	font-size: 12px;
+}
+
+/* park description */
+
+.description-box {
+	color: #504f4f;
+	max-height: 285px;
+	min-height: 285px;
+	height: 285px;
+	background: #e1e1e1 url('/images/bottom-grey.png') bottom right no-repeat;
+}
+
+/* state listings */
+
+#state-listings {
+	background-color: #e1e1e1;
+}
+
+#state-listings h3 {
+	font-size: 22px;
+	margin-bottom: 5px;
+}
+
+#state-listings ul {
+		margin: 0; padding: 0;
+		list-style-type: none;
+}
+
+#state-listings li {
+
+}
+
+#state-listings ul li a {
+	color: #6a6a6a;
+	padding: 0 3px;
+}
+
+#state-listings ul li a:hover {
+	background-color: #6a6a6a;
+	color: #ffffff;
+}
+
+/* story */
+
+.story {
+	padding: 10px 20px;
+}
+
+.story img {
+	padding: 10px;
+}
+
+.navlinks {
+	padding: 3px 10px;
+}
+
+/* alignments */
+
+.alignright {
+	text-align: right;
+}
+
+.alignleft {
+	text-align: left;
+}
+
+.vmiddle {
+	vertical-align: middle;
+}
+
+.hcenter {
+	text-align: center;
+}
+
+.allpadding-10 {
+	padding: 10px;
+}
+
+.allpadding-5 {
+	padding: 5px;
+}
+
+.bottompadding-5 {
+	padding-bottom: 5px;
+}
+
+.toppadding-5 {
+	padding-top: 5px;
+}
+
+.bottompadding-10 {
+	padding-bottom: 10px;
+}
+
+.toppadding-10 {
+	padding-top: 10px;
+}
+
+.bottomborder {
+	border-bottom: 1px dotted #ccc;
+}
+
+/*------------support page------------*/
+
+#youtube_embed{
+margin:0 0 0 2em;
+border:7px outset #6a6a6a;
+width:400px;
+height:300px;
+}
+
+.hidden {
+  display:none;
+}

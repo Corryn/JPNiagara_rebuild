@@ -1,0 +1,11 @@
+  root  /                             content#homepage
+        /about-us(.:format)           content#about-us
+        /contact-us(.:format)         content#contact-us
+search  /search(.:format)             content#search
+        /camping-places/:id(.:format) content#campingplaces
+        /admin/:action(.:format)      admin#:action
+        /param.xml(.:format)          content#param
+        /images.xml(.:format)         content#images
+        /:id(.:format)                content#home
+        /:id/:action(.:format)        content#:action
+        /:id/param.xml(.:format)      content#param
