@@ -1,1 +1,16 @@
 <h1>Specials</h1>
+
+<div id="linkbox">
+	<% @specials.each do |special| %>
+		<img class="speciallink" src=<%= special[-2] %> data-viewid="<%= special[-1] %>">
+	<% end %>
+</div>	
+
+<iframe id="specialviewer" src="#"></iframe>
+
+<script>
+	$(".speciallink").click(function(){ 
+		$("iframe").attr('src',$(this).data('viewid'));
+	});
+	$("#specialviewer").attr('src','<%= @specials.first[-1] %>');
+</script>

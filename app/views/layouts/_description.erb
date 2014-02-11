@@ -1,0 +1,19 @@
+<% if @currMonthEvents[@num] != nil %>
+	<div id="dLink">
+		<% if @currMonthEvents[@num] != nil && @currMonthEvents[@num][:event_link] != nil %>
+			<a class="link" href="<%= @currMonthEvents[@num][:event_link] %>"><p class="linkText">Get More Information</p></a>
+		<% end %>
+	</div>
+	<div id="colorBox" style="background-color:<%= @color %>"> </div>
+	<div id="dTitle">
+		<h4><%= @currMonthEvents[@num][:event_name] %></h4>
+	</div>
+	<div id="dText">
+		<p><%= @currMonthEvents[@num][:event_text] %><p>
+	</div>
+	<div id="dImage">
+		<% if @currMonthEvents[@num].picture != nil %>
+			<img class="image" src="<%= @currMonthEvents[@num].picture.picture_file %>">
+		<% end %>
+	</div>
+<% end %>

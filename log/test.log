@@ -5725,3 +5725,63 @@ Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 1.9ms)
 
 Started GET "/javascript/jquery.min.map" for 72.38.165.178 at 2014-02-04 15:42:54 +0000
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/areaattractions" for 72.38.165.178 at 2014-02-07 21:23:40 +0000
+Processing by JellystoneniagaraController#areaattractions as HTML
+  Rendered jellystoneniagara/areaattractions.html.erb within layouts/jellystoneniagara (2.5ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_slider.html.erb (0.3ms)
+  [1m[36mContent Load (1.3ms)[0m  [1mSELECT `contents`.* FROM `contents` INNER JOIN `pictures` ON `pictures`.`id` = `contents`.`picture_id` WHERE `contents`.`content_type_id` = 5[0m
+  [1m[35mPicture Load (1.6ms)[0m  SELECT `pictures`.* FROM `pictures` WHERE `pictures`.`id` = 3 LIMIT 1
+  Rendered layouts/_content.html.erb (198.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 457ms (Views: 331.5ms | ActiveRecord: 16.6ms)
+
+
+Started GET "/test" for 72.38.165.178 at 2014-02-07 21:23:41 +0000
+Processing by JellystoneniagaraController#test as HTML
+  [1m[36mCalendarEvent Load (1.5ms)[0m  [1mSELECT `calendar_events`.* FROM `calendar_events` LEFT JOIN pictures ON calendar_events.picture_id = pictures.id WHERE event_start_date BETWEEN '2014-02-01T00:00:00+00:00' AND '2014-02-28T23:59:59+00:00' OR event_end_date BETWEEN '2014-02-01T00:00:00+00:00' AND '2014-02-28T23:59:59+00:00' ORDER BY event_start_date[0m
+  [1m[35mPicture Load (50.9ms)[0m  SELECT `pictures`.* FROM `pictures` WHERE `pictures`.`id` = 2 LIMIT 1
+  Rendered jellystoneniagara/test.html.erb within layouts/jellystoneniagara (57.4ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_content.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 95ms (Views: 8.7ms | ActiveRecord: 57.8ms)
+
+
+Started GET "/javascript/jquery.min.map" for 72.38.165.178 at 2014-02-07 21:23:42 +0000
+
+
+Started GET "/test123/blue" for 72.38.165.178 at 2014-02-07 21:23:42 +0000
+Processing by JellystoneniagaraController#testp as HTML
+  Parameters: {"data"=>"blue"}
+  Rendered layouts/_test.erb (29.7ms)
+Completed 500 Internal Server Error in 33ms
+
+
+Started GET "/test123/blue" for 72.38.165.178 at 2014-02-07 21:23:54 +0000
+Processing by JellystoneniagaraController#testp as HTML
+  Parameters: {"data"=>"blue"}
+  Rendered layouts/_test.erb (2.2ms)
+Completed 500 Internal Server Error in 3ms
+
+
+Started GET "/test123/blue" for 72.38.165.178 at 2014-02-07 21:23:55 +0000
+Processing by JellystoneniagaraController#testp as HTML
+  Parameters: {"data"=>"blue"}
+  Rendered layouts/_test.erb (14.5ms)
+Completed 500 Internal Server Error in 15ms
+
+
+Started GET "/areaattractions" for 72.38.165.178 at 2014-02-07 21:24:00 +0000
+Processing by JellystoneniagaraController#areaattractions as HTML
+  Rendered jellystoneniagara/areaattractions.html.erb within layouts/jellystoneniagara (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+  Rendered layouts/_slider.html.erb (0.0ms)
+  [1m[36mContent Load (3.9ms)[0m  [1mSELECT `contents`.* FROM `contents` INNER JOIN `pictures` ON `pictures`.`id` = `contents`.`picture_id` WHERE `contents`.`content_type_id` = 5[0m
+  [1m[35mPicture Load (1.5ms)[0m  SELECT `pictures`.* FROM `pictures` WHERE `pictures`.`id` = 3 LIMIT 1
+  Rendered layouts/_content.html.erb (63.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 71ms (Views: 65.0ms | ActiveRecord: 5.3ms)

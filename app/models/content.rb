@@ -5,6 +5,6 @@ class Content < ActiveRecord::Base
 	#scope :getContent
 
 	def self.getContent(int) 
-		self.joins(:picture).where(content_type_id: int)
+		self.joins('LEFT JOIN pictures ON contents.picture_id = pictures.id').where(content_type_id: int)
 	end
 end

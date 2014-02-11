@@ -6,12 +6,20 @@ BookYourSiteWebNew::Application.routes.draw do
 
   match "rates" => "jellystoneniagara#rates"
   match "lodging" => "jellystoneniagara#lodging"
-  match "familyfun" => "jellystoneniagara#familyfun"
+  match "lodging/rvcampsites" => "jellystoneniagara#rvcampsites"
+  match "lodging/rentals" => "jellystoneniagara#rentals"
+  match "familyfun/" => "jellystoneniagara#familyfun"
+  match "familyfun/activities" => "jellystoneniagara#activities"
+  match "calendar/:date" => "jellystoneniagara#calendar"
   match "areaattractions" => "jellystoneniagara#areaattractions"
   match "parkmap" => "jellystoneniagara#parkmap"
   match "gallery" => "jellystoneniagara#imagegallery"
   match "specials" => "jellystoneniagara#specials"
 
+
+  match "description/:data/:data2/:date" => "jellystoneniagara#description"
+
+  
   match "camp/home" => "summerdaycamp#home"
   match "camp/about" => "summerdaycamp#about"
   match "camp/program" => "summerdaycamp#campinfo"

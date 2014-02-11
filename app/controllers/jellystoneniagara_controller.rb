@@ -6,6 +6,15 @@ class JellystoneniagaraController < ApplicationController
     @renderContent - Indicates whether to include content blocks on page. 
     @alternate - If true, content blocks will alternate image left, content right and vice-versa.
     @contentRecs - List of content records to be displayed on a given page.
+    <Content_Type_IDs>
+    1 - home
+    2 - rates
+    3, 4, 5 - lodging
+    6, 7, 8 - Family Fun
+    9, 10, 11, 12 - Area Attractions
+    13 - Parkmap
+    14 - Image Gallery
+    15 - Specials
 =end
 
   def home
@@ -29,16 +38,28 @@ class JellystoneniagaraController < ApplicationController
     @renderContent = true
   end
 
+  def rvcampsites
+  end
+
+  def rentals
+  end
+
   def familyfun
+  end
+
+  def activities
+  end
+
+  def calendar
     
-    @title = "Family Fun"
+    @title = "Event Calendar"
     @renderSlider = false
     
-    ##
-    # <Variables needed>
-    # @Date
-    #
-    @currDate = DateTime.now.beginning_of_month
+    if params[:date] == nil 
+        @currDate = DateTime.now.beginning_of_month
+    else
+        @currDate = params[:date].to_datetime
+    end
     endOfMonth = @currDate.end_of_month
     @currMonthEvents = CalendarEvent.getCurrMonth(@currDate,endOfMonth)
     weeks = endOfMonth.mday + @currDate.wday
@@ -91,7 +112,8 @@ class JellystoneniagaraController < ApplicationController
   def areaattractions
     @title = "Area Attractions"
     @renderSlider = true
-    @contentRecs = Content.getContent(5)
+    @alternate = true
+    @contentRecs = Content.getContent(9)
     @renderContent = true
   end
 
@@ -108,7 +130,8 @@ class JellystoneniagaraController < ApplicationController
 
   def specials
     @title = "Specials"
-    @renderSlider = true
+    @renderSlider = false
+    @specials = ActiveRecord::Base.connection.execute("SELECT specials.*, p1.picture_file, p2.picture_file FROM specials LEFT JOIN pictures p1 ON specials.link_id=p1.id LEFT JOIN pictures p2 ON specials.view_id=p2.id")
   end
 
   def test
@@ -118,5 +141,19 @@ class JellystoneniagaraController < ApplicationController
     @currMonthEvents = CalendarEvent.getCurrMonth(@currDate,endOfMonth)
     puts @currMonthEvents.inspect
   end
+
+  
+
+  def description
+    @currDate = params[:date].to_date
+    endOfMonth = @currDate.end_of_month
+    @currMonthEvents = CalendarEvent.getCurrMonth(@currDate,endOfMonth)
+    @num = params[:data].to_i
+    @color = params[:data2]
+    render :partial => 'layouts/description'
+  end
+
+
+
 
 end

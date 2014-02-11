@@ -1,0 +1,218 @@
+<link rel="stylesheet" type="text/css" href="/styles/calendar-styles.css">
+<script type="text/javascript">
+	function setVisible (name, num) {
+		if(num == 0){
+			$(name).css("visibility","hidden");
+		};
+	}
+</script>
+<% colorArray = ['transparent','red','green','blue','cyan','magenta','yellow','orange','lime'] %>
+<div id="calendarcontainer">
+<div id="leftcontent">
+	<div id="eventhead">
+	<h3 id="eventtitle">EVENTS</h3>
+	</div>
+	<div id="eventbody">
+		<ul id="eventdetails">
+			<% if @currMonthEvents != nil %>
+			<% count = 1 %>
+			<% @currMonthEvents.each do |cme| %>
+				<li style="color:<%= colorArray[count]%>">
+					<p class="title">
+						<% if cme[:event_link] != nil %>
+						<a id="link" href="<%=cme[:event_link]%>"><%= cme[:event_name]%></a>:
+						<% else %>
+						<%= cme[:event_name] %>:
+						<% end %>
+					</p>
+					<p class="description">
+						&nbsp;<%= cme[:event_tag] %>
+					</p>
+				</li>
+				<% count = count + 1 %>
+				<% end %>
+			<% end %>
+		</ul>
+	</div>
+</div>
+<% a = Array.new(32,0) %>
+<% b = Array.new(32,0) %>
+<% c = Array.new(32,0) %>
+<% if @currMonthEvents != nil %>
+	<% colorNum = 1 %>
+	<% @currMonthEvents.each do |cme| %>
+		<% if cme[:event_start_date].to_date.month != @currDate.to_date.month %>
+			<% startDate = @currDate.beginning_of_month %>
+			<% puts "1" %>
+		<% else %>
+			<% startDate = cme[:event_start_date] %>
+			<% puts "2" %>
+		<% end %>
+		<% if cme[:event_end_date].to_date.month != @currDate.to_date.month %>
+			<% endDate = @currDate.end_of_month %>
+			<% puts "3" %>
+		<% else %>
+			<% endDate = cme[:event_end_date] %>
+			<% puts "4" %>
+		<% end %>
+		<% puts "Start: #{startDate}, End: #{endDate}" %>
+		<% days = endDate.mday - startDate.mday + 1 %>
+		<% count = 0 %>
+		<% temp = a %>
+		<% if temp[startDate.mday] != 0 %>
+			<% temp = b %>
+			<% puts "5" %>
+		<% elsif temp[startDate.mday] != 0%>
+			<% temp = c %>
+			<% puts "6" %>
+		<% end %>
+		<% days.times do %>
+		<% temp[startDate.mday + count] = colorNum %>
+		<% count = count + 1 %>
+		<% puts "7" %>
+		<% end %>
+		<% colorNum = colorNum + 1 %>
+	<% end %>
+<% end %>
+
+<% month = ["January","February","March","April","May","June","July","August","September","October","November","December"] %>
+<div id="calendar">
+	<div class="buttondiv"><img  id="bleft" class="button" src="/Button2.png" onclick="change(-1)"></div>
+	<div id="monthname">
+		<h2><%= month[@currDate.month-1] + " " + @currDate.year.to_s %></h2>
+	</div>
+	<div class="buttondiv"><img  id="bright" class="button" src="/Button.png" onclick="change(1)"></div>
+<script>
+	function change (num) {
+		if(num == 1){
+			window.location.href = "/calendar/<%= @currDate >> 1 %>";
+		} else if(num == 0) {
+			window.location.href = "/calendar"
+		} else if(num == -1) {
+			window.location.href = "/calendar/<%= @currDate >> -1 %>";
+		}
+	}
+</script>
+<table id="months">
+	<tbody>
+		<tr><th>Sunday</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th></tr>
+		<tr>
+			<% colcount = 0 %>
+			<% @currDate.wday.times do %>
+				<td class="hidden"><div class="day" ></div></td>
+				<% colcount = colcount + 1 %>
+			<% end %>
+			<% @currDate.upto(@currDate.end_of_month) do |day| %>
+				<td style="height:<%= @height %>px">
+					<div class="day"><p><%= day.to_date.mday %></p></div>
+					<div class="spacer"></div>
+					<div id="a<%= day.to_date.mday%>" class="a" style="background-color: <%= colorArray[a[day.mday]] %>"
+						data-event-number="<%= a[day.mday]-1 %>"></div>
+					<div id="b<%= day.to_date.mday%>" class="b" style="background-color: <%= colorArray[b[day.mday]] %>"
+						data-event-number="<%= b[day.mday]-1 %>"></div>
+					<div id="c<%= day.to_date.mday%>" class="c" style="background-color: <%= colorArray[c[day.mday]] %>"
+						data-event-number="<%= c[day.mday]-1 %>"></div>
+					<script type="text/javascript">setVisible("#a<%= day.to_date.mday%>","<%= a[day.mday] %>")</script>
+					<script type="text/javascript">setVisible("#b<%= day.to_date.mday%>","<%= b[day.mday] %>")</script>
+					<script type="text/javascript">setVisible("#c<%= day.to_date.mday%>","<%= c[day.mday] %>")</script>
+				</td>
+				<% colcount = colcount + 1 %>
+				<% if colcount == 7 && day.mday != day.end_of_month.mday %>
+					</tr><tr>
+					<% colcount = 0 %>
+				<% end %>
+			<% end %>
+		</tr>
+
+		<script type="text/javascript">	
+		var c;
+		$(".a").hover(
+			function() {
+				c = this.style.backgroundColor;
+				$(".a").each(function() {
+					if(this.style.backgroundColor == c) {
+						this.style.backgroundImage = "url('/darken.png')";
+					}
+				});	
+			}, 
+			function() {
+				$(".a").each(function() {
+					if(this.style.backgroundColor == c) {
+						this.style.backgroundImage = "none";
+					}
+				});
+			}
+			);
+		</script>
+		<script type="text/javascript">
+		$(".b").hover(
+			function() {
+				c = this.style.backgroundColor;
+				$(".b").each(function() {
+					if(this.style.backgroundColor == c) {
+						this.style.backgroundImage = "url('/darken.png')";
+					}
+				});	
+			}, 
+			function() {
+				$(".b").each(function() {
+					if(this.style.backgroundColor == c) {
+						this.style.backgroundImage = "none";
+					}
+				});
+			}
+			);
+		</script>
+		<script type="text/javascript">
+		$(".c").hover(
+			function() {
+				c = this.style.backgroundColor;
+				$(".c").each(function() {
+					if(this.style.backgroundColor == c) {
+						this.style.backgroundImage = "url('/darken.png')";
+					}
+				});	
+			}, 
+			function() {
+				$(".c").each(function() {
+					if(this.style.backgroundColor == c) {
+						this.style.backgroundImage = "none";
+					}
+				});
+			}
+			);
+		</script>
+
+	</tbody>
+</table>
+</div>
+<div id="description">
+	<% if @currMonthEvents.empty? == false %>
+		<div id="dLink">
+			<% if @currMonthEvents.first != nil && @currMonthEvents.first[:event_link] != nil %>
+				<a class="link" href="<%= @currMonthEvents.first[:event_link] %>"><p class="linkText">Get More Information</p></a>
+			<% end %>
+		</div>
+		<div id="colorBox"> </div>
+		<div id="dTitle">
+			<h4><%= @currMonthEvents.first[:event_name] %></h4>
+		</div>
+		<div id="dText">
+			<p><%= @currMonthEvents.first[:event_text] %><p>
+		</div>
+		<div id="dImage">
+			<% if @currMonthEvents.first.picture != nil %>
+				<img class="image" src="<%= @currMonthEvents.first.picture.picture_file %>">
+			<% end %>
+		</div>
+	<% end %>
+</div>
+</div>
+<script type="text/javascript">
+		$(".a, .b, .c").click(function(){
+			text = "/description/" + $(this).data("event-number") + "/" 
+			+ this.style.backgroundColor.replace(" ","").replace(" ","") + "/" 
+			+ "<%= @currDate %>"
+			$('#description').load(text);
+		});
+</script>

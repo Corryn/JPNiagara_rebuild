@@ -26,13 +26,105 @@ div#innernav {
 		</ul>
 	</div>
 </div>
-
+<% colors = ['red','blue','green','purple','yellow','tomato'] %>
 <div id="output" width="100%" style="background-color:magenta">
 	<% if @currMonthEvents != nil %>
+	<% count = 0 %>
 	<% @currMonthEvents.each do |testdbitems| %>
-	<p><%= "Event Name: " + testdbitems[:event_name] + " Event Date Start: " + testdbitems[:event_start_date].to_s + " Event Date Finish " + testdbitems[:event_end_date].to_s %></p>
+	<p style="float:left;"><%= "Event Name: " + testdbitems[:event_name] + " Event Date Start: " + testdbitems[:event_start_date].to_s + " Event Date Finish " + testdbitems[:event_end_date].to_s %></p><div id="a<%= count %>" class="test" style="width:20px; height:20px; margin: 5px 5px; background-color: <%= colors[count] %>; clear:left;" data-event-number="<%= count %>"></div>
+	<% count = count+1 %>
 	<% end %>
 	<% else %>
 	<p><%= "NOTHING" %> </p>
 	<% end %>
 </div>
+
+<style type="text/css">
+#dTitle{
+	width:750px;
+	height:50px;
+	background-color: olive;
+	margin: 10px;
+	float:left;
+}
+#dTitle h4 {
+	font-size:40px;
+	color:beige;
+}
+#dLink {
+	width:350px;
+	height:40px;
+	background-color: teal;
+	float:right;
+	margin: 10px;
+}
+#dLink p {
+	font-size:34px;
+}
+#dLink a {
+	color:beige;
+}
+#dImage {
+	width:200px;
+	height:200px;
+	background-color: royalblue;
+	margin:10px 100px;
+	clear:left;
+}
+#dImage img {
+	width:200px;
+	height:200px;
+}
+#dText {
+	width:800px;
+	height:200px;
+	background-color: coral;
+	float:right;
+	margin:0px 10px;
+	text-align: left;
+	font-size:20px;
+}
+#colorBox {
+	width:50px;
+	height:50px;
+	background-color: black;
+	margin: 10px;
+	float:left;
+}
+#description {
+	background-color: cyan;
+	width:1240px;
+	float:left;
+	margin: 0 auto;
+	height: 300px;
+}
+</style>
+<div id="description">
+	<% if @currMonthEvents.empty? == false %>
+		<div id="dLink">
+			<% if @currMonthEvents.first != nil && @currMonthEvents.first[:event_link] != nil %>
+				<a class="link" href="<%= @currMonthEvents.first[:event_link] %>"><p class="linkText">Get More Information</p></a>
+			<% end %>
+		</div>
+		<div id="colorBox" style="background-color:"> </div>
+		<div id="dTitle">
+			<h4><%= @currMonthEvents.first[:event_name] %></h4>
+		</div>
+		<div id="dText">
+			<p><%= @currMonthEvents.first[:event_text] %><p>
+		</div>
+		<div id="dImage">
+			<% if @currMonthEvents.first.picture != nil %>
+				<img class="image" src="<%= @currMonthEvents.first.picture.picture_file %>">
+			<% end %>
+		</div>
+	<% end %>
+</div>
+<script>
+	
+	$(".test").click(function(){
+		text = "description/" + $(this).data("event-number") + "/" + this.style.backgroundColor.replace(" ","") + "/" + "<%= DateTime.now.beginning_of_month %>"
+		$('#description').load(text);
+	});
+
+</script>

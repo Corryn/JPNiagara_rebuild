@@ -81,7 +81,7 @@ div.content {
 	display: table;
 	margin: 0 auto;
 	background-color:red;
-	border: 5px outset black;
+	border: 5px outset rgb(60,60,60);
 	width: 1200px;
 	height: 300px;
 }
@@ -90,22 +90,27 @@ div.content {
 	text-align: center;
 }
 
-div.contentleft, .contentright {
+.content p {
+	/* -moz-columns: 150px 2; Requires regular and webkit if used. */
+	margin: 25px;
+	height: 250px;
+}
+
+.contentleft, .contentright {
 	display: table;
 	margin: 0 auto;
 	min-width: 700px;
 	max-width: 1200px;
 }
 
-.contentleft p, .contentleft img {
+.contentleft img {
 	float: left;
 	margin: 25px;
 	width: 250px;
 	height: 250px;
-
 }
 
-.contentright p, .contentright img {
+.contentright img {
 	float: right;
 	margin: 25px;
 	width: 250px;
@@ -150,6 +155,30 @@ footer .icon {
 	bottom: 45px;
 	right: 45px;
 }
+
+#specialviewer, .speciallink {
+	margin: 20px auto;
+	display: block;
+}
+
+#specialviewer {
+	width: 1000px;
+	height: 700px;
+}
+
+#linkbox {
+	margin: 0 auto;
+	display: table;
+}
+
+.speciallink {
+	float: left;
+	cursor: pointer;
+	margin: 10px 10px;
+	width: 400px;
+	height: 65px;
+}
+
 
 
 
