@@ -87,7 +87,15 @@ div.content {
 }
 
 .content h2 {
-	text-align: center;
+	text-align: center;	
+}
+
+.content h2:before {
+  display: block; 
+  content: " "; 
+  margin-top: -135px; 
+  height: 135px; 
+  visibility: hidden; 
 }
 
 .content p {
@@ -156,6 +164,8 @@ footer .icon {
 	right: 45px;
 }
 
+/* Specials view styling */
+
 #specialviewer, .speciallink {
 	margin: 20px auto;
 	display: block;
@@ -169,6 +179,7 @@ footer .icon {
 #linkbox {
 	margin: 0 auto;
 	display: table;
+	max-width: 1700px;
 }
 
 .speciallink {

@@ -6,10 +6,10 @@
 	</div>
 	<div id="colorBox" style="background-color:<%= @color %>"> </div>
 	<div id="dTitle">
-		<h4><%= @currMonthEvents[@num][:event_name] %></h4>
+		<h4><%= @currMonthEvents[@num][:event_name].html_safe %></h4>
 	</div>
 	<div id="dText">
-		<p><%= @currMonthEvents[@num][:event_text] %><p>
+		<p><%= @currMonthEvents[@num][:event_text].html_safe %><p>
 	</div>
 	<div id="dImage">
 		<% if @currMonthEvents[@num].picture != nil %>

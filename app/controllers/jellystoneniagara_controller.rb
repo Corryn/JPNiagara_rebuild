@@ -50,6 +50,9 @@ class JellystoneniagaraController < ApplicationController
   def activities
   end
 
+  def areamap
+  end
+
   def calendar
     
     @title = "Event Calendar"
@@ -131,7 +134,8 @@ class JellystoneniagaraController < ApplicationController
   def specials
     @title = "Specials"
     @renderSlider = false
-    @specials = ActiveRecord::Base.connection.execute("SELECT specials.*, p1.picture_file, p2.picture_file FROM specials LEFT JOIN pictures p1 ON specials.link_id=p1.id LEFT JOIN pictures p2 ON specials.view_id=p2.id")
+    currDate = DateTime.now
+    @specials = Special.getCurrentSpecials(currDate)
   end
 
   def test
@@ -142,7 +146,8 @@ class JellystoneniagaraController < ApplicationController
     puts @currMonthEvents.inspect
   end
 
-  
+  def entry
+  end
 
   def description
     @currDate = params[:date].to_date
@@ -153,7 +158,60 @@ class JellystoneniagaraController < ApplicationController
     render :partial => 'layouts/description'
   end
 
+  def formtypeenter
+    t = ContentType.create(:content_name => params["tname"])
+    puts "\033[1;31m #{t.errors.messages}\033[0m\n"
+    redirect_to("/putrandomstringhere" + "/fct")
+  end
 
+  def formcontententer
+    c = Content.create(:content_name => params["cname"], :content_type_id => params["ctype"], :picture_id => params["cpic"], :content_text => params["ctext"])
+    puts "\033[1;31m #{c.errors.messages}\033[0m\n"
+    redirect_to("/putrandomstringhere" + "/fc")
+  end
 
+  def formpictureenter
+    p = Picture.create(:picture_description => params["pdesc"], :picture_file => params["pfile"])
+    puts "\033[1;31m #{p.errors.messages}\033[0m\n"
+    redirect_to("/putrandomstringhere" + "/fp")
+  end
+
+  def formevententer
+    if params["elink"] == "" then params["elink"] = nil end
+    e = CalendarEvent.create(:event_name => params["ename"], :picture_id => params["epic"], :event_tag => params["etag"], :event_text => params["etext"], :event_link => params["elink"], :event_start_date => params["esdate"].to_date, :event_end_date => params["eedate"].to_date)
+    puts "\033[1;31m #{e.errors.messages}\033[0m\n"
+    redirect_to("/putrandomstringhere" + "/fe")
+  end
+
+  def formspecialenter
+    s = Special.create(:special_name => params["sname"], :special_description => params["sdesc"], :link_id => params["slink"], :view_id => params["sview"], :special_start_date => params["ssdate"], :special_end_date => params["sedate"])
+    puts "\033[1;31m #{s.errors.messages}\033[0m\n"
+    redirect_to("/putrandomstringhere" + "/fs")
+  end
+
+  def formgrab
+    render :partial => "dbm/" + params[:data].to_s
+  end
+
+  def datagrab
+    if params[:data] == "type_base"
+      @itemNames = ContentType.column_names
+      @itemValues = ContentType.all
+    elsif params[:data] == "content_base"
+      @itemNames = Content.column_names
+      @itemValues = Content.all
+    elsif params[:data] == "picture_base"
+      @itemNames = Picture.column_names
+      @itemValues = Picture.all
+    elsif params[:data] == "event_base"
+      @itemNames = CalendarEvent.column_names
+      @itemValues = CalendarEvent.all
+    elsif params[:data] == "special_base"
+      @itemNames = Special.column_names
+      @itemValues = Special.all
+    end
+
+    render :partial => "dbm/type_base"
+  end
 
 end

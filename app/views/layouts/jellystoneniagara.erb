@@ -4,7 +4,11 @@
 	<meta name="keywords" content="Jellystone, Niagara, Falls, Campground, RV, Trailer, Park">
 	<meta name="description" content="Website redesign page for Jellystone Park Niagara">
 
+	<% if @title != nil %>
 	<title><%= @title %> - Jellystone Park Niagara</title>
+	<% else %>
+	<title>Jellystone Park Niagara</title>
+	<% end %>
 
 	<script src="/javascript/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/styles/sliding_banner.css">

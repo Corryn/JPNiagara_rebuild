@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="/styles/calendar-styles.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/calendar-styles.css">
 <script type="text/javascript">
 	function setVisible (name, num) {
 		if(num == 0){
@@ -20,13 +20,13 @@
 				<li style="color:<%= colorArray[count]%>">
 					<p class="title">
 						<% if cme[:event_link] != nil %>
-						<a id="link" href="<%=cme[:event_link]%>"><%= cme[:event_name]%></a>:
+						<a id="link" href="<%=cme[:event_link]%>"><%= cme[:event_name].html_safe %></a>:
 						<% else %>
-						<%= cme[:event_name] %>:
+						<%= cme[:event_name].html_safe %>:
 						<% end %>
 					</p>
 					<p class="description">
-						&nbsp;<%= cme[:event_tag] %>
+						&nbsp;<%= cme[:event_tag].html_safe %>
 					</p>
 				</li>
 				<% count = count + 1 %>
@@ -62,7 +62,8 @@
 		<% if temp[startDate.mday] != 0 %>
 			<% temp = b %>
 			<% puts "5" %>
-		<% elsif temp[startDate.mday] != 0%>
+		<% end %>
+		<% if temp[startDate.mday] != 0%>
 			<% temp = c %>
 			<% puts "6" %>
 		<% end %>
@@ -195,10 +196,10 @@
 		</div>
 		<div id="colorBox"> </div>
 		<div id="dTitle">
-			<h4><%= @currMonthEvents.first[:event_name] %></h4>
+			<h4><%= @currMonthEvents.first[:event_name].html_safe %></h4>
 		</div>
 		<div id="dText">
-			<p><%= @currMonthEvents.first[:event_text] %><p>
+			<p><%= @currMonthEvents.first[:event_text].html_safe %><p>
 		</div>
 		<div id="dImage">
 			<% if @currMonthEvents.first.picture != nil %>
