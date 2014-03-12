@@ -1,10 +1,141 @@
-<div id="slider-section">
+<!-- <div id="slider-section">
 	<div class="slider-container">
 		<div class="slider">
 			<p><img src="images/banner/banner_1.png"></p>
-			<p><img src="images/landscape.jpg"></p>		
+			<p><img src="images/landscape.jpg"></p>	
+			<p><img src="images/slider/logorv.jpg"></p>
+			<p><img src="images/slider/slider1.jpg"></p>	
 		</div>
+	</div>
+</div> -->
+<style type="text/css">
+.button {
+	width:50px;
+	height:50px;
+	border: 2px solid black;
+	background-color: rgba(230,230,230,0.4);
+	cursor:pointer;
+}
+#leftButton {
+	float:left;
+	left:25px;
+	background-image: url('/images/slider/leftarrow.png');
+}
+#rightButton {
+	float:right;
+	right:25px;
+	background-image: url('/images/slider/rightarrow.png');
+}
+#visibleImage {
+	clear: both;
+}
+#navigation {
+	position: relative;
+	height:54px;
+	background-color: rgba(255,255,255,0.2);
+	bottom:75px;
+	z-index: 5;
+	margin: 0px auto;
+}
+#sliderbox {
+	position:relative;
+	overflow:hidden;
+}
+.navbox {
+	width:20px;
+	height:20px;
+	background-color: rgba(255,255,255,0.5);
+	margin:17px 15px;
+	float:left;
+	cursor: pointer;
+}
+</style>
+
+<div id="sliderbox">
+	<img id="visibleImage">
+	<div id="navigation">
+		<div id="leftButton" class="button" onclick="prevImageClick()"></div>
+		<div id="rightButton" class="button" onclick="nextImageClick()"></div>
 	</div>
 </div>
 
+<script>
+<% if @url == nil %>
+<% @url = "/images/slider/main" %>
+<% end %>
 
+var url = "<%= @url %>";
+var pics = new Array();
+var index = 0;
+var autoplay = true;
+
+<% count = 0 %>
+<%= Dir.foreach("public/" + @url) do |fn| %>
+<% next if fn =="." || fn == ".." %>
+pics[<%= count %>] = "<%= @url + "/" + fn %>";
+$("#rightButton").before("<div class='navbox' onclick='indexImage(<%= count %>)'></div>")
+<% count = count + 1 %>
+<% end %>
+
+	$("#navigation").width("<%= 108 + count * 50 %>");
+	$("#visibleImage").attr('src',pics[0]);
+	$("#leftButton").next().css("background-color","blue");
+
+function nextImageClick() {
+	autoplay = false;
+	nextImage();
+}
+
+function prevImageClick() {
+	autoplay = false;
+	prevImage();
+}
+
+function nextImage() {
+	index = (index + 1) % (pics.length);
+	change(index);
+}
+
+function prevImage() {
+	index = index-1;
+	if(index < 0){
+		index = pics.length - 1;
+	}
+	change(index);
+}
+
+function indexImage(num) {
+	autoplay = false;
+	index = num;
+	change(index);
+}
+
+function change (num) {
+	$(".navbox").css("background-color","rgba(255,255,255,0.5)");
+	var current = $("#leftButton").next();
+	for(i = 0; i < num; i++){
+		current = current.next();
+	}
+	current.css("background-color","blue");
+	$("#visibleImage").fadeOut(500,function () {
+		$("#visibleImage").attr('src',pics[index]);
+		$("#visibleImage").fadeIn(500);
+	});
+}
+
+function play(){
+	if(autoplay == true){
+		setTimeout(function () {
+			if(autoplay == true){
+			nextImage();
+			play();
+			}	
+		},10000);
+	}
+}
+
+play();
+
+disableSelection(document.getElementById('sliderbox'));
+
+</script>

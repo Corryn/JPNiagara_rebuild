@@ -1,0 +1,17 @@
+<h1>Tour's and Shuttles</h1>
+
+<div id="quicknav">
+<p>Quicknav</p>
+	<div id="sections">
+		<% @contentRecs.each do |cRecs| %>
+			<a href="#<%= cRecs[:content_name] %>"><%= cRecs[:content_name] %></a> </br>
+		<% end %>
+	</div>
+
+</div>
+
+<script>
+$("#quicknav").hover(function(){
+$("#sections").toggle();
+});
+</script>

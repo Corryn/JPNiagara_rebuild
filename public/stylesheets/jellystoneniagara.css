@@ -1,0 +1,130 @@
+/* Rates */
+
+#ratesbox {
+	width:1024px; 
+	height:958px; 
+	margin: 0px auto; 
+	background-color: lightgreen;
+}
+
+#rates {
+	margin: 50px 15px;
+}
+
+#ratesranger{
+	width:250px;
+	float:left;
+	position:relative;
+	top:255px;
+	margin:0px 10px;
+}
+
+/* RV & Campsites */
+
+
+
+/* Rentals */
+
+
+
+/* Park Map */
+
+#parkmap {
+	float:left;
+}
+#infobar {
+	float: left;
+	width: 1200px;
+	height: 350px;
+	background: orange url(/images/test/wood.jpg);
+	background-size: cover;
+}
+#mapcontainer{
+	width:1200px;
+	height:900px;
+	margin: 0px auto;
+}
+#sitecolor {
+	width:50px;
+	height:50px;
+	margin:15px 15px;
+	background-color: black;
+}
+#parkmapmap area {
+	cursor: pointer;
+	display:block;
+}
+
+/* Area Attractions */
+
+#quicknav {
+position:relative;
+width:100px;
+height:25px;
+background-color: blue;
+border: 5px solid black;
+margin:20px 50px;
+padding:0px 5px;
+}
+#quicknav p {
+	font-size: 20px;
+}
+#sections {
+	position:absolute;
+	display:none;
+	z-index:10;
+	width:400px;
+	margin-left: 0;
+	background-color:orange;
+	border: 5px solid black;
+	top:25px;
+	left:-5px;
+}
+
+/* Area Map */
+
+#googleMap {
+    margin: 25px auto;
+    display: table;
+    width: 1000px;
+    height: 600px;
+}
+#mapbox {
+    margin: 0 auto;
+    display: table;
+    background-color: orange;
+    width: 1100px;
+    height: 650px;
+}
+
+/* Image Gallery */
+
+#photogallery {	
+	margin: 0px 5%;
+}
+
+/* Specials */
+
+#specialviewer, .speciallink {
+	margin: 20px auto;
+	display: block;
+}
+
+#specialviewer {
+	width: 1000px;
+	height: 700px;
+}
+
+#linkbox {
+	margin: 0 auto;
+	display: table;
+	width: 840px;
+}
+
+.speciallink {
+	float: left;
+	cursor: pointer;
+	margin: 10px 10px;
+	width: 400px;
+	height: 65px;
+}

@@ -5,25 +5,26 @@ BookYourSiteWebNew::Application.routes.draw do
   root :to => 'jellystoneniagara#home'
 
   match "rates" => "jellystoneniagara#rates"
-  match "lodging" => "jellystoneniagara#lodging"
+  match "lodging/" => "jellystoneniagara#lodging"
     match "lodging/rvcampsites" => "jellystoneniagara#rvcampsites"
     match "lodging/rentals" => "jellystoneniagara#rentals"
+    match "lodging/moreinfo/:data" => "jellystoneniagara#moreinfo"
   match "familyfun/" => "jellystoneniagara#familyfun"
     match "familyfun/activities" => "jellystoneniagara#activities"
     match "calendar/:date" => "jellystoneniagara#calendar"
       match "description/:data/:data2/:date" => "jellystoneniagara#description"
   match "areaattractions" => "jellystoneniagara#areaattractions"
+    match "toursandshuttles" => "jellystoneniagara#toursandshuttles"
+    match "attractionsandcoupons" => "jellystoneniagara#attractionsandcoupons"
     match "areamap" => "jellystoneniagara#areamap"
   match "parkmap" => "jellystoneniagara#parkmap"
+    match "parkmapinfo/:data" => "jellystoneniagara#parkmapinfo"
+  match "camp" => "jellystoneniagara#camp"
   match "gallery" => "jellystoneniagara#imagegallery"
   match "specials" => "jellystoneniagara#specials"
+  match "admin" => "jellystoneniagara#admin"
+    match "comments" => "jellystoneniagara#comments"
 
-  match "putrandomstringhere/:data" => "jellystoneniagara#entry"
-  match "putrandomstringhere/" => "jellystoneniagara#entry"
-    match "*dbm/base/:data" => "jellystoneniagara#datagrab"
-    match "*dbm/:data" => "jellystoneniagara#formgrab"
-
-  
   match "camp/home" => "summerdaycamp#home"
   match "camp/about" => "summerdaycamp#about"
   match "camp/program" => "summerdaycamp#campinfo"
@@ -34,6 +35,14 @@ BookYourSiteWebNew::Application.routes.draw do
   match "camp/operations" => "summerdaycamp#pricinghours"
   match "camp/directions" => "summerdaycamp#directions"
   match "camp/faq" => "summerdaycamp#faq"
+
+  match "putrandomstringhereput/:data" => "jellystoneniagara#entry"
+  match "putrandomstringhere/" => "jellystoneniagara#entry"
+    match "dbm/base/:data" => "jellystoneniagara#datagrab"
+    match "dbm/:data" => "jellystoneniagara#formgrab"
+
+  
+  
 
 
   match "contactus-content" => "jellystoneniagara#contactus"

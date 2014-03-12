@@ -13,7 +13,7 @@
 	</div>
 	<div id="dImage">
 		<% if @currMonthEvents[@num].picture != nil %>
-			<img class="image" src="<%= @currMonthEvents[@num].picture.picture_file %>">
+			<img class="image" src="<%= @currMonthEvents[@num].picture.picture_file %>" alt="<%= @currMonthEvents[@num].picture.picture_description %>">
 		<% end %>
 	</div>
 <% end %>

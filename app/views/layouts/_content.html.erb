@@ -1,25 +1,37 @@
 <% if @renderContent == true %>
 	<% switch = false %>
-	<% @contentRecs.each do |contentRec|%> 
-		<div class="content">			
+	<% count = 0 %>
+	<% @contentRecs.each do |contentRec|%>
+	<% if count % 2 == 0 %>
+		<div class="content wood">
+	<% else %>
+		<div class="content basket">
+	<% end %>
+	<% count = count + 1 %>			
 				<% if switch == true %>
 					<div class="contentright">
 						<% puts contentRec.inspect %>
-						<h2 id="<%= contentRec[:content_name] %>"><%= contentRec[:content_name] %></h2>
+						<h2 id="<%= contentRec[:content_name] %>"><%= contentRec[:content_name].gsub("(tm)","&#8482").html_safe %></h2>
 						<% if contentRec.picture != nil %>
 							<img src= <%= contentRec.picture.picture_file %> alt=<% contentRec.picture.picture_description %>>
 						<% end %>
-						<p><%= contentRec[:content_text] %></p> 
+						<p><%= contentRec[:content_text].gsub("(tm)","&#8482").html_safe %></p> 					
 					</div>
+					<% if contentRec[:content_link] != nil && contentRec[:content_link] != "" %>
+						<a class="rightlink" href="<%= contentRec[:content_link] %>"><%= contentRec[:content_linktext] %></a>
+					<% end %>
 				<% else %>
 					<div class="contentleft">
 						<% puts contentRec.inspect %>
-						<h2 id="<%= contentRec[:content_name] %>"><%= contentRec[:content_name] %></h2>
+						<h2 id="<%= contentRec[:content_name] %>"><%= contentRec[:content_name].gsub("(tm)","&#8482").html_safe %></h2>
 						<% if contentRec.picture != nil %>
 							<img src= <%= contentRec.picture.picture_file %> alt=<% contentRec.picture.picture_description %>>
 						<% end %>
-						<p><%= contentRec[:content_text] %></p> 
+						<p><%= contentRec[:content_text].gsub("(tm)","&#8482").html_safe %></p> 			
 					</div>
+					<% if contentRec[:content_link] != nil && contentRec[:content_link] != "" %>
+						<a class="leftlink" href="<%= contentRec[:content_link] %>"><%= contentRec[:content_linktext] %></a>
+					<% end %>
 				<% end %>
 				<% if @alternate == true %>
 					<% if switch == true %>

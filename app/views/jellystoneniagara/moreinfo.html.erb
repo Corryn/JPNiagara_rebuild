@@ -1,0 +1,77 @@
+<h1>More Info</h1>
+<style type="text/css">
+#infobox {
+	width:900px;
+	margin:0px auto;
+	background: lightgreen;
+	border:3px solid tan;
+}
+#infobox h2 {
+	margin:10px;
+	font-size: 40px;
+	padding:0px 30px;
+}
+#description {
+	width:800px;
+	height:300px;
+	margin:10px auto;
+	background-color: rgba(210,180,140,0.4); /* tan */
+}
+#rates {
+	width:312px;
+	margin:10px 0px 10px 50px;
+	background-color: rgba(210,180,140,0.4);
+	float:left;
+}
+#images {
+	width:400px;
+	height:400px;
+	margin:10px 50px 10px 0px;
+	background-color: rgba(210,180,140,0.4);
+	float:right;
+}
+#spacer {
+	width:800px;
+	height:1px;
+	clear:both;
+}
+#rates div {
+	width:150px;
+	height:25px;
+	float:left;
+}
+.purple {
+	background-color:lavender;
+	border: 3px solid purple;
+}
+.blue {
+	background-color:skyblue;
+	border: 3px solid blue;
+}
+.orange {
+	background-color:orange;
+	border: 3px solid tomato;
+}
+.green {
+	background-color:limegreen;
+	border: 3px solid green;
+}
+</style>
+<div id="infobox">
+<h2><%= @siteinfo[0][:content_name].gsub("(tm)","&#8482").html_safe %></h2>
+<div id="description">
+</div>
+<div id="rates"><p style="width:312;">Rates:</p>
+
+	<div class="purple"></div><div class="purple"></div>
+	<div class="purple"></div><div class="purple"></div>
+	<div class="blue"></div><div class="blue"></div>
+	<div class="orange"></div><div class="orange"></div>
+	<div class="orange"></div><div class="orange"></div>
+	<div class="green"></div><div class="green"></div>
+	<div class="green"></div><div class="green"></div>
+
+</div>
+<div id="images"></div>
+<div id="spacer"><img src=""></div>
+</div>

@@ -5,7 +5,7 @@ class SummerdaycampController < ApplicationController
 	end
 
 	def about
-
+		
 	end
 
 	def campinfo

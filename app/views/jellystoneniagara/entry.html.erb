@@ -1,78 +1,12 @@
-<style type="text/css">
-form {
-	float: left;
-	width:492px;
-	background-color:lime;
-	border: 2px solid;
-	text-align: left;
-}
-form label, form input, form textarea {
-	margin: 5px 5px;
-}
-.tabbar {
+<link rel="stylesheet" type="text/css" href="/stylesheets/dbm.css">
 
+<script>
+if(sessionStorage.getItem("adminUser") != "banana") {
+	alert("Protected page.  Redirecting...");
+	window.location.replace("/home");
 }
-.formnav {
-width: 96px;
-height: 25px;
-float: left;
-border: 2px solid;
-text-align: center;
-background-color: #00CC00;
-}
-.basenav {
-width: 196px;
-height: 25px;
-float: left;
-border: 2px solid;
-text-align: center;
-background-color: #CC00CC;
-}
-#formbox {
-	width:496px;
-	height:692px;
-	background-color: #00CC00;
-	overflow: auto;
-	border:2px solid black;
-}
-#basebox {
-	width:996px;
-	height:692px;
-	background-color: #CC00CC;
-	overflow: auto;
-	border:2px solid black;
-}
-table {
-	border-collapse: collapse;
-	border: 2px solid black;
-	background-color: magenta;
-}
-th {
-	border: 2px solid black;
-	padding: 1px 2px;
-}
-td {
-	border: 2px solid black;
-	padding: 1px 2px;
-}
-#registration, #logo {
-	visibility: hidden;
-}
-#container {
-	width:1500px;
-	margin:0px auto;
-}
-#form_content {
-	width:500px;
-	height:725px;
-	float:left;
-}
-#base_content {
-	width:1000px;
-	height:725px;
-	float:left;
-}
-</style>
+</script>
+
 <div id="container">
 	<div id="form_content">
 		<div id="form" class="tabbar" >
@@ -81,6 +15,7 @@ td {
 			<div id="fp" class="formnav" data-fname="picture_form">Picture</div>
 			<div id="fe" class="formnav" data-fname="event_form">Event</div>
 			<div id="fs" class="formnav" data-fname="special_form">Special</div>
+			<div id="fa" class="formnav" data-fname="attraction_form">Attraction</div>
 		</div>
 		<div id="formbox">
 		</div>
@@ -93,18 +28,29 @@ td {
 			<div id="bp" class="basenav" data-bname="picture_base">Picture</div>
 			<div id="be" class="basenav" data-bname="event_base">Event</div>
 			<div id="bs" class="basenav" data-bname="special_base">Special</div>
+			<div id="ba" class="basenav" data-bname="attraction_base">Attraction</div>
 		</div>
 		<div id="basebox">
 		</div>
 	</div>
 </div>
+
+<a class="backlink" href="/admin">Back to Admin</a>
+
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#" + sessionStorage.getItem("fdata")).trigger("click");
 	$("#" + sessionStorage.getItem("bdata")).trigger("click");
+	$(window).unload(function(){
+		sessionStorage.setItem("dbScroll",$("#basebox").scrollTop());
+	});
 });
 </script>
 <script type="text/javascript">
+
+	$(".tabbar").mouseover(function() {
+		$(this).find('> div').css('cursor',"default");
+	});
 
 	$(".formnav").click(function() {
 		text = "dbm/" + $(this).data("fname")
@@ -116,7 +62,7 @@ $(document).ready(function(){
 
 	$(".basenav").click(function() {
 		text = "dbm/base/" + $(this).data("bname")
-		$('#basebox').load(text);
+		$('#basebox').load(text , function(){ $("#basebox").scrollTop(sessionStorage.getItem("dbScroll")); });
 		sessionStorage.setItem("bdata",this.id);
 		$(".basenav").css("background-color","#CC00CC");
 		$(this).css("background-color","magenta");

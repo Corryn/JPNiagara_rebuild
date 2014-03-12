@@ -1,0 +1,57 @@
+<script>
+if(sessionStorage.getItem("adminUser") != "banana") {
+	alert("Protected page.  Redirecting...");
+	window.location.replace("/home");
+}
+</script>
+
+<% @comments.each do |comment| %>
+	<div class="comment">
+		<p class="horiz">Name:&nbsp</p><p class="horiz"><%= comment[:name] %></p><br/>
+		<p class="horiz">E-Mail:&nbsp</p><p class="horiz"><%= comment[:email] %></p><br/>
+		<p>Message:</p><p class="message"><%= comment[:message] %></p>
+		<a class="deletelink" href="deletecomment?id=<%= comment[:id] %>">Delete</a>
+	</div>
+<% end %>
+
+<a class="backlink" href="/admin">Back to Admin</a>
+
+<style>
+#registration {
+	display: none;
+}
+.horiz {
+	float: left;
+}
+.comment {
+	margin: 5px auto;
+	padding: 0px 5px;
+	display: table;
+	background-color: #29A329;
+	width: 500px;
+}
+.message {
+	margin: 5px auto;
+	padding: 0px 5px;
+	display: table;
+	background-color: #47D147;
+	width: 475px;
+}
+.deletelink {
+	position: relative;
+	bottom: 2px;
+	float: right;
+	background-color: #5CAD5C;
+	padding: 2px 3px;
+}
+</style>
+
+<script>
+function deleteComment() {
+	return window.confirm("Are you sure?");
+};
+</script>
+
+<script>
+$('.deletelink').click(deleteComment);
+</script>

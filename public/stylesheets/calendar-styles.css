@@ -1,19 +1,22 @@
 #leftcontent {
-	background-color: orange;
+	background: orange url(/images/test/basket.jpg);
+	background-size: cover;
 	width:250px;
 	float:left;
-	height:800px;
+	height:795px;
 	margin-left: auto;
+	border-bottom: 5px solid black; 
 }
 #calendar {
-	background-color: yellow;
+	background-color: rgb(165, 255, 179);
 	width:990px;
 	float:left;
 	height:800px;
 	margin-right: auto;
 }
 #description {
-	background-color: magenta;
+	background: magenta url(/images/test/wood.jpg);
+	background-size: cover;
 	width:1240px;
 	float:left;
 	margin: 0 auto;
@@ -37,11 +40,13 @@
 	text-align: center;
 }
 #eventdetails {
-	padding:5px;
+	padding:5px 0px;
 	list-style-type: none;
 }
 #eventdetails li {
 	padding: 3px;
+	border-bottom: 2px solid;
+	border-top: 2px solid;
 }
 #eventdetails a {
 	color:inherit;
@@ -66,7 +71,7 @@
 #months th {
 	height: 40px;
 	border: 5px solid black;
-	background-color: cyan;
+	background-color: green;
 }
 #months td {
 	border: 2px outset darkgrey;
@@ -94,7 +99,7 @@
 .buttondiv {
 	height:80px;
 	width:80px;
-	background-color: brown;
+	background-color: #eee;
 	float:left;
 	overflow: hidden;
 }
@@ -142,7 +147,7 @@
 #dTitle{
 	width:750px;
 	height:50px;
-	background-color: olive;
+	background-color: rgba(150, 75, 0, 0.2);
 	margin: 10px;
 	float:left;
 }
@@ -153,7 +158,7 @@
 #dLink {
 	width:350px;
 	height:40px;
-	background-color: teal;
+	background-color: rgba(150, 75, 0, 0.2);
 	float:right;
 	margin: 10px;
 }
@@ -166,7 +171,6 @@
 #dImage {
 	width:200px;
 	height:200px;
-	background-color: royalblue;
 	margin:10px 100px;
 	clear:left;
 }
@@ -177,7 +181,7 @@
 #dText {
 	width:800px;
 	height:200px;
-	background-color: coral;
+	background-color: rgba(150, 75, 0, 0.2);
 	float:right;
 	margin:0px 10px;
 	text-align: left;

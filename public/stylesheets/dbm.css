@@ -1,0 +1,99 @@
+form {
+	float: left;
+	width:492px;
+	background-color:lime;
+	border: 2px solid;
+	text-align: left;
+}
+
+form label, form input, form textarea {
+	margin: 5px 5px;
+}
+
+.tabbar {
+}
+
+.formnav {
+width: 96px;
+height: 25px;
+float: left;
+border: 2px solid;
+text-align: center;
+background-color: #00CC00;
+}
+
+.basenav {
+width: 196px;
+height: 25px;
+float: left;
+border: 2px solid;
+text-align: center;
+background-color: #CC00CC;
+}
+
+#formbox {
+	width:496px;
+	height:692px;
+	background-color: #00CC00;
+	overflow: auto;
+	border:2px solid black;
+}
+
+#basebox {
+	width:996px;
+	height:692px;
+	background-color: #CC00CC;
+	overflow: auto;
+	border:2px solid black;
+}
+
+table {
+	border-collapse: collapse;
+	border: 2px solid black;
+	background-color: magenta;
+}
+
+th {
+	border: 2px solid black;
+	padding: 1px 2px;
+}
+
+td {
+	border: 2px solid black;
+	padding: 1px 2px;
+}
+
+#registration, #logo {
+	visibility: hidden;
+}
+
+#container {
+	width:1500px;
+	height:754px;
+	margin:0px auto;
+}
+
+#form_content {
+	width:500px;
+	height:725px;
+	float:left;
+}
+
+#base_content {
+	width:1000px;
+	height:725px;
+	float:left;
+}
+
+td:focus {
+	background-color:white;
+}
+
+.removeItem:link, .removeItem:visited {
+	color:blue;
+}
+.editItem {
+	cursor:pointer;
+	color:blue;
+	text-decoration: underline;
+}

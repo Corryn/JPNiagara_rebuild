@@ -1,0 +1,15 @@
+<form id="content_form" action="/formattractionenter" method="post">
+	<h2>ATTRACTIONS</h2>
+	<label for="aname">Name: </label><input type="text" name="aname" id="aname" autofocus></br>
+	<label for="alat">Latitude: </label><input type="number" name="alat" id="alat" ></br>
+	<label for="alon">Longitude: </label><input type="number" name="alon" id="alon"></br>
+	<label for="alabel">Label: </label><input type="text" name="alabel" id="alabel"></br>
+	<label for="acolor">Color: </label><input type="text" name="acolor" id="acolor" value="FFFFFF"></br>
+	<div id="tcolor" style="background-color:white; width:50px; height:50px;"></div>
+	<input type="submit" id="enter" name="enter">
+</form>
+<script type="text/javascript">
+$("#acolor").keyup(function () {
+	$("#tcolor").css("background-color", "#" + this.value);
+});
+</script>

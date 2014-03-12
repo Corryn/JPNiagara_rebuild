@@ -1,39 +1,70 @@
-<h1>Area Map</h1>
-<style type="text/css">
-#mapcontainer {
-	width:1024px;
-	height:1224px;
-	margin: 0px auto;
-	background-color: orange;
+<script>
+function initialize()
+{
+var mapProp = {
+  center:new google.maps.LatLng(43.089639,-79.085011),
+  zoom:12,
+  mapTypeId:google.maps.MapTypeId.ROADMAP,
+};
+
+var map=new google.maps.Map(document.getElementById("googleMap")
+  ,mapProp);
+
+var infowindow = new google.maps.InfoWindow({content: "blank"});
+<% @mapAttractions.each do |attraction| %>
+  <% if attraction.latitude != nil && attraction.longitude != nil %>
+    var marker = new StyledMarker({
+      styleIcon: new StyledIcon(StyledIconTypes.BUBBLE,{color:"<%= attraction[:color] %>",text:"<%= attraction[:marker_label] %>"}),
+      position: new google.maps.LatLng(<%= attraction[:latitude] %>, <%= attraction[:longitude] %>),
+      map: map,
+      title: "<%= attraction[:attraction_name] %>",
+      animation: google.maps.Animation.DROP
+      <% infoheader = '<p>' + attraction.attraction_name + '</p>' %>
+      <% if attraction.content != nil && attraction.content.content_link != nil %>
+      <% infoheader = "<a target='_blank' href='" + attraction.content.content_link + "'>" + infoheader + "</a>" %>
+      <% end %>
+    }); 
+    google.maps.event.addListener(marker,"click",function(){
+      infowindow.close();
+      infowindow.setContent("<%= infoheader.html_safe %>");
+      infowindow.setOptions({maxWidth: "500"});
+      infowindow.open(map,this);
+    });
+  <% end %>
+<% end %>
+
+var marker = new google.maps.Marker({
+    position: new google.maps.LatLng(43.157851,-79.101959),
+    title: "North to Niagara-on-the-Lake",
+    icon: {
+      path: google.maps.SymbolPath.FORWARD_CLOSED_ARROW,
+      scale: 10
+    },
+    map: map
+  });
+
+
 }
-#titlebar {
-	font-size: 100px;
-	text-align: center;
-	width:1024px;
-	height:200px;
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<div id="mapbox">
+  <div id="googleMap"><!--[if lt IE 9]><img src="/images/attractions/iemapfinished.png"><![endif]--></div>
+  <h2>Click on a marker to see more information!</h2>
+</div>
+
+<style>
+div#mapbox {
+  width: 1024px;
+  height: 900px;
+  background-color: #008F47;
+}
+#mapbox p {
+  text-align: center;
+  width: 150px;
+}
+#mapbox h2 {
+  text-align: center;
 }
 </style>
-
-<div id="mapcontainer">
-<div id="titlebar">TITLE</div>
-<img src="http://maps.googleapis.com/maps/api/staticmap?zoom=12
-&size=512x512
-&scale=2
-&maptype=roadmap
-&markers=color:blue%7Clabel:H%7C43.118778,-79.074765
-&markers=color:green%7Clabel:J%7C43.050984,-79.121479
-&markers=color:yellow%7Clabel:C%7C43.091613,-79.071888
-&markers=color:red%7Clabel:A%7C43.117792,-79.068713
-&markers=color:red%7Clabel:S%7C43.076098,-79.08466
-&markers=color:blue%7Clabel:M%7C43.059043,-79.072748
-&markers=color:%7Clabel:%7C
-&markers=color:purple%7Clabel:O%7C43.067508,-79.127326
-&markers=color:orange%7Clabel:O%7C43.088894,-79.141594
-&markers=color:yellow%7Clabel:B%7C43.136193,-79.055303
-&markers=color:white%7Clabel:J%7C43.079201,-79.079044
-&markers=color:blue%7Clabel:W%7C43.092068,-79.071223
-&markers=color:red%7Clabel:G%7C43.07294,-79.121669
-&markers=color:purple%7Clabel:R%7C43.088432,-79.138581
-&markers=color:%7Clabel:%7C
-&sensor=false">
-</div>

@@ -1,0 +1,9 @@
+<div id="sitecolor"></div>
+<div id="sitename"><h3> <%= @parkMapInfo.first[:content_name].gsub("(tm)","&#8482").html_safe %> </h3></div>
+<div id="sitelink"><a href="lodging/moreinfo/<%= @parkMapInfo.first[:id] %>">More Information</a></div>
+<div id="description"> <%= @parkMapInfo.first[:content_text].gsub("(tm)","&#8482").html_safe %></div>
+<div id="picture">
+	<% if @parkMapInfo.first.picture != nil %>
+	<img id="pic" src="<%= @parkMapInfo.first.picture.picture_file %>">
+	<% end %>
+</div>

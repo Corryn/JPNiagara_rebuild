@@ -11,61 +11,73 @@
 	<% end %>
 
 	<script src="/javascript/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="/styles/sliding_banner.css">
-	<script src="/scripts/miniSlider.js"></script> 
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBYfuTrP32VMyo7wXy6XWTcUoRdhgQuuPU&sensor=false"></script>
+	<script src="/javascripts/StyledMarker.js"></script>
 	<link rel="stylesheet" href="/stylesheets/main.css">
 	<link rel="stylesheet" href="/stylesheets/navbar.css">
+	<link rel="stylesheet" href="/stylesheets/jellystoneniagara.css">
 	<!--[if lt IE 9]>
 	<script src="/javascripts/html5shiv.js"></script>
 	<link rel="stylesheet" href="/stylesheets/IE.css">
 	<![endif]-->
 
 	<script>
-		function showElement(id) {
-			document.getElementById(id).style.visibility = 'visible'; 
-		}
-		function hideElement(id) {
-			document.getElementById(id).style.visibility = 'hidden';
-		}
+	function showElement(id) {
+		document.getElementById(id).style.visibility = 'visible'; 
+	}
+	function hideElement(id) {
+		document.getElementById(id).style.visibility = 'hidden';
+	}
 	</script> 
 
 	<!-- Registration box animation -->
 
 	<script>
-	function toggleRegistration(id) {
-		if($(id).height() == 25){
-			$(id).animate({height:'332px'},"slow");
+	function toggleRegistration() {
+		if($('#registration').height() == 25){
 			$('#BYSframe').css('visibility','visible');
-		} else {
-			$(id).animate({height:'25px'},"slow");
-			setTimeout(function() {
+			$('#registration').animate({height:'332px'},"slow",function(){$('#registration').one('click',toggleRegistration);});			
+		} 
+		else {
+			$('#registration').animate({height:'25px'},"slow",function(){
+				$('#registration').one('click',toggleRegistration);
 				$('#BYSframe').css('visibility','hidden');
-			},600);
+			});
+		}
 		
-	}
 	}
 	</script>
 
-	<!-- Image slider script -->
-
-	<script type="text/javascript">
-		$(function() {
-		  $('.slider').miniSlider({
-		  	delay:8000,
-		  	transitionSpeed: 1500
-		  });
-		});
+	<script>
+	function disableSelection(target) { // Function by Abinash Grahachrya of mindfiresolutions.com
+	    //For IE This code will work
+	    if (typeof target.onselectstart!="undefined") {
+	    target.onselectstart=function(){return false};
+		}
+	    //For Firefox This code will work
+	    else if (typeof target.style.MozUserSelect!="undefined") {
+	    target.style.MozUserSelect="none";
+	 	}
+	    //All other  (ie: Opera) This code will work
+	    else {
+	    target.onmousedown=function(){return false};
+	    target.style.cursor = "default";
+		}
+	}
 	</script>
 
 </head>
 
 <body>
 
-	<script> $('#BYSframe').css('visibility','hidden'); </script>
-
 	<noscript><div>JavaScript is not enabled.  Some page elements may not function correctly.</div></noscript>
 
 	<%= render :partial => '/layouts/header' %>
+
+	<script>
+		$('#registration').one('click',toggleRegistration);
+		disableSelection(document.getElementById('registration'));
+	</script>
 
 	<% if @renderSlider == true %>
 	<%= render :partial => '/layouts/slider' %>
@@ -78,3 +90,4 @@
 	<%= render :partial => '/layouts/footer' %>
 
 </body>
+

@@ -1,21 +1,64 @@
 <header>
 
-    <img id="logo" style="position:fixed; width:200px; left:50px;" src="/images/templogo.png" usemap="map">
-    <map name="map">
+    <img id="logo" style="position:fixed; width:200px; left:20px;" src="/images/logo.png" usemap="#map">
+    <map id="map" name="map">
         <area shape="circle" coords="88,70,70" href="/home">
     </map> 
+
+    <!-- <a id="blink" href="/images/CurrentJellystoneWEBrochure.pdf" target="_blank"></a> -->
+
+    <script type="text/javascript">
+    var pass = [false,false,false,false,false,false];
+    
+    function resetPass() {
+        for(i=0;i<pass.length;i++){
+               pass[i] = false;
+        }
+    }
+
+    function trueTest (num) {
+        for(i=0;i<num;i++){
+            if(pass[i] == false){
+                return false;
+            }
+        }
+        return true;
+    }
+    resetPass();
+    $(document).keydown(function (event) {
+        if (event.which == 104){
+            pass[0] = true;
+        } else if (trueTest(1) && event.which == 102){
+            pass[1] = true;
+        } else if (trueTest(2) && event.which == 103){
+            pass[2] = true;
+        } else if (trueTest(3) && event.which == 101){
+            pass[3] = true;
+        } else if (trueTest(4) && event.which == 99){
+            pass[4] = true;
+        } else if (trueTest(5) && event.which == 96){
+            pass[5] = true;
+        } else if (trueTest(6) && event.which == 105){
+            resetPass();
+            window.location = "/admin";
+        } else {
+            resetPass();
+        }
+    });
+    </script>
 
   	<h1> TEST </h1>
 
 	<nav>
 		<ul>
 			<li><a href="/parkmap">Park Map</a></li>
-			<li><a href="/camp/home">Summer Day Camp</a></li>
+            <li><a href="images/CurrentJellystoneWEBrochure.pdf" target="_blank">Brochure</a></li>
+			<li><a href="/camp">Summer Day Camp</a></li>          
 			<li><a href="/gallery">Image Gallery</a></li>
-			<li><a href="/specials">Specials</a></li>
+            <li><a href="/specials">Specials</a></li>
 			<br/>	
 			<li><a href="/home">Home</a></li>
-			<li><a href="/rates">Rates</a></li>
+			<li><a href="/rates">Rates</a></li>    
 			<li><a href="/lodging">Lodging</a>
 				<ul>
 					<li><a href="/lodging/rvcampsites">RV & Campsites</a></li>
@@ -30,63 +73,67 @@
             </li>
 			<li><a href="/areaattractions">Area Attractions</a>
                 <ul>
-                    <li><a href="#">Content1</a></li>
-                    <li><a href="#">Content2</a></li>
+                    <li><a href="/toursandshuttles">Tour's & Shuttles</a></li>
+                    <li><a href="/attractionsandcoupons">Attractions & Coupons</a></li>
                     <li><a href="/areamap">Area Map</a></li>
                 </ul>
             </li>
+            <li><a href="/contact">Contact Us</a></li>
 		</ul>
 	</nav>
+
+    <noscript><a href="https://v3.bookyoursite.com/jellystoneniagara/reservation"></noscript>
+
+    <div id="registration"><noscript><a href="https://v3.bookyoursite.com/jellystoneniagara/reservation"></noscript>RESERVATIONS<noscript></a></noscript><div style="width:255px; height:5px;"></div>
+        <iframe id="BYSframe" height="310px" width="255px" src="https://v3.bookyoursite.com/jellystoneniagara/reservation_mini">
+
+        #document
+            <!DOCTYPE html>
+            <html>
+                <head>
+                    <meta content="IE=EmulateIE7" http-equiv="X-UA-Compatible"></meta>
+                    <link type="text/css" rel="stylesheet" media="screen, projection" href="/assets/compiled/screen-0140f17f5cfec1ed757874a45d32b440.css"></link>
+                    <link type="text/css" rel="stylesheet" media="screen, projection" href="/assets/compiled/common-669e7ffbcc8ccafa0111ca8f148c39e3.css"></link>
+                    <link type="text/css" rel="stylesheet" media="print" href="/assets/compiled/print-03eacddc05a2e96636eda6cf7a20174c.css"></link>
+                    <link type="text/css" rel="stylesheet" media="screen" href="/stylesheets/compiled/reservation.css"></link>
+                    <script type="text/javascript" src="/javascripts/jquery/js/jquery-1.3.2.min.js"></script>
+                    <script type="text/javascript" src="/javascripts/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
+                    <link type="text/css" rel="stylesheet" media="screen" href="/javascripts/jquery/css/smoothness/jquery-ui-1.7.2.custom.css"></link>
+                    <script></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.6.1/prototype.js" type="text/javascript"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js" type="text/javascript"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/builder.js" type="text/javascript"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/effects.js" type="text/javascript"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/dragdrop.js" type="text/javascript"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/controls.js" type="text/javascript"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/slider.js" type="text/javascript"></script>
+                    <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/sound.js" type="text/javascript"></script>
+                    <!--
+
+                     = javascript_include_tag :defaults 
+
+                    -->
+                    <link href="/yui/build/fonts/fonts-min.css" type="text/css" rel="stylesheet"></link>
+                    <link href="/yui/build/datatable/assets/skins/sam/datatable.css" type="text/css" rel="stylesheet"></link>
+                    <script src="/yui/build/yahoo-dom-event/yahoo-dom-event.js" type="text/javascript"></script>
+                    <script src="/yui/build/connection/connection-min.js" type="text/javascript"></script>
+                    <script src="/yui/build/json/json-min.js" type="text/javascript"></script>
+                    <script src="/yui/build/element/element-min.js" type="text/javascript"></script>
+                    <script src="/yui/build/datasource/datasource-min.js" type="text/javascript"></script>
+                    <script src="/yui/build/datatable/datatable-min.js" type="text/javascript"></script>
+                    <link type="text/css" rel="stylesheet" media="screen" href="/assets/compiled/reservation_mini-891e03e51a99b9806b6ed3992a9f4413.css"></link>
+                </head>
+                <body class="yui-skin-sam">
+                    <div id="page"></div>
+                    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible"></div>
+                </body>
+            </html>
+        </iframe>
+    </div>
+
+    <script> $('#BYSframe').css('visibility','hidden'); </script>
 		
 </header>
-
-<noscript><a href="https://v3.bookyoursite.com/jellystoneniagara/reservation"></noscript><div id="registration" onclick="toggleRegistration('#registration')"><noscript><a href="https://v3.bookyoursite.com/jellystoneniagara/reservation"></noscript>REGISTRATION<noscript></a></noscript><div style="width:255px; height:5px;"></div>
-	<iframe id="BYSframe" height="310px" width="255px" src="https://v3.bookyoursite.com/jellystoneniagara/reservation_mini">
-
-    #document
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <meta content="IE=EmulateIE7" http-equiv="X-UA-Compatible"></meta>
-                <link type="text/css" rel="stylesheet" media="screen, projection" href="/assets/compiled/screen-0140f17f5cfec1ed757874a45d32b440.css"></link>
-                <link type="text/css" rel="stylesheet" media="screen, projection" href="/assets/compiled/common-669e7ffbcc8ccafa0111ca8f148c39e3.css"></link>
-                <link type="text/css" rel="stylesheet" media="print" href="/assets/compiled/print-03eacddc05a2e96636eda6cf7a20174c.css"></link>
-                <link type="text/css" rel="stylesheet" media="screen" href="/stylesheets/compiled/reservation.css"></link>
-                <script type="text/javascript" src="/javascripts/jquery/js/jquery-1.3.2.min.js"></script>
-                <script type="text/javascript" src="/javascripts/jquery/js/jquery-ui-1.7.2.custom.min.js"></script>
-                <link type="text/css" rel="stylesheet" media="screen" href="/javascripts/jquery/css/smoothness/jquery-ui-1.7.2.custom.css"></link>
-                <script></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/prototype/1.6.1/prototype.js" type="text/javascript"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js" type="text/javascript"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/builder.js" type="text/javascript"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/effects.js" type="text/javascript"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/dragdrop.js" type="text/javascript"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/controls.js" type="text/javascript"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/slider.js" type="text/javascript"></script>
-                <script src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/sound.js" type="text/javascript"></script>
-                <!--
-
-                 = javascript_include_tag :defaults 
-
-                -->
-                <link href="/yui/build/fonts/fonts-min.css" type="text/css" rel="stylesheet"></link>
-                <link href="/yui/build/datatable/assets/skins/sam/datatable.css" type="text/css" rel="stylesheet"></link>
-                <script src="/yui/build/yahoo-dom-event/yahoo-dom-event.js" type="text/javascript"></script>
-                <script src="/yui/build/connection/connection-min.js" type="text/javascript"></script>
-                <script src="/yui/build/json/json-min.js" type="text/javascript"></script>
-                <script src="/yui/build/element/element-min.js" type="text/javascript"></script>
-                <script src="/yui/build/datasource/datasource-min.js" type="text/javascript"></script>
-                <script src="/yui/build/datatable/datatable-min.js" type="text/javascript"></script>
-                <link type="text/css" rel="stylesheet" media="screen" href="/assets/compiled/reservation_mini-891e03e51a99b9806b6ed3992a9f4413.css"></link>
-            </head>
-            <body class="yui-skin-sam">
-                <div id="page"></div>
-                <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all ui-helper-hidden-accessible"></div>
-            </body>
-        </html>
-	</iframe>
-</div>
-
 
 <div id="headerpadding">
 </div>

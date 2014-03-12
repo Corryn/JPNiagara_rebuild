@@ -1,0 +1,55 @@
+<table>
+<tbody>
+	<tr>
+		<% @itemNames.each do |i| %>
+		<th><%= i %></th>
+		<% end %>
+		<th>Edit</th>
+		<th>Delete</th>
+	</tr>
+	<% @itemValues.each do |it| %>
+	<tr id="id<%= it[:id] %>">
+		<% @itemNames.each do |i| %>
+		<td class="<%= i %>"><%= it[i.to_sym] %></td>
+		<% end %>
+		<td><div class="editItem" onclick="editDatabase('#id<%= it[:id] %>')">Edit</div></td>
+		<td><a class="removeItem" href="/deleteitem?id=<%= it[:id] %>&content=<%= @itemType %>" onclick="return window.confirm('Are you sure?');">Delete</a></td>
+	</tr>
+	<% end %>
+</tbody>
+</table>
+
+<form id="hform" action="/updatedb" style="display:none">
+	<input id="datanum" name="bdata" type="hidden">
+	<% @itemNames.each do |itm| %>
+	<input id="f<%= itm %>" name="f<%= itm %>" type="hidden">
+	<% end %>
+</form>
+
+<script type="text/javascript">
+$("td").dblclick(function () {
+	if(this.className == "id" || this.className == "updated_at" || this.className == "created_at" || this.className == "editItem" || this.className == "removeItem"){
+		alert("Can't edit IDs, Created_at or Updated_at, Use SQL Database if needed\nUpdated_at will update automagically");
+	} else {
+		$(this).attr("contenteditable","true");
+	}
+});
+
+$("td").blur(function () {
+	$(this).attr("contenteditable","false");
+});
+
+
+</script>
+<script type="text/javascript">
+function editDatabase (str) {
+	document.forms["hform"].elements["datanum"].value = sessionStorage.getItem('bdata');
+	var info = $(str).children('td');
+	<% count = 0 %>
+	<% @itemNames.each do |itms| %>
+	document.forms["hform"].elements["f<%= itms %>"].value = $(info[<%= count %>]).text();
+	<% count = count + 1 %>
+	<% end %>
+	$("#hform").submit();
+}
+</script>

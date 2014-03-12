@@ -1,3 +1,8 @@
+<style>
+footer {
+	min-width: 1240px;
+}
+</style>
 <link rel="stylesheet" type="text/css" href="/stylesheets/calendar-styles.css">
 <script type="text/javascript">
 	function setVisible (name, num) {
@@ -203,7 +208,7 @@
 		</div>
 		<div id="dImage">
 			<% if @currMonthEvents.first.picture != nil %>
-				<img class="image" src="<%= @currMonthEvents.first.picture.picture_file %>">
+				<img class="image" src="<%= @currMonthEvents.first.picture.picture_file %>" alt="@currMonthEvents.first.picture.picture_description">
 			<% end %>
 		</div>
 	<% end %>

@@ -1,0 +1,42 @@
+<script>
+if(sessionStorage.getItem("adminUser") != "banana") {
+	var password = prompt("Enter the password","");
+	if(password == "banana") {sessionStorage.setItem("adminUser","banana");}
+	else {
+		sessionStorage.setItem("adminUser",false);
+		alert("Incorrect password.  Redirecting...");
+		window.location.replace("/home");
+	}
+}
+</script>
+<div id="adminnav">
+	<a class="adminlink" href="/comments"><h3>Comment Viewer</h3></a>
+	<a class="adminlink" href="/putrandomstringhere"><h3>Database Management</h3></a>
+</div>
+
+<style>
+#adminnav {
+	margin: 5px auto;
+	display: table;
+	padding: 5px 5px;
+	background-color: #29A329;
+}
+.adminlink {
+	text-align: center;
+}
+.adminlink h3 {
+	border: 1px solid #4DDB4D;
+}
+.adminlink:link {
+	color: #33D633;
+}
+.adminlink:visited {
+	color: #33D633;
+}
+#logo {
+	display: none;
+}
+#registration {
+	display: none;
+}
+</style>
