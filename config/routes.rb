@@ -17,6 +17,7 @@ BookYourSiteWebNew::Application.routes.draw do
     match "toursandshuttles" => "jellystoneniagara#toursandshuttles"
     match "attractionsandcoupons" => "jellystoneniagara#attractionsandcoupons"
     match "areamap" => "jellystoneniagara#areamap"
+  match "brochure" => redirect("/images/CurrentJellystoneWEBrochure.pdf")
   match "parkmap" => "jellystoneniagara#parkmap"
     match "parkmapinfo/:data" => "jellystoneniagara#parkmapinfo"
   match "camp" => "jellystoneniagara#camp"

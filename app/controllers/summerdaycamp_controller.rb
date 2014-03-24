@@ -1,7 +1,7 @@
 class SummerdaycampController < ApplicationController
 
 	def home
-
+		@contentRecs = Content.getContent(1)
 	end
 
 	def about

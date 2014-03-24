@@ -1,7 +1,10 @@
+/* Styling for things that appear on most/all pages. */
+
 /* Z-index values:
 	navigation bar in slider: 5
 	header: 10
 	noscript: 11
+	whitespace background div: -1;
 */
 
 /* Quick-use visual classes */
@@ -44,32 +47,46 @@ html {
 }
 
 body {
-	background: blue repeat url(/images/test/goodleaves.jpg);
+	background: #19A3FF repeat url(/images/bg.png);
+}
+
+#whitespace {
+	position: absolute;
+	z-index: -1;
+	width: 1024px;
+	background-color: white;
 }
 
 /* Header rules */
 
 header {
-	background: linear-gradient(to left, rgb(0,163,82), rgb(51,214,133));
+	/* background: linear-gradient(to left, rgb(0,163,82), rgb(51,214,133));
 	background: -webkit-linear-gradient(left, rgb(0,163,82), rgb(51,214,133));
 	background: -o-linear-gradient(left, rgb(0,163,82), rgb(51,214,133));
 	background: -moz-linear-gradient(left, rgb(0,163,82), rgb(51,214,133));
 	border-top: 10px dashed chartreuse;
-	border-bottom: 10px dashed chartreuse;
-	z-index: 10; 	
+	border-bottom: 10px dashed chartreuse; */
+	z-index: 20; 	
 	width: 100%;
-	height: 110px;
 	position: fixed;
 	min-width: 1024px; 
 }
 
 header h1 {
+	background-color: #b5ceed;
 	text-align: center;
 }
 
-div#headerpadding {
+#forest {
+	background: url(/images/header/forest.png);
+	background-size: contain;
 	width: 100%;
-	height: 130px;
+	height: 100px;
+}
+
+#headerpadding {
+	width: 100%;
+	height: 162px;
 }
 
 #blink {
@@ -81,28 +98,7 @@ div#headerpadding {
 	right: 10px;
 }
 
-/* Nav rules */
-
-nav { 
-	display: table;
-	margin: 0 auto;
-	width: 550px;
-}
-
-div#registration {
-	position: fixed;
-	float: right;
-	background-color: red;
-	border-radius: 10px;
-	text-align: center;
-	z-index: 15;
-	width: 255px;
-	height: 25px;
-	top: 117px; /* 98px without dashed borders */
-	right: 0px;
-	overflow: hidden;
-	cursor: default;
-}
+/* See navbar.css for nav styling. */
 
 /* Slider rules */
 
@@ -119,34 +115,63 @@ div#registration {
 
 /* Page content rules (direction refers to image location */
 
-div.content {
-	display: table;
-	margin: 0 auto;
-	background-color:red;
-	background-size: cover;
-	border: 5px outset rgb(60,60,60);
-	width: 1014px;
-	height: 350px;
+.pagetitle {
+	text-align: center;
+	padding: 10px 0px;
 }
 
-.content h2 {
-	text-align: center;	
+.bar{
+	position:relative;
+	width: 100%;
+	min-width: 1024px;
+	height: 35px;	
+	background-color: yellow;
+	box-shadow: 10px 10px 10px 0px;
+	margin: 20px 0px 0px;
+	cursor: pointer;
+}
+.bar h2 {
+	width: 95%;
+	height: 25px;
+	line-height: 33px;
+	text-align: center;
+}
+.bar h2:before {
+  display: block; 
+  margin-top: -197px; 
+  height: 197px; 
+  visibility: hidden; 
+}
+
+.dropdown {
+	position: absolute;
+	right: 20px;
+	top: 3px;
+	width: 30px;
+	height: 30px;
+	background-image: url(/images/slider/leftarrow.png);
+	background-size: 100%;
+	cursor:pointer;
+}
+
+.content {
+	display: none;
+	margin: 0 auto;
+	background-color: #eee;
+	background-size: cover;
+	border: 5px outset rgb(60,60,60);
+	width: 1000px;
+	height: 350px;
 }
 
 .wood {
 	background: url(/images/test/wood.jpg);
+	background-size: cover;
 }
 
 .basket {
 	background: url(/images/test/basket.jpg);
-}
-
-.content h2:before {
-  display: block; 
-  content: " "; 
-  margin-top: -135px; 
-  height: 135px; 
-  visibility: hidden; 
+	background-size: cover;
 }
 
 .content p {
@@ -155,10 +180,11 @@ div.content {
 	margin: 25px;
 	padding: 5px;
 	height: 250px;
-	width: 634px;
+	width: 630px;
 	float: left;
 	position: relative;
 	font-size: 19px;
+	text-align: center;
 }
 
 .contentleft, .contentright {  /* Note: Direction refers to location of picture in section */
@@ -216,17 +242,25 @@ div.content {
 
 /* Footer rules */
 
+#shadowspacer {
+	width: 100%;
+	height: 10px;
+}
+
 footer {
-	background: linear-gradient(to right, rgb(0,163,82), rgb(51,214,133));
+	/* background: linear-gradient(to right, rgb(0,163,82), rgb(51,214,133));
 	background: -webkit-linear-gradient(right, rgb(0,163,82), rgb(51,214,133));
 	background: -o-linear-gradient(right, rgb(0,163,82), rgb(51,214,133));
 	background: -moz-linear-gradient(right, rgb(0,163,82), rgb(51,214,133));
 	clear:both;
 	border-top: 10px dashed chartreuse;
-	border-bottom: 10px dashed chartreuse;
+	border-bottom: 10px dashed chartreuse; */
+	width:100%;
+	min-width: 1024px;
 }
 
 footer p {
+	background-color: #19AC63;
 	text-align: center;
 	padding: 10px 0px;
 }
@@ -234,10 +268,6 @@ footer p {
 .icon {
 	width: 45px;
 	height: 45px;
-}
-
-.testicon {
-	margin: 5px;
 }
 
 footer .icon {
@@ -248,6 +278,14 @@ footer .icon {
 	height: 45px;
 	top: 15px;
 	left: 45px;
+}
+
+#chase {
+ 	margin: 0 auto;
+ 	display: block;
+	background: repeat url(/images/footer/chase.png);
+	width: 792px;
+	height: 325px;
 }
 
 #fbicon {

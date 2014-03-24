@@ -7,8 +7,7 @@ var mapProp = {
   mapTypeId:google.maps.MapTypeId.ROADMAP,
 };
 
-var map=new google.maps.Map(document.getElementById("googleMap")
-  ,mapProp);
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 
 var infowindow = new google.maps.InfoWindow({content: "blank"});
 <% @mapAttractions.each do |attraction| %>
@@ -52,13 +51,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <div id="mapbox">
   <div id="googleMap"><!--[if lt IE 9]><img src="/images/attractions/iemapfinished.png"><![endif]--></div>
   <h2>Click on a marker to see more information!</h2>
+  <h3>Notable Streets and Locations</h3>
+  <ul>
+    <li><b>Lundy's Lane:</b> A main road that runs through the falls</li>
+    <li><b>Clifton Hill:</b> Arcades, entertainment and the famous Skywheel Oh My!</li>
+    <li><b>Niagara Parkway:</b> Parkway that goes along the falls</li>
+  </ul>
 </div>
 
 <style>
-div#mapbox {
+#mapbox {
   width: 1024px;
   height: 900px;
-  background-color: #008F47;
+  background-color: white;
 }
 #mapbox p {
   text-align: center;

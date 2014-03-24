@@ -11,6 +11,7 @@
 	<% end %>
 
 	<script src="/javascript/jquery.min.js"></script>
+	<script src="/javascripts/main.js"></script>
 	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBYfuTrP32VMyo7wXy6XWTcUoRdhgQuuPU&sensor=false"></script>
 	<script src="/javascripts/StyledMarker.js"></script>
 	<link rel="stylesheet" href="/stylesheets/main.css">
@@ -21,73 +22,37 @@
 	<link rel="stylesheet" href="/stylesheets/IE.css">
 	<![endif]-->
 
-	<script>
-	function showElement(id) {
-		document.getElementById(id).style.visibility = 'visible'; 
-	}
-	function hideElement(id) {
-		document.getElementById(id).style.visibility = 'hidden';
-	}
-	</script> 
-
-	<!-- Registration box animation -->
-
-	<script>
-	function toggleRegistration() {
-		if($('#registration').height() == 25){
-			$('#BYSframe').css('visibility','visible');
-			$('#registration').animate({height:'332px'},"slow",function(){$('#registration').one('click',toggleRegistration);});			
-		} 
-		else {
-			$('#registration').animate({height:'25px'},"slow",function(){
-				$('#registration').one('click',toggleRegistration);
-				$('#BYSframe').css('visibility','hidden');
-			});
-		}
-		
-	}
-	</script>
-
-	<script>
-	function disableSelection(target) { // Function by Abinash Grahachrya of mindfiresolutions.com
-	    //For IE This code will work
-	    if (typeof target.onselectstart!="undefined") {
-	    target.onselectstart=function(){return false};
-		}
-	    //For Firefox This code will work
-	    else if (typeof target.style.MozUserSelect!="undefined") {
-	    target.style.MozUserSelect="none";
-	 	}
-	    //All other  (ie: Opera) This code will work
-	    else {
-	    target.onmousedown=function(){return false};
-	    target.style.cursor = "default";
-		}
-	}
-	</script>
-
 </head>
 
 <body>
 
 	<noscript><div>JavaScript is not enabled.  Some page elements may not function correctly.</div></noscript>
 
+	<div id="whitespace"></div>
+
 	<%= render :partial => '/layouts/header' %>
 
 	<script>
-		$('#registration').one('click',toggleRegistration);
-		disableSelection(document.getElementById('registration'));
+		$("#reservation").click(toggleReservation);
+		disableSelection(document.getElementById('reservation'));
+		disableSelection(document.getElementById('navencap'));
 	</script>
 
 	<% if @renderSlider == true %>
-	<%= render :partial => '/layouts/slider' %>
+	<%= render :partial => '/layouts/slider'%>
 	<% end %>
 
 	<%= yield %>
 
-	<%= render :partial => '/layouts/content' %>
+	<div id="shadowspacer"></div>
 
 	<%= render :partial => '/layouts/footer' %>
+
+	<script type="text/javascript">
+	$(".bar").each(function(){
+		disableSelection(this);
+	});
+	</script>
 
 </body>
 

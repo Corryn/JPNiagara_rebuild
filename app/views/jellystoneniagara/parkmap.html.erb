@@ -1,6 +1,9 @@
 <style type="text/css">
-footer {
+footer, html { /* Necessary to override main.css width settings. */
 	min-width: 1200px;
+}
+body{
+	position:relative;
 }
 </style>
 
@@ -16,135 +19,69 @@ function getSiteInfo(text,sc) {
 
 <div id="mapcontainer">
 
-<img id="parkmap" src="/jellystone-full-map.jpg" alt="Map" width="1200" height="700" usemap="#parkmapmap">
+	<img id="parkmap" src="/jellystone-full-map.jpg" alt="Map" width="1200" height="700" usemap="#parkmapmap">
 
-<map id="parkmapmap" name="parkmapmap">
-	<!-- preferred 30 -->
-	<area shape="rect" coords="50,200,78,405" onclick="getSiteInfo('Preferred 30','#ff8c35')"> <!-- leftOrange -->
-	<area shape="rect" coords="398,345,460,507" onclick="getSiteInfo('Preferred 30','#ff8c35')"> <!-- rightOrange -->
-	<!-- park model trailers -->
-	<area shape="rect" coords="90,292,130,480" onclick="getSiteInfo('Park Model Trailers','#dfbd80')"> <!-- leftbaige -->
-	<area shape="rect" coords="398,288,460,345" onclick="getSiteInfo('Park Model Trailers','#dfbd80')"> <!-- rightbaige -->
-	<!-- preferred 50 -->
-	<area shape="poly" coords="80,110,385,110,400,155,95,155" onclick="getSiteInfo('Preferred 50','#43847c')"> <!-- topleftgreenbluething -->
-	<area shape="rect" coords="420,577,672,618" onclick="getSiteInfo('Preferred 50','#43847c')"> <!-- bottom blue weird color-->
-	<!-- preferred 50PT -->
-	<area shape="rect" coords="338,290,380,465" onclick="getSiteInfo('Preferred 50PT','#445897')"> <!-- bottom dark blue -->
-	<area shape="poly" coords="135,168,370,168,358,210,125,210" onclick="getSiteInfo('Preferred 50PT','#445897')"> <!-- topbluebar+purple -->
-	<!-- Ultimate 50PT -->
-	<area shape="poly" coords="106,226,363,226,378,270,120,270" onclick="getSiteInfo('Ultimate 50PT','#b282be')"> <!-- topleftbar -->
-	<area shape="poly" coords="372,168,390,168,378,210,360,210" onclick="getSiteInfo('Ultimate 50PT','#b282be')"> <!-- top left lone wanderer -->
-	<area shape="rect" coords="478,260,533,533" onclick="getSiteInfo('Ultimate 50PT','#b282be')"> <!-- left center -->
-	<area shape="rect" coords="548,260,600,535" onclick="getSiteInfo('Ultimate 50PT','#b282be')"> <!-- right center -->
-	<!-- standard 15/30 -->
-	<area shape="rect" coords="398,260,460,288" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- top of bar (2) -->
-	<area shape="rect" coords="398,507,460,535" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- bottom of bar -->
-	<area shape="rect" coords="615,260,680,535" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- big bar -->
-	<area shape="rect" coords="694,245,728,277" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- top of the red stuff -->
-	<area shape="poly" coords="774,229,812,214,812,237,774,256" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- slanted next to pink -->
-	<area shape="poly" coords="766,162,811,162,811,207,787,207,776,224,758,192" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- below ranger -->
-	<area shape="poly" coords="635,173,654,150,664,149,675,177,670,223" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- curly next to blue -->
-	<!-- basic 15 amp -->
-	<area shape="rect" coords="693,285,760,538" onclick="getSiteInfo('Basic 15amp','#c80a46')"> <!-- THERE CAN ONLY BE ONE!!! -->
-	<!-- preferred 30PT -->
-	<area shape="poly" coords="452,185,475,193,616,195,634,173,671,224,670,243,414,243,426,192" onclick="getSiteInfo('Preferred 30PT','#00adef')"> <!-- see above -->
-	<!-- rustic water/ electric 15 amp -->
-	<area shape="rect" coords="332,527,375,561" onclick="getSiteInfo('Rustic Water/Electric 15amp','#f54991')"> <!-- two at the front -->
-	<area shape="poly" coords="774,256,812,237,812,214,885,215,911,235,911,275,885,294,835,294,835,255,812,255,812,294,773,322" onclick="getSiteInfo('Rustic Water/Electric 15amp','#f54991')"> <!-- big crazy jagged top one -->
-	<!-- rustic no hook up -->
-	<area shape="poly" coords="884,109,1012,255,1113,453,1128,516,1078,451,992,289,884,140" onclick="getSiteInfo('Rustic No Hook-Up','#51af27')"> <!-- long side bar -->
-	<area shape="poly" coords="888,311,954,287,975,302,985,342,977,387,888,411" onclick="getSiteInfo('Rustic No Hook-Up','#51af27')"> <!-- next to the houses -->
-	<area shape="poly" coords="781,444,858,444,1000,405,995,440,1008,475,890,542,781,542" onclick="getSiteInfo('Rustic No Hook-Up','#51af27')"> <!-- with the not avaliable -->
-	<area shape="poly" coords="997,519,1015,516,1041,505,1060,487,1085,494,1126,539,1113,585,1018,585,997,557," onclick="getSiteInfo('Rustic No Hook-Up','#51af27')"> <!-- with the cabin -->
-	<area shape="poly" coords="1078,615,1145,573,1140,631,1085,631" onclick="getSiteInfo('Rustic No Hook-Up','#51af27')"> <!-- Timeout corner -->
-	<!-- bare bones habitats -->
-	<area shape="rect" coords="332,561,375,595" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!-- two up front -->
-	<area shape="rect" coords="683,575,993,608" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!-- bottom row -->
-	<area shape="rect" coords="970,510,990,543" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!-- lone guy in the woods -->
-	<area shape="rect" coords="816,153,893,204" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!-- top three stooges -->
-	<area shape="rect" coords="780,108,879,136" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!-- cabin top 4 -->
-	<area shape="rect" coords="787,317,881,424" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!--  -->
-	<!-- Boo BOO deluxe cabin -->
-	<area shape="rect" coords="685,161,750,225" onclick="getSiteInfo('Boo Boo(tm) Deluxe Cabins','#7bc5c8')"> <!-- Hey Boo Boo! -->
-	<!-- Yogi Bear Cottages -->
-	<area shape="rect" coords="678,110,770,138" onclick="getSiteInfo('Yogi Bear(tm) Cottages','#1c98be')"> <!-- Guard those picnic baskets! -->
+	<map id="parkmapmap" name="parkmapmap">
+		<!-- preferred 30 -->
+		<area shape="rect" coords="50,200,78,405" onclick="getSiteInfo('Preferred 30','#ff8c35')"> <!-- leftOrange -->
+		<area shape="rect" coords="398,345,460,507" onclick="getSiteInfo('Preferred 30','#ff8c35')"> <!-- rightOrange -->
+		<!-- park model trailers -->
+		<area shape="rect" coords="90,292,130,480" onclick="getSiteInfo('Park Model Trailers','#dfbd80')"> <!-- leftbaige -->
+		<area shape="rect" coords="398,288,460,345" onclick="getSiteInfo('Park Model Trailers','#dfbd80')"> <!-- rightbaige -->
+		<!-- preferred 50 -->
+		<area shape="poly" coords="80,110,385,110,400,155,95,155" onclick="getSiteInfo('Preferred 50','#43847c')"> <!-- topleftgreenbluething -->
+		<area shape="rect" coords="420,577,672,618" onclick="getSiteInfo('Preferred 50','#43847c')"> <!-- bottom blue weird color-->
+		<!-- preferred 50PT -->
+		<area shape="rect" coords="338,290,380,465" onclick="getSiteInfo('Preferred 50PT','#445897')"> <!-- bottom dark blue -->
+		<area shape="poly" coords="135,168,370,168,358,210,125,210" onclick="getSiteInfo('Preferred 50PT','#445897')"> <!-- topbluebar+purple -->
+		<!-- Ultimate 50PT -->
+		<area shape="poly" coords="106,226,363,226,378,270,120,270" onclick="getSiteInfo('Ultimate 50PT','#b282be')"> <!-- topleftbar -->
+		<area shape="poly" coords="372,168,390,168,378,210,360,210" onclick="getSiteInfo('Ultimate 50PT','#b282be')"> <!-- top left lone wanderer -->
+		<area shape="rect" coords="478,260,533,533" onclick="getSiteInfo('Ultimate 50PT','#b282be')"> <!-- left center -->
+		<area shape="rect" coords="548,260,600,535" onclick="getSiteInfo('Ultimate 50PT','#b282be')"> <!-- right center -->
+		<!-- standard 15/30 -->
+		<area shape="rect" coords="398,260,460,288" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- top of bar (2) -->
+		<area shape="rect" coords="398,507,460,535" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- bottom of bar -->
+		<area shape="rect" coords="615,260,680,535" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- big bar -->
+		<area shape="rect" coords="694,245,728,277" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- top of the red stuff -->
+		<area shape="poly" coords="774,229,812,214,812,237,774,256" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- slanted next to pink -->
+		<area shape="poly" coords="766,162,811,162,811,207,787,207,776,224,758,192" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- below ranger -->
+		<area shape="poly" coords="635,173,654,150,664,149,675,177,670,223" onclick="getSiteInfo('Standard 15/30','#feed7b')"> <!-- curly next to blue -->
+		<!-- basic 15 amp -->
+		<area shape="rect" coords="693,285,760,538" onclick="getSiteInfo('Basic 15amp','#c80a46')"> <!-- THERE CAN ONLY BE ONE!!! -->
+		<!-- preferred 30PT -->
+		<area shape="poly" coords="452,185,475,193,616,195,634,173,671,224,670,243,414,243,426,192" onclick="getSiteInfo('Preferred 30PT','#00adef')"> <!-- see above -->
+		<!-- rustic water/ electric 15 amp -->
+		<area shape="rect" coords="332,527,375,561" onclick="getSiteInfo('Rustic Water/Electric 15amp','#f54991')"> <!-- two at the front -->
+		<area shape="poly" coords="774,256,812,237,812,214,885,215,911,235,911,275,885,294,835,294,835,255,812,255,812,294,773,322" onclick="getSiteInfo('Rustic Water/Electric 15amp','#f54991')"> <!-- big crazy jagged top one -->
+		<!-- rustic no hook up -->
+		<area shape="poly" coords="884,109,1012,255,1113,453,1128,516,1078,451,992,289,884,140" onclick="getSiteInfo('Rustic No Hook-Up','#51af27')"> <!-- long side bar -->
+		<area shape="poly" coords="888,311,954,287,975,302,985,342,977,387,888,411" onclick="getSiteInfo('Rustic No Hook-Up','#51af27')"> <!-- next to the houses -->
+		<area shape="poly" coords="781,444,858,444,1000,405,995,440,1008,475,890,542,781,542" onclick="getSiteInfo('Rustic No Hook-Up','#51af27')"> <!-- with the not avaliable -->
+		<area shape="poly" coords="997,519,1015,516,1041,505,1060,487,1085,494,1126,539,1113,585,1018,585,997,557," onclick="getSiteInfo('Rustic No Hook-Up','#51af27')"> <!-- with the cabin -->
+		<area shape="poly" coords="1078,615,1145,573,1140,631,1085,631" onclick="getSiteInfo('Rustic No Hook-Up','#51af27')"> <!-- Timeout corner -->
+		<!-- bare bones habitats -->
+		<area shape="rect" coords="332,561,375,595" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!-- two up front -->
+		<area shape="rect" coords="683,575,993,608" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!-- bottom row -->
+		<area shape="rect" coords="970,510,990,543" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!-- lone guy in the woods -->
+		<area shape="rect" coords="816,153,893,204" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!-- top three stooges -->
+		<area shape="rect" coords="780,108,879,136" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!-- cabin top 4 -->
+		<area shape="rect" coords="787,317,881,424" onclick="getSiteInfo('Bare Bones Habitats','#955002')"> <!--  -->
+		<!-- Boo BOO deluxe cabin -->
+		<area shape="rect" coords="685,161,750,225" onclick="getSiteInfo('Boo Boo(tm) Deluxe Cabins','#7bc5c8')"> <!-- Hey Boo Boo! -->
+		<!-- Yogi Bear Cottages -->
+		<area shape="rect" coords="678,110,770,138" onclick="getSiteInfo('Yogi Bear(tm) Cottages','#1c98be')"> <!-- Guard those picnic baskets! -->
 
-</map>
+	</map>
 
-<style type="text/css">
-#infobar {
-	background: lightgreen url(/images/test/wood.jpg);
-	background-size: cover;
-	width:1200px;
-	float:left;
-	margin: 0 auto;
-	height: 300px;
-}
-
-#sitename {
-	width:700px;
-	height:50px;
-	background-color: rgba(150, 75, 0, 0.2);
-	margin: 10px;
-	float:left;
-}
-
-#sitename h3 {
-	font-size:45px;
-	color:beige;
-}
-#sitelink {
-	width:350px;
-	height:40px;
-	background-color: rgba(150, 75, 0, 0.2);
-	float:right;
-	margin: 10px;
-}
-
-#sitelink a {
-	font-size:34px;
-	color:beige;
-}
-
-#description {
-	width:800px;
-	height:200px;
-	background-color: rgba(150, 75, 0, 0.2);
-	float:right;
-	margin:0px 10px;
-	text-align: left;
-	font-size:20px;
-}
-
-#picture {
-	width:200px;
-	height:200px;
-	margin:10px 80px;
-	clear:left;
-	border:5px outset darkgrey;
-}
-
-#pic {
-	width:200px;
-	height:200px;
-}
-
-#sitecolor {
-	width:50px;
-	height:50px;
-	background-color: black;
-	margin: 10px;
-	float:left;
-}
-
-</style>
 	<div id="infobar">
 		<div id="sitecolor"></div>
 		<div id="sitename"><h3></h3></div>
 		<div id="sitelink"><a href=""></a></div>
-		<div id="description">Click on a site type for more Information</div>
-		<div id="picture"><img id="pic" src="/images/test/basket.jpg"></div>
+		<div id="description">Click on a site type for more information!</div>
+		<div id="picture"><img id="pic" src="/images/logo.jpg"></div>
 	</div>
+
 </div>
 
 <style type="text/css">

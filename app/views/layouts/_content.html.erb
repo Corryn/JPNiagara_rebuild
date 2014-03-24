@@ -1,45 +1,52 @@
-<% if @renderContent == true %>
-	<% switch = false %>
-	<% count = 0 %>
-	<% @contentRecs.each do |contentRec|%>
-	<% if count % 2 == 0 %>
-		<div class="content wood">
-	<% else %>
-		<div class="content basket">
-	<% end %>
-	<% count = count + 1 %>			
-				<% if switch == true %>
-					<div class="contentright">
-						<% puts contentRec.inspect %>
-						<h2 id="<%= contentRec[:content_name] %>"><%= contentRec[:content_name].gsub("(tm)","&#8482").html_safe %></h2>
-						<% if contentRec.picture != nil %>
-							<img src= <%= contentRec.picture.picture_file %> alt=<% contentRec.picture.picture_description %>>
-						<% end %>
-						<p><%= contentRec[:content_text].gsub("(tm)","&#8482").html_safe %></p> 					
-					</div>
-					<% if contentRec[:content_link] != nil && contentRec[:content_link] != "" %>
-						<a class="rightlink" href="<%= contentRec[:content_link] %>"><%= contentRec[:content_linktext] %></a>
-					<% end %>
-				<% else %>
-					<div class="contentleft">
-						<% puts contentRec.inspect %>
-						<h2 id="<%= contentRec[:content_name] %>"><%= contentRec[:content_name].gsub("(tm)","&#8482").html_safe %></h2>
-						<% if contentRec.picture != nil %>
-							<img src= <%= contentRec.picture.picture_file %> alt=<% contentRec.picture.picture_description %>>
-						<% end %>
-						<p><%= contentRec[:content_text].gsub("(tm)","&#8482").html_safe %></p> 			
-					</div>
-					<% if contentRec[:content_link] != nil && contentRec[:content_link] != "" %>
-						<a class="leftlink" href="<%= contentRec[:content_link] %>"><%= contentRec[:content_linktext] %></a>
-					<% end %>
-				<% end %>
-				<% if @alternate == true %>
-					<% if switch == true %>
-						<% switch = false %>
-					<% else %>
-						<% switch = true %>
-					<% end %>
-				<% end %>	
-		</div>
-	<% end %>
+<% @bg = "wood" %>
+<% @dir = "left" %>
+<% def swapbg() %>
+<% bgh = {:wood => "basket", :basket => "wood"} %>
+<% @bg = bgh[@bg.to_sym] %>
 <% end %>
+<% def swapdir() %>
+<% dirh = {:left => "right", :right => "left"}%>
+<% @dir = dirh[@dir.to_sym] %>
+<% end %>
+<% @contentRecs.each do |contentRec|%>
+
+<div class="bar"><h2 id="<%= contentRec[:content_name] %>"><%= contentRec[:content_name].gsub("(tm)","&#8482").html_safe %></h2><div class="dropdown"></div></div>	
+	<div class="content <%= @bg %>">
+		<div class="content<%= @dir %>">
+			<% puts contentRec.inspect %>
+			<% if contentRec.picture != nil %>
+				<img src= <%= contentRec.picture.picture_file %> alt=<% contentRec.picture.picture_description %>>
+			<% end %>
+			<p><%= contentRec[:content_text].gsub("(tm)","&#8482").html_safe %></p> 					
+		</div>
+		<% if contentRec[:content_link] != nil && contentRec[:content_link] != "" %>
+			<a class="<%= @dir %>link" href="<%= contentRec[:content_link] %>"><%= contentRec[:content_linktext] %></a>
+		<% end %>
+	</div>
+
+
+	<% swapbg() %>
+	<% if @alternate then swapdir() end %>
+<% end %>
+
+<script>
+function toggleDropdown(){
+	$(this).unbind('click');
+	var x = setInterval(fixerUper,50);
+	if($(this).find(".dropdown").css("background-image").search("downarrow") != -1) {
+		$(this).find(".dropdown").css("background-image","url('/images/slider/leftarrow.png')");
+	}
+	else {
+		$(this).find(".dropdown").css("background-image","url('/images/slider/downarrow.png')");
+	}
+	$(this).next().slideToggle(1000,function(){
+		clearInterval(x);
+		$(this).prev().bind('click',toggleDropdown);
+	});	
+}
+</script>
+
+<script type="text/javascript">
+$(".bar").click(toggleDropdown);
+</script>
+

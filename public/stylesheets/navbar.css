@@ -1,85 +1,108 @@
-/* Fancy header styling. */
-/* Basic layout designed by Chris Spooner of Line25.com */
+/* Styling for yellow navbar in header. */
 
-nav ul ul {
-	display: none;
+#navencap {
+	z-index: 10;
+	width: 100%;
+	height: 25px;
+	background-color: yellow;
+	box-shadow: 0px 5px 5px;
 }
 
-nav ul li:hover > ul {
-	display: block;
+#newnav {
+	width: 1024px;
+	margin: 0 auto;
+	display: table;
 }
 
-nav ul {
-	background: #efefef; 
-	background: linear-gradient(to bottom, #7EDF7E 0%, #00E600 40%);
-	background: -moz-linear-gradient(to bottom, #7EDF7E 0%, #00E600 40%);
-	background: -o-linear-gradient(to bottom, #7EDF7E 0%, #00E600 40%);
-	background: -webkit-linear-gradient(top, #7EDF7E 0%, #00E600 40%);
-	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
-	padding: 0 20px;
-	border-radius: 10px;  
-	list-style: none;
-	position: relative;
-	display: inline-table;
-	z-index: 20;
-}
-
-nav ul:after {
-	content ""; 
-	clear: both;
-	display: block;
-}
-
-nav ul li {
+.navigationbox {
+	margin: auto 10px;
+	height: 25px;
+	background-color: yellow;
 	float: left;
 }
 
-nav ul li:hover {
-	background: #7EDF7E;
-	background: linear-gradient(to bottom, #00A300 0%, #007A00 40%);
-	background: -moz-linear-gradient(to bottom, #00A300 0%, #007A00 40%);
-	background: -o-linear-gradient(to bottom, #00A300 0%, #007A00 40%);
-	background: -webkit-linear-gradient(top, #00A300 0%, #007A00 40%);
+.navigationbox p {
+	line-height: 25px;
 }
 
-nav ul li:hover a {
-	color: #fff;
+.innerbox {
+	display: none;
+	z-index: 10;
+	background-color: yellow;
+	box-shadow: 5px 5px 5px;
 }
 
-nav ul li a {
-	display: block; 
-	padding: 5px 9px;
-	color: #757575; 
-	text-decoration: none;
-	z-index: 20;
+.navigationbox:hover > .innerbox {
+	display: block;
 }
 
-nav ul ul {
-	background: #007A00; 
-	border-radius: 0px; 
-	padding: 0;
-	position: absolute; 
-	top: 100%;
+.innerbox li {
+	cursor: pointer;
+	padding: 5px 20px;
 }
 
-nav ul ul li {
-	float: none;
-	border-top: 1px solid #007A00;
-	border-bottom: 1px solid #007A00;
+.innerbox li:hover {
+	background-color: #E6E600;
+}
+
+#newnav li {
 	position: relative;
+	list-style-type: none;
 }
 
-nav ul ul li a {
-	padding: 15px 40px;
-	color: #fff;
+#newnav li a {
+	text-decoration: none;
 }
 
-nav ul ul li a:hover {
-	background: #33D633;
+#newnav p {
+	font-weight: bold;
+	color: #000066;
 }
+#newnav li a:link {color:#000066;}      /* unvisited link */
+#newnav li a:visited {color:#000066;}  /* visited link */
+#newnav li a:hover {color:#000066;}  /* mouse over link */
+#newnav li a:active {color:#000066;}  /* selected link */ 
 
-nav ul ul ul {
+#newnav li ul {
 	position: absolute;
-	left: 100%;
-	top: 0;
+	left: -5px;
+	top: 25px;
+}
+#newnav li ul li {
+	margin: 5px 0px;
+	white-space: nowrap;
+}
+
+#reservation {
+	position: absolute;
+	float: right;
+	background-color: transparent;
+	text-align: center;
+	z-index: 15;
+	width: 200px;
+	height: 25px;
+	line-height: 25px;
+	right: 15px;
+	overflow: hidden;
+	cursor: pointer;
+	text-decoration: none;
+}
+#reservation p {
+	font-weight: bolder;
+	color: #000066;
+}
+#reservation a {
+	text-decoration: none;
+	font-weight: bolder;
+	color: #000066;
+}
+#BYSframe {
+	display: none;
+	position: absolute;
+	top: 162px;
+	right: 0px;
+	width: 265px;
+	height: 385px;
+	opacity: 0.8;
+	box-shadow: 5px 5px 5px;
 }

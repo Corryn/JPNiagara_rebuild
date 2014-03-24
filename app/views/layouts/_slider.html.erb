@@ -58,11 +58,9 @@
 		<div id="rightButton" class="button" onclick="nextImageClick()"></div>
 	</div>
 </div>
-
 <script>
-<% if @url == nil %>
-<% @url = "/images/slider/main" %>
-<% end %>
+
+<% @url = "images/slider/main" %>
 
 var url = "<%= @url %>";
 var pics = new Array();
@@ -70,7 +68,7 @@ var index = 0;
 var autoplay = true;
 
 <% count = 0 %>
-<%= Dir.foreach("public/" + @url) do |fn| %>
+<%= Dir.foreach("#{Rails.root}/public/" + @url) do |fn| %>
 <% next if fn =="." || fn == ".." %>
 pics[<%= count %>] = "<%= @url + "/" + fn %>";
 $("#rightButton").before("<div class='navbox' onclick='indexImage(<%= count %>)'></div>")

@@ -39,7 +39,7 @@ class JellystoneniagaraController < ApplicationController
   end
 
   def rvcampsites
-    @title = "RV & Campsites"
+    @title = "RVs & Campsites"
     @alternate = false
     @contentRecs = Content.getContent(4)
     @renderContent = true
@@ -205,6 +205,14 @@ class JellystoneniagaraController < ApplicationController
     @num = params[:data].to_i
     @color = params[:data2]
     render :partial => 'layouts/description'
+  end
+
+  def slider
+    if params["data"] != nil && params["data"] != ""
+      @url = params["data"]
+    else
+      @url = "images/slider/main"
+    end
   end
 
   def formtypeenter

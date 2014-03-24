@@ -1,9 +1,11 @@
+/* Styling for each individual page on the Jellystone site. */
+
 /* Rates */
 
 #ratesbox {
 	width:1024px; 
 	height:958px; 
-	margin: 0px auto; 
+	margin: 20px auto; 
 	background-color: lightgreen;
 }
 
@@ -17,6 +19,21 @@
 	position:relative;
 	top:255px;
 	margin:0px 10px;
+}
+
+/* Lodging */
+
+#summary {
+	width:1014px;
+	border:5px solid bisque;
+	background-color: lightgreen;
+	margin: 20px auto;
+}
+#summary p, #summary h2, #summary a {
+	margin: 5px;
+}
+#summary li {
+	list-style-type: none;
 }
 
 /* RV & Campsites */
@@ -33,26 +50,70 @@
 	float:left;
 }
 #infobar {
-	float: left;
-	width: 1200px;
-	height: 350px;
-	background: orange url(/images/test/wood.jpg);
+	background: lightgreen url(/images/test/wood.jpg);
 	background-size: cover;
+	width:1200px;
+	float:left;
+	margin: 0 auto;
+	height: 300px;
 }
 #mapcontainer{
 	width:1200px;
-	height:900px;
+	height:1000px;
 	margin: 0px auto;
 }
 #sitecolor {
 	width:50px;
 	height:50px;
-	margin:15px 15px;
 	background-color: black;
+	margin: 10px;
+	float:left;
 }
 #parkmapmap area {
 	cursor: pointer;
 	display:block;
+}
+#sitename {
+	width:700px;
+	height:50px;
+	background-color: rgba(150, 75, 0, 0.2);
+	margin: 10px;
+	float:left;
+}
+#sitename h3 {
+	font-size:45px;
+	color:beige;
+}
+#sitelink {
+	width:350px;
+	height:40px;
+	background-color: rgba(150, 75, 0, 0.2);
+	float:right;
+	margin: 10px;
+}
+#sitelink a {
+	font-size:34px;
+	color:beige;
+}
+#description {
+	width:800px;
+	height:200px;
+	background-color: rgba(150, 75, 0, 0.2);
+	float:right;
+	margin:0px 10px;
+	text-align: left;
+	font-size:20px;
+}
+#picture {
+	width:200px;
+	height:200px;
+	margin:10px 80px;
+	clear:left;
+	border:5px outset darkgrey;
+}
+#pic {
+	width:200px;
+	height:200px;
 }
 
 /* Area Attractions */
@@ -99,11 +160,25 @@ padding:0px 5px;
 
 /* Image Gallery */
 
+#gallerypage {
+	margin: 0 auto;
+	display: table;
+	width: 1024px;
+}
+
 #photogallery {	
-	margin: 0px 5%;
+	margin: 0px auto;
+	display: block;
 }
 
 /* Specials */
+
+#specialspage {
+	margin: 0 auto;
+	display: table;
+	background-color: #00A352;
+	width: 1020px;
+}
 
 #specialviewer, .speciallink {
 	margin: 20px auto;
