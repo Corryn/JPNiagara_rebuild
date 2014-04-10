@@ -1,3 +1,29 @@
 <h1 class="pagetitle">RVs & Campsites</h1>
 
-<%= render :partial => '/layouts/content' %>
+<div id="tabs">
+	<% @siteinfo.each do |site| %>
+		<div class="sitetab" data-id="<%= site[:id] %>"><%= site[:name] %></div>
+	<% end %>
+</div>
+
+<div id="infobox">
+	<p style="text-align:center;">Select a site type!</p>
+</div>
+
+<script>
+disableSelection($("#tabs")[0]);
+$(".sitetab").click(function(){
+	$("#infobox").load("/getSite?num=" + $(this).data("id"),function(text, status, xhr){$(window).resize();});
+	$(".sitetab").css("background-color","#D6C2AD");
+	$(".sitetab").css("border","2px inset gray");
+	$(this).css("background-color","rgba(210,180,140,0.4)");
+	$(this).css("border","2px outset gray");
+});
+
+<% if @open != nil && !@open.empty? %>
+$("[data-id=<%= @open %>]").click();
+<% else %>
+$(".sitetab")[0].click();
+<% end %>
+
+</script>

@@ -1,32 +1,88 @@
 /* Styling for each individual page on the Jellystone site. */
 
+/* Home */
+
+.homebox {
+	margin: 10px auto;
+	display: table;
+	width: 990px;
+	border: 2px ridge brown;
+}
+.homebox h1 {
+	text-align: right;
+	margin-right: 10px;
+}
+.homebox p {
+	margin: 10px auto;
+	width: 924px;
+}
+.secondp {
+	display: none;
+}
+.readmore {
+	text-align: center;
+	cursor: pointer;
+	width: 90px;
+	height: 20px;
+	float: right;
+	margin: 3px;
+}
+.readmore span {
+	color: blue;
+	text-decoration: underline;
+}
+#p1 {
+	-ms-transform: rotate(15deg); /* IE 9 */
+	-webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
+	transform: rotate(15deg);
+}
+#p2 {
+	-ms-transform: rotate(-5deg); /* IE 9 */
+	-webkit-transform: rotate(-5deg); /* Chrome, Safari, Opera */
+	transform: rotate(-5deg);
+	margin:0px -20px;
+}
+#p3 {
+	-ms-transform: rotate(10deg); /* IE 9 */
+	-webkit-transform: rotate(10deg); /* Chrome, Safari, Opera */
+	transform: rotate(10deg);
+}
+#homepics{
+	width:800px;
+	height:250px;
+ 	margin:40px auto 0px;
+}
+.photo {
+	position: relative;
+	float: left;
+	width: 250px;
+	height: 250px;
+	background: url("/images/test/Jellystone_GalleryPic.png");
+	background-size: 250px 250px;
+}
+.photo img {
+	position: absolute;
+	top: 35px;
+	left: 38px;
+	width: 180px;
+	height: 180px;
+}
+
 /* Rates */
 
-#ratesbox {
-	width:1024px; 
-	height:958px; 
-	margin: 20px auto; 
-	background-color: lightgreen;
-}
-
 #rates {
-	margin: 50px 15px;
-}
-
-#ratesranger{
-	width:250px;
-	float:left;
-	position:relative;
-	top:255px;
-	margin:0px 10px;
+	margin: 0 auto;
+	width: 900px;
+	height: 1000px;
+	display: block;
 }
 
 /* Lodging */
 
 #summary {
-	width:1014px;
-	border:5px solid bisque;
-	background-color: lightgreen;
+	width: 1014px;
+	border: 2px solid bisque;
+	background-color: #FFD633;
 	margin: 20px auto;
 }
 #summary p, #summary h2, #summary a {
@@ -36,134 +92,391 @@
 	list-style-type: none;
 }
 
-/* RV & Campsites */
+/* RV & Campsites AND More Info */
 
+#tabs {
+	margin: 0 auto;
+	display: block;
+	background-color: #D6C2AD;
+	width: 762px;
+}
+.sitetab {
+	width: 250px;
+	height: 25px;
+	background-color: #D6C2AD;
+	text-align: center;
+	border: 2px inset gray;
+	float: left;
+	cursor: pointer;
+	border-radius: 20px;
+}
+#infobox {
+	height: 550px;
+	margin: 0 auto;
+	background: #FFD633;
+	border: 3px solid tan;
+	clear: both;
+}
+#infobox h2 {
+	margin: 10px;
+	font-size: 40px;
+	padding: 0px 30px;
+}
+#upper {
+	margin: 0px auto 30px;
+	width: 875px;
+	height: 300px;
+}
+#infotext {
+	position: relative;
+	width: 450px;
+	height: 200px;
+	float: left;
+}
+#seasonsbox {
+	width: 450px;
+	height: 80px;
+	padding: 10px 0;
+	float: left;
+	margin: 5px 0px;
+}
+#seasonsbox div {
+	width: 10px;
+	height: 10px;
+	float: left;
+	margin: 2px;
+}
+#seasonsbox p {
+	vertical-align: bottom;
+}
+#ratesbox {
+	width: 875px;
+	height: 130px;
+	margin: 0 auto;
+	clear: both;
+}
+#ratesinner {
+	width: 885px;
+	margin: 0 auto;
+	display: block;
+}
+#images {
+	width:400px;
+	height:300px;
+	border: 3px gray outset;
+	float:right;
+}
+#spacer {
+	width:800px;
+	height:1px;
+	clear:both;
+}
+.box {
+	width: 116px;
+	height: 25px;
+	float: left;
+	text-align: center;
+}
+.longbox {
+	width: 234px;
+	height: 25px;
+	float: left;
+	text-align: center;
+}
+.purple {
+	background-color:lavender;
+	border: 1px solid purple;
+}
+.blue {
+	background-color:skyblue;
+	border: 1px solid blue;
+}
+.orange {
+	background-color:orange;
+	border: 1px solid tomato;
+}
+.green {
+	background-color:limegreen;
+	border: 1px solid green;
+}
 
+/* Facilities */
 
-/* Rentals */
-
-
+#facilitycontainer {
+	margin: 0px auto;
+	width: 800px;
+}
+#facilityname {
+	height:50px;
+	font-size:50px;
+	text-align:center;
+}
+#facilitydesc {
+	height:70px;
+	position:absolute;
+	padding:5px 0px;
+	bottom:0px;
+	left:75px;
+	width:650px;
+	text-align:center;
+}
 
 /* Park Map */
 
 #parkmap {
-	float:left;
+	margin: 0 auto;
+	display: block;
 }
 #infobar {
-	background: lightgreen url(/images/test/wood.jpg);
-	background-size: cover;
-	width:1200px;
-	float:left;
+	width: 1024px;
 	margin: 0 auto;
 	height: 300px;
 }
 #mapcontainer{
-	width:1200px;
-	height:1000px;
+	width: 1200px;
 	margin: 0px auto;
 }
 #sitecolor {
-	width:50px;
-	height:50px;
+	width: 50px;
+	height: 50px;
 	background-color: black;
 	margin: 10px;
-	float:left;
+	float: left;
 }
 #parkmapmap area {
 	cursor: pointer;
-	display:block;
+	display: block;
 }
 #sitename {
-	width:700px;
-	height:50px;
+	height: 50px;
 	background-color: rgba(150, 75, 0, 0.2);
 	margin: 10px;
-	float:left;
+	float: left;
 }
 #sitename h3 {
-	font-size:45px;
-	color:beige;
+	font-size: 45px;
+	color: beige;
 }
 #sitelink {
-	width:350px;
-	height:40px;
+	width: 245px;
+	height: 40px;
 	background-color: rgba(150, 75, 0, 0.2);
-	float:right;
+	float: right;
 	margin: 10px;
 }
 #sitelink a {
-	font-size:34px;
-	color:beige;
+	font-size: 34px;
+	color: beige;
 }
 #description {
-	width:800px;
-	height:200px;
+	width: 750px;
+	height: 200px;
 	background-color: rgba(150, 75, 0, 0.2);
-	float:right;
-	margin:0px 10px;
+	float: right;
+	margin: 0px 10px;
 	text-align: left;
-	font-size:20px;
+	font-size: 20px;
 }
 #picture {
-	width:200px;
-	height:200px;
-	margin:10px 80px;
-	clear:left;
-	border:5px outset darkgrey;
+	width: 200px;
+	height: 200px;
+	margin: 10px 35px;
+	clear: left;
+	border: 2px outset darkgrey;
 }
 #pic {
-	width:200px;
-	height:200px;
+	width: 200px;
+	height: 200px;
+}
+.yui-skin-sam {
+	background-color: blue;
 }
 
 /* Area Attractions */
 
-#quicknav {
-position:relative;
-width:100px;
-height:25px;
-background-color: blue;
-border: 5px solid black;
-margin:20px 50px;
-padding:0px 5px;
-}
-#quicknav p {
-	font-size: 20px;
-}
 #sections {
-	position:absolute;
-	display:none;
-	z-index:10;
-	width:400px;
+	position: absolute;
+	display: none;
+	z-index: 10;
+	width: 400px;
 	margin-left: 0;
-	background-color:orange;
+	background-color: orange;
 	border: 5px solid black;
-	top:25px;
-	left:-5px;
+	top: 25px;
+	left: -5px;
+}
+
+/* Tours and Shuttles */
+
+.tourbox {
+	margin: 0 auto 20px;
+}
+.tourinfo {
+	width: 490px;
+	float: left;
+}
+.tourinfo p {
+	margin: 0px 10px;
+}
+.tourlogo {
+	max-width: 250px;
+	max-height: 200px;
+	margin: 0px 5px 0px 15px;
+	float: left;
+}
+.tourstops {
+	width: 497px;
+	float: left;
+}
+.tourbar {
+	position: relative;
+	width: 490px;
+	height: 35px;	
+	/* background-color: #66CCFF; */
+	box-shadow: 5px 10px 10px 0px;
+	margin: 20px auto auto;
+	cursor: pointer;
+}
+.tourbar h2, .dealbar h2 {
+	margin-left: 10px;
+}
+.tourcontent {
+	display: none;
+	margin: 0 auto;
+	background-color: #eee;
+	background-size: cover;
+	width: 450px;
+	height: 355px;
+	padding: 5px;
+}
+.tourcontent p {
+	margin-top: 5px;
+}
+.tourcontent img {
+	max-width: 200px;
+	max-height: 250px;
+	margin: 2px;
+	border: 3px outset gray;
+	float: left;
+}
+.tourdeals {
+	clear: both;
+}
+.dealbar {
+	width: 800px;
+	height: 35px;
+	box-shadow: 5px 10px 10px 0px;
+	margin: 20px auto 0px;
+	cursor: pointer;
+	position: relative;
+	top: 15px;
+}
+.dealcontent {
+	display: none;
+	margin: 0 auto;
+	background-color: #eee;
+	background-size: cover;
+	width: 750px;
+	height: 200px;
+	padding: 5px;
+	position: relative;
+	top: 15px;
+}
+.tourspacer {
+	height: 30px;
+	clear: both;
 }
 
 /* Area Map */
 
-#googleMap {
-    margin: 25px auto;
-    display: table;
-    width: 1000px;
-    height: 600px;
+#mappage {
+	margin: 0 auto;
+	display: block;
+	width: 1024px;
 }
-#mapbox {
-    margin: 0 auto;
-    display: table;
-    background-color: orange;
-    width: 1100px;
-    height: 650px;
+
+#googleMap {
+    margin: 20px 0px 0px 10px;
+    width: 700px;
+    height: 600px;
+    float: left;
+}
+#mapbox p {
+	text-align: center;
+	width: 150px;
+}
+#mapbox h2 {
+    text-align: center;
+}
+#legend {
+  	width: 300px;
+  	height: 600px;
+  	margin: 20px 5px;
+  	border: 1px solid black;
+  	float: left;
+}
+#legendnotice {
+	text-align: center;
+}
+.legendtext {
+  	position: relative;
+  	top: -2px;
+  	width: 250px;
+  	margin-left: 20px;
+}
+.legendcolorbox {
+	width: 10px;
+	height: 10px;
+	margin: 2px;
+	border: 1px solid black;
+	float: left;
+	cursor: pointer;
+}
+#belowmap {
+	margin: 0 10px;
+  	clear: both;
+}
+#belowmap ul {
+	list-style-type: none;
+}
+#attractioncontent {
+	width: 1000px;
+	height: 300px;
+	margin: 20px auto;
+	border: 2px solid #999966;
+}
+#attractioncontent h2 {
+	margin: 5px;
+}
+#attractioninner {
+	margin: 0 auto;
+	min-width: 700px;
+	max-width: 1000px;
+}
+#attractioncontent img {
+	max-width: 450px;
+	height: 250px;
+	margin: 0 10px; 
+	float: left;
+}
+#attractioncontent p {
+	overflow-y: auto;
+	text-align: center;
+	margin: 10px;
+}
+#attractioncontent a {
+	margin: 5px;
+	float: right;
+	font-weight: bold;
 }
 
 /* Image Gallery */
 
 #gallerypage {
 	margin: 0 auto;
-	display: table;
+	display: block;
 	width: 1024px;
+	height: 500px;
 }
 
 #photogallery {	
@@ -171,13 +484,130 @@ padding:0px 5px;
 	display: block;
 }
 
+#albums {
+	width:220px;
+	height:500px;
+	float:left;
+	background:yellow;
+}
+.album {
+	width: 200px;
+	text-align:center;
+	margin:10px auto;
+	border: 2px outset gray;
+	background: rgb(236,199,1);
+	cursor:pointer;
+}
+#pictures {
+	width:800px;
+	height:500px;
+	float:left;
+}
+.gpic {
+	position:relative;
+	width:160px;
+	height:160px;
+	float:left;
+	background: url("/images/test/Jellystone_GalleryPic.png");
+	background-size: 165px 165px;
+}
+.gimg {
+	position: absolute;
+	top:22px;
+	left:23px;
+	width:120px;
+	height:120px;
+	cursor:pointer;
+}
+.right {
+	transform:rotate(7deg);
+	-ms-transform:rotate(7deg); /* IE 9 */
+	-webkit-transform:rotate(7deg); /* Opera, Chrome, and Safari */
+}
+.left {
+	transform:rotate(-7deg);
+	-ms-transform:rotate(-7deg); /* IE 9 */
+	-webkit-transform:rotate(-7deg); /* Opera, Chrome, and Safari */
+}
+#blackout {
+	position:fixed;
+	top:0px;
+	left:0px;
+	z-index:19999;
+	background:rgba(0,0,0,0.8);
+	display:none;
+	width:100%;
+	height:100%;
+}
+#gallery {
+	position:relative;
+	z-index:20000;
+	width:800px;
+	height:600px;
+	margin:150px auto;
+	background: white;
+	opacity:1.0;
+}
+#gallery img {
+	max-width: 800px;
+	max-height: 600px;
+	display:block;
+	margin:0px auto;
+	position:relative;
+}
+#gclose {
+	width:20px;
+	height:20px;
+	background: url("/images/footer/close.png");
+	background-size: 20px 20px;
+	position:absolute;
+	right:0px;
+	top:-20px; 
+	cursor:pointer;
+}
+.arrow {
+	position:absolute;
+	width:40px;
+	height:40px;
+	bottom:20px;
+	background:lime;
+	opacity:0.4;
+	cursor:pointer;
+}
+#grightarrow {
+	right:20px;
+	background: url('/images/slider/rightarrow.png');
+	background-size: 40px 40px;
+}
+#gleftarrow {
+	left:20px;
+	background: url('/images/slider/leftarrow.png');
+	background-size: 40px 40px;
+}
+
 /* Specials */
 
-#specialspage {
+#spectabs {
 	margin: 0 auto;
-	display: table;
-	background-color: #00A352;
-	width: 1020px;
+	display: block;
+}
+.spectab {
+	width: 200px;
+	height: 25px;
+	background-color: #CCA352;
+	float: left;
+	text-align: center;
+	border: 1px inset gray;
+	cursor: pointer;
+}
+#dealbox {
+	height: 1000px;
+	margin: 0 auto;
+	clear: both;
+}
+
+#specialsbox {
+	margin: 0 auto 10px;
 }
 
 #specialviewer, .speciallink {
@@ -186,8 +616,9 @@ padding:0px 5px;
 }
 
 #specialviewer {
-	width: 1000px;
-	height: 700px;
+	overflow: scroll;
+	width:1000px;
+	height:700px;
 }
 
 #linkbox {
@@ -202,4 +633,187 @@ padding:0px 5px;
 	margin: 10px 10px;
 	width: 400px;
 	height: 65px;
+}
+
+#discounts {
+	margin: 0 auto;
+	position: relative;
+	top: 30px;
+}
+
+#printbutton {
+	text-align: center;
+	width: 130px;
+	margin: 10px auto;
+}
+#contain {
+	margin:0px auto;
+	width:1000px;
+	height:700px;
+	overflow:auto;
+}
+
+/* Contact */
+
+#contactpage {
+	margin: 0 auto;
+	display: table;
+	width: 1024px;
+	height: 700px;
+}
+#directions {
+	position: relative;
+	margin: 25px 10px;
+	padding: 10px;
+	float: left;
+	background-color: rgb(236,199,1);
+	width: 544px;
+	height: 630px;
+}
+#directions h2 {
+	color: #0099CC;
+}
+#directions a {
+	color: #3366CC;
+}
+.contactbox {
+	float: left;
+	background-color: rgb(236,199,1);
+	width: 200px;
+	height: 650px;
+	margin: 25px 10px;
+}
+.contactbox h3 {
+	text-align: center;
+}
+#name, #email {
+	width: 190px;
+}
+#message {
+	resize: none;
+	width: 190px;
+	height: 100px;
+}
+#commentform {
+	margin: 5px;
+}
+#commentnotice {
+	padding: 1px;
+	text-align: center;
+}
+#contactimage {
+	position:relative;
+	width:190px;
+	margin:0px 5px;
+	top:170px;
+}
+#borderinfo {
+	position: absolute;
+	right: 10px;
+}
+
+/* Menu */
+
+#login {
+	width: 200px;
+	height: 100px;
+	margin: 40px auto 0px;
+	padding: 5px;
+	background-color: #FFD633;
+}
+#loginnotice {
+	background-color: #FFD633;
+	width: 500px;
+	margin: 20px auto 0px;
+	padding: 0 5px;
+}
+#adminnav {
+	margin: 40px auto 0px;
+	display: table;
+	padding: 5px 5px;
+	background-color: #FFD633;
+}
+.adminlink {
+	text-decoration: none;
+	text-align: center;
+}
+.adminlink h3 {
+	border: 1px solid #E68A00;
+}
+.adminlink:link {
+	color: 	#FF9933;
+}
+.adminlink:visited {
+	color: #FF9933;
+}
+#logo {
+	display: none;
+}
+#registration {
+	display: none;
+}
+
+/* Comments */
+
+#registration {
+	display: none;
+}
+.horiz {
+	float: left;
+}
+.comment {
+	margin: 5px auto;
+	padding: 0px 5px;
+	display: table;
+	background-color: #CCA300;
+	width: 500px;
+}
+.message {
+	margin: 5px auto;
+	padding: 0px 5px;
+	display: table;
+	background-color: #FFCC00;
+	width: 475px;
+}
+.deletelink {
+	position: relative;
+	bottom: 2px;
+	float: right;
+	background-color: #FFCC00;
+	padding: 2px 3px;
+}
+
+/* Day Camp */
+
+#camppage {
+	padding: -10px;
+	margin: 0 auto;
+	display: table;
+	width: 1024px;
+	height: 700px;
+}
+#campbox {
+	margin: 10px;
+}
+#campbox strong {
+	font-size: 20px;
+}
+#booboo {
+	float: right;
+	position: relative;
+	left: -100px;
+	transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-ms-transform: scaleX(-1);
+}
+
+/* Class Trips */
+
+#trippage {
+	width: 1004px;
+	height: 700px;
+	margin: 0 auto;
+	padding: 0 10px;
 }

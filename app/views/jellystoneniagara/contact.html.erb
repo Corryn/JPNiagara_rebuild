@@ -1,6 +1,6 @@
 <div id="contactpage">
 	<div class="contactbox">
-		<img id="contactimage" src="images/yogi_01.png">
+		<img id="contactimage" src="images/yogi_01.png" alt="yogi">
 	</div>
 	<div id="directions">
 		<h2>Contact Information</h2>
@@ -10,11 +10,9 @@
 		(East Service Road)<br>
 		Niagara Falls, ON L2E 6S5</p>
 
-        <p><b>Email:</b><br/>
-        <a  href="mailto:yogibear@jellystoneniagara.ca">yogibear@jellystoneniagara.ca</a></p>
-        <p><b>Toll-Free:</b> 1-800-558-2954, Press 2 for Canada, then 5 for Jellystone Niagara. <BR/>
+        <p><b>Toll-Free:</b> 1-800-558-2954, Press 3 for Canada, then 5 for Jellystone Niagara. <BR/>
   	    	<b>Phone: </b>(905)354-1432<br/>
-        	<b>Fax:</b> (905)354-2115</p>
+        	<b>Fax:</b> (905)374-4493</p>
         <h2>Directions</h2>
         <p><strong>From Rainbow Bridge</strong> - 2 miles on Hwy. 420, take 
         Fort Erie exit for 1-1/2 miles(exit 27). Turn east(left) on McLeod Road, 
@@ -35,67 +33,15 @@
         <p> <a href="images/jellystone_map.pdf" target="_blank">Click 
         here for a printable driving map and directions.</a>
         </p>
+
+        <a id="borderinfo" href="http://gocanada.about.com/od/canadatraveloverview/qt/uscitizenborder.htm" target="_blank"><img src="images/border-info-americans.gif" alt="borderinfo"></a>
 	</div>
 	<div class="contactbox">
 		<h3>Submit a Comment</h3>
 		<%= render :partial => '/layouts/contact' %>
-		<p id="notice"><% if flash[:notice] %>
+		<p id="commentnotice"><% if flash[:notice] %>
 			<%= flash[:notice] %>
-			<script>$("#notice").css("background-color","#00E600");</script>
+			<script>$("#commentnotice").css("background-color","#FFCC00");</script>
 			<% end %></p>
 	</div>
 </div>
-
-<style>
-#contactpage {
-	margin: 0 auto;
-	display: table;
-	width: 1024px;
-	height: 700px;
-}
-#directions {
-	margin: 25px 10px;
-	padding: 10px;
-	float: left;
-	background-color: yellow;
-	width: 544px;
-	height: 630px;
-}
-#directions h2 {
-	color: #0099CC;
-}
-#directions a {
-	color: #3366CC;
-}
-.contactbox {
-	float: left;
-	background-color: yellow;
-	width: 200px;
-	height: 650px;
-	margin: 25px 10px;
-}
-.contactbox h3 {
-	text-align: center;
-}
-#name, #email {
-	width: 190px;
-}
-#message {
-	resize: none;
-	width: 190px;
-	height: 100px;
-}
-#commentform {
-	margin: 5px;
-}
-#notice {
-	padding: 1px;
-	text-align: center;
-}
-#contactimage {
-	position:relative;
-	width:190px;
-	margin:0px 5px;
-	top:170px;
-}
-</style>

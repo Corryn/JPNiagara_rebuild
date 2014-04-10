@@ -1,12 +1,12 @@
 class CalendarEvent < ActiveRecord::Base
 	belongs_to :picture
-	attr_accessible :event_name, :event_tag, :event_text, :picture_id, :event_link, :event_start_date, :event_end_date
-	validates :event_name, :event_tag, :event_text, :event_start_date, :event_end_date, presence: true
+	attr_accessible :name, :tag, :text, :picture_id, :link, :start_date, :end_date
+	validates :name, :tag, :text, :start_date, :end_date, presence: true
 
 	def self.getCurrMonth(startOfMonth,endOfMonth)
 		x = "'#{startOfMonth}' AND '#{endOfMonth}'"
 		puts "Are we here yet!?"
-		self.joins("LEFT JOIN pictures ON calendar_events.picture_id = pictures.id WHERE event_start_date BETWEEN #{x} OR event_end_date BETWEEN #{x}").order(:event_start_date);
+		self.joins("LEFT JOIN pictures ON calendar_events.picture_id = pictures.id WHERE start_date BETWEEN #{x} OR end_date BETWEEN #{x}").order(:start_date);
 	end
 
 end

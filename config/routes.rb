@@ -9,22 +9,22 @@ BookYourSiteWebNew::Application.routes.draw do
     match "lodging/rvcampsites" => "jellystoneniagara#rvcampsites"
     match "lodging/rentals" => "jellystoneniagara#rentals"
     match "lodging/moreinfo/:data" => "jellystoneniagara#moreinfo"
+    match "/getSite" => "jellystoneniagara#getSite"
   match "familyfun/" => "jellystoneniagara#familyfun"
-    match "familyfun/activities" => "jellystoneniagara#activities"
-    match "calendar/:date" => "jellystoneniagara#calendar"
-      match "description/:data/:data2/:date" => "jellystoneniagara#description"
+  match "activities" => "jellystoneniagara#activities"
+  match "calendar/:date" => "jellystoneniagara#calendar"
+    match "description/:data/:data2/:date" => "jellystoneniagara#description"
   match "areaattractions" => "jellystoneniagara#areaattractions"
     match "toursandshuttles" => "jellystoneniagara#toursandshuttles"
     match "attractionsandcoupons" => "jellystoneniagara#attractionsandcoupons"
     match "areamap" => "jellystoneniagara#areamap"
-  match "brochure" => redirect("/images/CurrentJellystoneWEBrochure.pdf")
+  match "brochure" => redirect("#{Resource.where(:use => "brochure").first[:path]}")
   match "parkmap" => "jellystoneniagara#parkmap"
     match "parkmapinfo/:data" => "jellystoneniagara#parkmapinfo"
   match "camp" => "jellystoneniagara#camp"
-  match "gallery" => "jellystoneniagara#imagegallery"
+  match "imagegallery" => "jellystoneniagara#imagegallery"
+  match "gallery" => "jellystoneniagara#gallery"
   match "specials" => "jellystoneniagara#specials"
-  match "admin" => "jellystoneniagara#admin"
-    match "comments" => "jellystoneniagara#comments"
 
   match "camp/home" => "summerdaycamp#home"
   match "camp/about" => "summerdaycamp#about"
@@ -37,15 +37,16 @@ BookYourSiteWebNew::Application.routes.draw do
   match "camp/directions" => "summerdaycamp#directions"
   match "camp/faq" => "summerdaycamp#faq"
 
-  match "putrandomstringhereput/:data" => "jellystoneniagara#entry"
-  match "putrandomstringhere/" => "jellystoneniagara#entry"
-    match "dbm/base/:data" => "jellystoneniagara#datagrab"
-    match "dbm/:data" => "jellystoneniagara#formgrab"
+  match "admin/menu" => "jellystoneniagara#menu"
+  match "admin/login" => "jellystoneniagara#login"
+  match "admin/comments" => "jellystoneniagara#comments"
+  match "admin/test" => "jellystoneniagara#test"
+  match "admin/entry/:data" => "jellystoneniagara#entry"
+  match "admin/entry/" => "jellystoneniagara#entry"
+    match "admin/dbm/base/:data" => "jellystoneniagara#datagrab"
+    match "admin/dbm/:data" => "jellystoneniagara#formgrab"
 
   
-  
-
-
   match "contactus-content" => "jellystoneniagara#contactus"
   match ":action" => "jellystoneniagara"
 

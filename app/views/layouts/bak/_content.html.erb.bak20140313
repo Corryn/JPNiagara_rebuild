@@ -5,7 +5,7 @@
 	<% if count % 2 == 0 %>
 		<div class="content wood">
 	<% else %>
-		<div class="content basket">
+		<div class="content bearpaws1">
 	<% end %>
 	<% count = count + 1 %>			
 				<% if switch == true %>

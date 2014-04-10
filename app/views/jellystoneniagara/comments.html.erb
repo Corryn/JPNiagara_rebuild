@@ -1,9 +1,4 @@
-<script>
-if(sessionStorage.getItem("adminUser") != "banana") {
-	alert("Protected page.  Redirecting...");
-	window.location.replace("/home");
-}
-</script>
+<h1 class="pagetitle">Comment Viewer</h1>
 
 <% @comments.each do |comment| %>
 	<div class="comment">
@@ -14,37 +9,7 @@ if(sessionStorage.getItem("adminUser") != "banana") {
 	</div>
 <% end %>
 
-<a class="backlink" href="/admin">Back to Admin</a>
-
-<style>
-#registration {
-	display: none;
-}
-.horiz {
-	float: left;
-}
-.comment {
-	margin: 5px auto;
-	padding: 0px 5px;
-	display: table;
-	background-color: #29A329;
-	width: 500px;
-}
-.message {
-	margin: 5px auto;
-	padding: 0px 5px;
-	display: table;
-	background-color: #47D147;
-	width: 475px;
-}
-.deletelink {
-	position: relative;
-	bottom: 2px;
-	float: right;
-	background-color: #5CAD5C;
-	padding: 2px 3px;
-}
-</style>
+<a class="backlink" href="/admin/menu">Back to Admin</a>
 
 <script>
 function deleteComment() {

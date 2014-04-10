@@ -1,5 +1,5 @@
 class Attraction < ActiveRecord::Base
 	belongs_to :content
-	attr_accessible :attraction_name, :content_id, :latitude, :longitude, :color, :marker_label
-	validates :attraction_name, presence: true
+	attr_accessible :name, :content_id, :latitude, :longitude, :color, :marker_label
+	validates :name, presence: true
 end

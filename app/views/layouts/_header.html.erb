@@ -1,10 +1,5 @@
 <header>
 
-    <img id="logo" class="removed" style="position:fixed; width:200px; left:20px;" src="/images/logo.png" usemap="#map">
-    <map id="map" class="removed" name="map">
-        <area shape="circle" coords="88,70,70" href="/home">
-    </map> 
-
     <script type="text/javascript">
     var pass = [false,false,false,false,false,false];
     
@@ -38,16 +33,25 @@
             pass[5] = true;
         } else if (trueTest(6) && event.which == 105){
             resetPass();
-            window.location = "/admin";
+            window.location = "/admin/menu";
         } else {
             resetPass();
         }
     });
     </script>
 
-    <h1> Located in beautiful Niagara Falls Ontario, Canada!</h1>
+    <h1 id="opener"> Located in beautiful Niagara Falls Ontario, Canada!</h1>
 
     <div id="forest"></div>
+
+    <% if session[:admin] %>
+    <div id="functions">
+        <ul>
+            <li><a href="/admin/menu">Admin</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+    <% end %>
 
     <div id="navencap">
         <nav id="newnav">
@@ -62,18 +66,23 @@
                     <a href="/lodging"><p>Lodging</p></a>
                     <ul class="innerbox">
                         <li><a href="/lodging/rvcampsites"><p>RVs & Campsites</p></a></li>
-                        <li><a href="/lodging/rentals"><p>Rentals</p></a></li>
+                        <li><a href="/lodging/moreinfo/15"><p>Bare Bones Habitats</p></a></li>
+                        <li><a href="/lodging/moreinfo/12"><p>Park Model Trailers</p></a></li>
+                        <li><a href="/lodging/moreinfo/13"><p>Boo Boo&#8482; Deluxe Cabins</p></a></li>
+                        <li><a href="/lodging/moreinfo/14"><p>Yogi Bear&#8482; Cottages</p></a></li>
                     </ul>
                 </li>   
                 <li class="navigationbox">
-                    <a href="/familyfun"><p>Family Fun</a>
+                    <a href="/calendar"><p>Family Fun</p></a>
                     <ul class="innerbox">
-                        <li><a href="/familyfun/activities"><p>Activities</p></a></li>
+                        <li><a href="/camp"><p>Day Camp</p></a></li>
+                        <li><a href="/classtrips"><p>Class Trips</p></a></li>
+                        <li><a href="/activities"><p>Activities</p></a></li>
                         <li><a href="/calendar"><p>Event Calendar</p></a></li>
                     </ul>
                 </li>
                 <li class="navigationbox">
-                    <a href="/areaattractions"><p>Area Attractions</p></a>
+                    <a href="/toursandshuttles"><p>Area Attractions</p></a>
                     <ul class="innerbox">
                         <li><a href="/toursandshuttles"><p>Tours & Shuttles</p></a></li>
                         <li><a href="/attractionsandcoupons"><p>Attractions & Coupons</p></a></li>
@@ -81,12 +90,13 @@
                     </ul>
                 </li>
                 <li class="navigationbox">
-                    <a href="/gallery"><p>Image Gallery</p></a>
+                    <a href="/imagegallery"><p>Image Gallery</p></a>
                 </li>
                 <li class="navigationbox">
-                    <a href="#" style="cursor: pointer;"><p>Park Info</p></a>
+                    <a href="/brochure" target="_blank"><p>Park Info</p></a>
                     <ul class="innerbox">
                         <li><a href="/brochure" target="_blank"><p>Brochure</p></a></li>
+                        <li><a href="/facilities"><p>Facilities</p></a></li>
                         <li><a href="/parkmap"><p>Park Map</p></a></li>
                     </ul>
                 </li>
@@ -96,14 +106,14 @@
                 <li class="navigationbox">
                     <a href="/contact"><p>Contact Us</p></a>
                 </li>
-                <div id="reservation">
-                    <noscript>
-                        <a href="https://v3.bookyoursite.com/jellystoneniagara/reservation">RESERVATIONS</a>
-                    </noscript>
-                    <p>RESERVATIONS</p>
-                </div>
-                <iframe id="BYSframe" height="310px" width="255px" src="https://v3.bookyoursite.com/jellystoneniagara/reservation_mini"></iframe>
             </ul>
+            <div id="reservation">
+                <noscript>
+                    <a href="https://v3.bookyoursite.com/jellystoneniagara/reservation">RESERVATIONS</a>
+                </noscript>
+                <p>RESERVATIONS</p>
+            </div>
+            <iframe id="BYSframe" height="310" width="255" src="https://v3.bookyoursite.com/jellystoneniagara/reservation_mini"></iframe>
         </nav>
 
     </div>
@@ -114,8 +124,11 @@
 </div>
 
 <script>
+$("#navencap").find("a").click(function(e){
+    e.stopPropagation();
+});
 $(".innerbox li").click(function() {
-    window.location = $(this).find("a").click();
+    $(this).children()[0].click();
 });
 </script>
 

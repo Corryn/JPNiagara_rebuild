@@ -1,9 +1,13 @@
 <div id="sitecolor"></div>
-<div id="sitename"><h3> <%= @parkMapInfo.first[:content_name].gsub("(tm)","&#8482").html_safe %> </h3></div>
-<div id="sitelink"><a href="lodging/moreinfo/<%= @parkMapInfo.first[:id] %>">More Information</a></div>
-<div id="description"> <%= @parkMapInfo.first[:content_text].gsub("(tm)","&#8482").html_safe %></div>
+<div id="sitename"><h3> <%= @parkMapInfo[:name].gsub("(tm)","&#8482").html_safe %> </h3></div>
+<% if (12..15).cover?(@parkMapInfo[:id]) %>
+<div id="sitelink"><a href="lodging/moreinfo/<%= @parkMapInfo[:id] %>">More Info</a></div>
+<% else %>
+<div id="sitelink"><a href="lodging/rvcampsites?id=<%= @parkMapInfo[:id] %>">More Info</a></div>
+<% end %>
+<div id="description"> <%= @parkMapInfo[:desc_long].gsub("(tm)","&#8482").html_safe %></div>
 <div id="picture">
-	<% if @parkMapInfo.first.picture != nil %>
-	<img id="pic" src="<%= @parkMapInfo.first.picture.picture_file %>">
+	<% if @picture != nil %>
+	<img id="pic" src="<%= @picture[:file] %>">
 	<% end %>
 </div>

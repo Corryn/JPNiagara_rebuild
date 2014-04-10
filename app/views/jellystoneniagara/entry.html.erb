@@ -1,11 +1,13 @@
 <link rel="stylesheet" type="text/css" href="/stylesheets/dbm.css">
 
-<script>
-if(sessionStorage.getItem("adminUser") != "banana") {
-	alert("Protected page.  Redirecting...");
-	window.location.replace("/home");
-}
-</script>
+<p id="notice">
+	<% if flash[:notice] %>
+		<%= flash[:notice] %>
+		<script>$("#notice").css("background-color","#00E600");</script>
+	<% end %>
+</p>
+
+<a class="backlink" href="/admin/menu">Back to Admin</a>
 
 <div id="container">
 	<div id="form_content">
@@ -16,6 +18,11 @@ if(sessionStorage.getItem("adminUser") != "banana") {
 			<div id="fe" class="formnav" data-fname="event_form">Event</div>
 			<div id="fs" class="formnav" data-fname="special_form">Special</div>
 			<div id="fa" class="formnav" data-fname="attraction_form">Attraction</div>
+			<div id="fst" class="formnav" data-fname="sitetype_form">Sitetype</div>
+			<div id="fr" class="formnav" data-fname="resource_form">Resource</div>
+			<div id="fg" class="formnav" data-fname="gallery_form">Gallery</div>
+			<div id="ff" class="formnav" data-fname="facility_form">Facility</div>
+			<div id="ft" class="formnav" data-fname="tour_form">Tour</div>
 		</div>
 		<div id="formbox">
 		</div>
@@ -23,19 +30,22 @@ if(sessionStorage.getItem("adminUser") != "banana") {
 
 	<div id="base_content">
 		<div id="base" class="tabbar" >
-			<div id="bct" class="basenav" data-bname="type_base">Content Type</div>
-			<div id="bc" class="basenav" data-bname="content_base">Content</div>
-			<div id="bp" class="basenav" data-bname="picture_base">Picture</div>
-			<div id="be" class="basenav" data-bname="event_base">Event</div>
-			<div id="bs" class="basenav" data-bname="special_base">Special</div>
-			<div id="ba" class="basenav" data-bname="attraction_base">Attraction</div>
+			<div id="bct" class="basenav" data-bname="type_base">Content Types</div>
+			<div id="bc" class="basenav" data-bname="content_base">Contents</div>
+			<div id="bp" class="basenav" data-bname="picture_base">Pictures</div>
+			<div id="be" class="basenav" data-bname="event_base">Events</div>
+			<div id="bs" class="basenav" data-bname="special_base">Specials</div>
+			<div id="ba" class="basenav" data-bname="attraction_base">Attractions</div>
+			<div id="bst" class="basenav" data-bname="sitetype_base">Sitetypes</div>
+			<div id="br" class="basenav" data-bname="resource_base">Resources</div>
+			<div id="bg" class="basenav" data-bname="gallery_base">Gallery</div>
+			<div id="bf" class="basenav" data-bname="facility_base">Facility</div>
+			<div id="bt" class="basenav" data-bname="tour_base">Tour</div>
 		</div>
 		<div id="basebox">
 		</div>
 	</div>
 </div>
-
-<a class="backlink" href="/admin">Back to Admin</a>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -66,5 +76,9 @@ $(document).ready(function(){
 		sessionStorage.setItem("bdata",this.id);
 		$(".basenav").css("background-color","#CC00CC");
 		$(this).css("background-color","magenta");
+	});
+
+	$(document).delegate("input, textarea","change",function(){
+		$(this).val( $(this).val().replace("(tm)","™") );
 	});
 </script>

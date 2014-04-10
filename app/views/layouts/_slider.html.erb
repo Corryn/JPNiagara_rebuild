@@ -1,83 +1,26 @@
-<!-- <div id="slider-section">
-	<div class="slider-container">
-		<div class="slider">
-			<p><img src="images/banner/banner_1.png"></p>
-			<p><img src="images/landscape.jpg"></p>	
-			<p><img src="images/slider/logorv.jpg"></p>
-			<p><img src="images/slider/slider1.jpg"></p>	
-		</div>
-	</div>
-</div> -->
-<style type="text/css">
-.button {
-	width:50px;
-	height:50px;
-	border: 2px solid black;
-	background-color: rgba(230,230,230,0.4);
-	cursor:pointer;
-}
-#leftButton {
-	float:left;
-	left:25px;
-	background-image: url('/images/slider/leftarrow.png');
-}
-#rightButton {
-	float:right;
-	right:25px;
-	background-image: url('/images/slider/rightarrow.png');
-}
-#visibleImage {
-	clear: both;
-}
-#navigation {
-	position: relative;
-	height:54px;
-	background-color: rgba(255,255,255,0.2);
-	bottom:75px;
-	z-index: 5;
-	margin: 0px auto;
-}
-#sliderbox {
-	position:relative;
-	overflow:hidden;
-}
-.navbox {
-	width:20px;
-	height:20px;
-	background-color: rgba(255,255,255,0.5);
-	margin:17px 15px;
-	float:left;
-	cursor: pointer;
-}
-</style>
-
 <div id="sliderbox">
-	<img id="visibleImage">
-	<div id="navigation">
-		<div id="leftButton" class="button" onclick="prevImageClick()"></div>
-		<div id="rightButton" class="button" onclick="nextImageClick()"></div>
-	</div>
+	<img id="backgroundImage" src="/images/slider/JellystoneTOPImageNoLogo.jpg">
+	<img id="visibleImage" src="" alt="">
+	<div id="leftButton" class="button" onclick="prevImageClick()"></div>
+	<div id="rightButton" class="button" onclick="nextImageClick()"></div>
 </div>
+
 <script>
 
-<% @url = "images/slider/main" %>
-
-var url = "<%= @url %>";
+var url = "<%= @sliderFolder %>";
 var pics = new Array();
 var index = 0;
 var autoplay = true;
 
 <% count = 0 %>
-<%= Dir.foreach("#{Rails.root}/public/" + @url) do |fn| %>
+<%= Dir.foreach("#{Rails.root}/public/images/slider/" + @sliderFolder) do |fn| %>
 <% next if fn =="." || fn == ".." %>
-pics[<%= count %>] = "<%= @url + "/" + fn %>";
-$("#rightButton").before("<div class='navbox' onclick='indexImage(<%= count %>)'></div>")
+pics[<%= count %>] = '<%= "images/slider/" + @sliderFolder + "/" + fn %>';
 <% count = count + 1 %>
 <% end %>
 
-	$("#navigation").width("<%= 108 + count * 50 %>");
-	$("#visibleImage").attr('src',pics[0]);
-	$("#leftButton").next().css("background-color","blue");
+preloadImages(pics);
+$("#visibleImage").attr('src',pics[0]);
 
 function nextImageClick() {
 	autoplay = false;
@@ -109,13 +52,8 @@ function indexImage(num) {
 }
 
 function change (num) {
-	$(".navbox").css("background-color","rgba(255,255,255,0.5)");
-	var current = $("#leftButton").next();
-	for(i = 0; i < num; i++){
-		current = current.next();
-	}
-	current.css("background-color","blue");
 	$("#visibleImage").fadeOut(500,function () {
+		$("#visibleImage").attr('src','');
 		$("#visibleImage").attr('src',pics[index]);
 		$("#visibleImage").fadeIn(500);
 	});

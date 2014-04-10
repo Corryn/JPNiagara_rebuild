@@ -1,39 +1,41 @@
 #leftcontent {
-	background: orange url(/images/test/basket.jpg);
-	background-size: cover;
-	width:250px;
-	float:left;
-	height:795px;
+	width: 324px;
+	float: left;
+	height: 799px;
 	margin-left: auto;
-	border-bottom: 5px solid black; 
+	border-bottom: 1px solid black; 
 }
 #calendar {
-	background-color: rgb(165, 255, 179);
-	width:990px;
-	float:left;
-	height:800px;
+	background-color: rgb(236,199,1);
+	width: 700px;
+	float: left;
+	height: 800px;
 	margin-right: auto;
-}
-#description {
-	background: magenta url(/images/test/wood.jpg);
-	background-size: cover;
-	width:1240px;
-	float:left;
-	margin: 0 auto;
-	height: 300px;
 }
 #calendarcontainer {
 	margin: 0px auto;
-	width:1240px;
-	height:1000px;
+	width: 1024px;
+	height: 800px;
 }
 #eventhead {
-	height:10%;
-	width:100%;
+	height: 10%;
+	width: 100%;
 }
 #eventbody {
-	height:90%;
-	width:100%;
+	height: 90%;
+	width: 100%;
+}
+#eventbody h4 {
+	text-align: center;
+}
+#eventbody img {
+	max-height: 400px;
+	max-width:300px;
+	margin:10px auto;
+	display:block;
+}
+#eventbody p {
+	margin:10px 20px;
 }
 #eventtitle {
 	font-size: 50px;
@@ -60,18 +62,18 @@
 	font-size:22px;
 }
 #months {
-	border: 5px solid black;
+	border: 1px solid black;
 	padding:0px;
 	width: 100%;
-	height:90%;
+	height:722px;
 	border-spacing:0px;
 	table-layout: fixed;
 
 }
 #months th {
 	height: 40px;
-	border: 5px solid black;
-	background-color: green;
+	border: 1px solid black;
+	background-color: goldenrod;
 }
 #months td {
 	border: 2px outset darkgrey;
@@ -91,7 +93,7 @@
 	text-align: center;
 	float:left;
 	height:80px;
-	width:830px;
+	width:540px;
 }
 #monthname h2 {
 	font-size:60px;
@@ -103,7 +105,7 @@
 	float:left;
 	overflow: hidden;
 }
-.button {
+.calendarbutton {
 	position:relative;
 	height:160px;
 	width:80px;
@@ -120,29 +122,16 @@
 	visibility: hidden;
 }
 .a {
-	width:140px;
+	width:100px;
 	height:25%;
 	position: relative;
 	right:3px;
 	cursor:pointer;
-}
-.b {
-	width:140px;
-	height:25%;
-	position: relative;
-	right:3px;
-	cursor:pointer;
-}
-.c {
-	width:140px;
-	height:25%;
-	position: relative;
-	right:3px;
-	cursor:pointer;
+	text-align: center;
 }
 .spacer {
 	width:100%;
-	height:25%;
+	height:30%;
 }
 #dTitle{
 	width:750px;

@@ -10,11 +10,16 @@ form label, form input, form textarea {
 	margin: 5px 5px;
 }
 
+#notice {
+	margin: 10px auto 0px;
+	width: 1000px;
+}
+
 .tabbar {
 }
 
 .formnav {
-width: 96px;
+width: 117px;
 height: 25px;
 float: left;
 border: 2px solid;
@@ -32,7 +37,7 @@ background-color: #CC00CC;
 }
 
 #formbox {
-	width:496px;
+	width:360px;
 	height:692px;
 	background-color: #00CC00;
 	overflow: auto;
@@ -68,13 +73,13 @@ td {
 }
 
 #container {
-	width:1500px;
-	height:754px;
-	margin:0px auto;
+	width: 1500px;
+	height: 754px;
+	margin: 0px auto;
 }
 
 #form_content {
-	width:500px;
+	width:364px;
 	height:725px;
 	float:left;
 }

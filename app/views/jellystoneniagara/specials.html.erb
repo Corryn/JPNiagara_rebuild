@@ -1,21 +1,20 @@
-<div id="specialspage" class="wood">
-	<h1 class="pagetitle">Specials</h1>
-	<div id="linkbox">
-		<% @specials.each do |special| %>
-			<img class="speciallink" src=<%= special[-2] %> data-viewid="<%= special[-1] %>">
-		<% end %>
-	</div>	
-
-	<iframe id="specialviewer"></iframe>
+<div id="spectabs">
+	<div class="spectab" id="discounttab" data-page="discounts">Discounts</div><div class="spectab" id="specialtab" data-page="specials">Specials</div>
+</div>
+<div id="dealbox" class="wood">
 </div>
 
 <script>
-	$(".speciallink").click(function(){ 
-		$("#specialviewer").attr('src',$(this).data('viewid'));
-	});
-	$("#specialviewer").attr('src','<%= @specials.first[-1] %>');
-	/* var Opera = (navigator.userAgent.match(/Opera|OPR\//) ? true : false);
-	if (Opera != true) {
-	 	
-	} */
+$(".spectab").click(function(){
+	$("#dealbox").load("/getDeal?sd=" + $(this).data("page"));
+	$(".spectab").css("background-color","#CCA352");
+	$(".spectab").css("border","1px inset gray");
+	$(this).css("background-color","#E6B85C");
+	$(this).css("border","1px outset gray");
+});
+</script>
+
+<script>
+disableSelection($("#spectabs")[0]);
+$($(".spectab")[0]).click();
 </script>

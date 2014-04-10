@@ -1,5 +1,8 @@
 class Picture < ActiveRecord::Base
+	has_many :tours
 	has_many :events
-	attr_accessible :picture_description, :picture_file
-	validates :picture_description, :picture_file, presence: true
+	belongs_to :facility
+	belongs_to :gallery
+	attr_accessible :description, :file, :sitetype_id, :gallery_id
+	validates :description, :file, presence: true
 end

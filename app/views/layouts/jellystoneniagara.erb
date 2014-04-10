@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
 
+	<meta charset="utf-8">
 	<meta name="keywords" content="Jellystone, Niagara, Falls, Campground, RV, Trailer, Park">
 	<meta name="description" content="Website redesign page for Jellystone Park Niagara">
 
@@ -10,27 +11,41 @@
 	<title>Jellystone Park Niagara</title>
 	<% end %>
 
-	<script src="/javascript/jquery.min.js"></script>
+	<script src="/javascripts/jquery.min.js"></script>
 	<script src="/javascripts/main.js"></script>
-	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBYfuTrP32VMyo7wXy6XWTcUoRdhgQuuPU&sensor=false"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBYfuTrP32VMyo7wXy6XWTcUoRdhgQuuPU&amp;sensor=false"></script>
 	<script src="/javascripts/StyledMarker.js"></script>
 	<link rel="stylesheet" href="/stylesheets/main.css">
 	<link rel="stylesheet" href="/stylesheets/navbar.css">
 	<link rel="stylesheet" href="/stylesheets/jellystoneniagara.css">
+	<link rel="stylesheet" href="/stylesheets/miniSliderBar.css">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/calendar-styles.css">
+	<script src="/javascripts/miniSlider.js"></script>
 	<!--[if lt IE 9]>
-	<script src="/javascripts/html5shiv.js"></script>
-	<link rel="stylesheet" href="/stylesheets/IE.css">
+	<style>
+		.photo {
+			background: "none";
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/test/Jellystone_GalleryPic.png',sizingMethod='scale');
+		}
+		#sliderbox {
+			background: "none";
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/slider/JellystoneTOPImageNoLogo.jpg',sizingMethod='scale');
+		}
+		#chase {
+			background: "none";
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/footer/chase.png',sizingMethod='scale');
+		}
+	</style>
 	<![endif]-->
+	<script src="/javascripts/html5shiv.js"></script>
 
 </head>
 
 <body>
 
-	<noscript><div>JavaScript is not enabled.  Some page elements may not function correctly.</div></noscript>
-
-	<div id="whitespace"></div>
-
 	<%= render :partial => '/layouts/header' %>
+
+	<noscript><div>JavaScript is not enabled.  Some page elements may not function correctly.</div></noscript>
 
 	<script>
 		$("#reservation").click(toggleReservation);
@@ -39,14 +54,22 @@
 	</script>
 
 	<% if @renderSlider == true %>
-	<%= render :partial => '/layouts/slider'%>
+		<% begin %>
+			<%= render :partial => '/layouts/slider'%>
+		<% rescue %>
+			<% puts "\033[1;31m Error finding specified folder for slider images.\033[0m\n" %>
+		<% end %>
 	<% end %>
 
-	<%= yield %>
+	<div id="wrapper">
 
-	<div id="shadowspacer"></div>
+		<%= yield %>
 
-	<%= render :partial => '/layouts/footer' %>
+		<div id="footerspacer"></div>
+
+		<%= render :partial => '/layouts/footer' %>
+
+	</div>
 
 	<script type="text/javascript">
 	$(".bar").each(function(){

@@ -6,40 +6,10 @@
 </footer>
 
 <script type="text/javascript">
-	var i = 0;
-	$(window).resize(fixerUper);
+	$("#wrapper").css("min-height",screen.availHeight-162);
 
-	function fixerUper(){
-		whitespaceFix();
-		footerFix();
-	}
+	$($(".bar")[0]).click();
 
-	function whitespaceFix(){
-		var wh = Math.max(($('html').width()-1024)/2,0);
-		$("#whitespace").css("left",wh);
-		$("#whitespace").height(Math.max($('html').height(),$(window).height()));
-	}
-
-	function footerFix(){	
-		if ($(window).height() > $('html').height()+(405*i)){
-			setToBottom();
-			i = 1;
-		} else {
-			resizeFix();
-			i = 0;
-		}
-	}
-
-	function setToBottom () {
-		$('footer').css("position","absolute");
-		$('footer').css("bottom","0px");
-	}
-
-	function resizeFix() {
-		$('footer').css("position","static");
-	}
-
-	$(window).resize();
 </script>
 
 <div id="fixedfooter">
@@ -48,12 +18,12 @@
 		<div id="sicons">
 			<div class="icons">
 				<a href="https://twitter.com/YogiBearNiagara" target="_blank">
-					<img id="ticon" src="/images/socialicons1.png" width="114px" height="114px">
+					<img id="ticon" src="/images/socialicons1.png" width="114" height="114" alt="twitter">
 				</a>
 			</div>
 			<div class="icons">
 				<a href="https://www.facebook.com/JellystoneNiagara" target="_blank">
-					<img id="ficon" src="/images/socialicons1.png" width="114px" height="114px">
+					<img id="ficon" src="/images/socialicons1.png" width="114" height="114" alt="facebook">
 				</a>
 			</div>
 			<!--
@@ -89,49 +59,4 @@
 		}
 	});
 </script>
-
-<style type="text/css">
-#fixedfooter {
-	position: fixed;
-	right: 20px;
-	bottom: 20px;
-}
-#helpcloser{
-	position: relative;
-	width:10px;
-	height:10px;
-	/* top: -169px; Uncomment to put close button on top of social section */ 
-	right: 5px;
-	background: white;
-	background-image: url("/images/footer/close.png");
-	border: 1px solid black;
-	cursor:pointer;
-}
-#sicons {
-	position:relative;
-	height:57px;
-	width:171px;
-	background-color: grey;
-	clear:both;
-}
-.icons {
-	width:57px;
-	height:57px;
-	float:left;
-	overflow:hidden;
-}
-#ticon {
-	position: relative;
-	bottom:57px;
-	right:57px;
-}
-#ficon {
-	position: relative;
-	bottom:57px;
-}
-#yicon {
-	position: relative;
-	right:57px;
-}
-</style>
 

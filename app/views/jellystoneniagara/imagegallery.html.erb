@@ -1,5 +1,84 @@
 <div id="gallerypage" class="wood">
 
-	<iframe id="photogallery" src="http://embedsocial.com/facebook_album/album_photos/218053668212777" width="900" height="1000" frameborder="0" scrolling="yes" marginheight="0"  marginwidth="0" ></iframe>
-
+	<div id="albums">
+		<% @items.each do |item| %>
+		<div class="album" data-album="<%= item[:id] %>"><%= item[:name] %></div>
+		<% end %>
+	</div>
+	<div id="pictures">
+	</div>
 </div>
+
+<div id="blackout">
+	<div id="gallery">
+		<div id="gclose"></div>
+		<div id="gleftarrow" class="arrow"></div>
+		<img src="" alt="galleryimage">
+		<div id="grightarrow" class="arrow"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var images = new Array();
+	var index = 0;
+
+	
+	function centerImage(){
+		$($("#gallery img")[0]).css("top", (600 - $($("#gallery img")[0]).height()) / 2 + "px");
+	}
+
+	function closeit(){
+		$(".gimg").bind("click",imgSelect);
+		$("#blackout").hide();
+	}
+
+	function imgSelect(){
+		$(".gimg").unbind("click");
+		index = $(this).data("index");
+		$("#gallery img")[0].src = this.src;
+		$("#blackout").show();
+		centerImage();
+	}
+
+	$("#gleftarrow").click(function(){
+		index = (index-1);
+		if(index == -1){
+			index = images.length - 1;
+		}
+		$("#gallery img")[0].src = images[index];
+		centerImage();
+	});
+
+	$("#grightarrow").click(function(){
+		index = (index+1) % images.length;
+		$("#gallery img")[0].src = images[index];
+		centerImage();
+	});
+
+	$(".album").click(function(){
+		$(".album").css("border","2px outset gray");
+		$(".album").css("background-color","rgb(236,199,1)");
+		$(this).css("border","2px inset gray");
+		$(this).css("background-color","#CCA300");
+		$("#pictures").load("/gallery",{gallery: $(this).data("album")},function(){
+			index = 0;
+			images = new Array();
+			$(".gimg").each(function(){
+				images[index] = this.src;
+				index = index + 1;
+			});
+
+			$(".gimg").click(imgSelect);
+			addEventListener("click",function(event){
+				if(event.target.id == "blackout" || event.target.id == "gclose"){
+					closeit();
+				}
+			});
+		})
+	});
+
+	$($(".album")[0]).click();
+
+	disableSelection($("#gallery")[0]);
+</script>
+
