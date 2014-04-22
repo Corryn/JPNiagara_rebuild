@@ -1,3 +1,14 @@
+<script>
+pictures = new Array();
+var i = 0
+<% @pictures.each do |pic| %>
+	<% if !pic.nil? %>
+	pictures[i++] = "<%= pic[:file] %>";
+	<% end %>
+<% end %>
+preloadImages(pictures);
+</script>
+
 <h1 class="pagetitle">RVs & Campsites</h1>
 
 <div id="tabs">
@@ -16,14 +27,14 @@ $(".sitetab").click(function(){
 	$("#infobox").load("/getSite?num=" + $(this).data("id"),function(text, status, xhr){$(window).resize();});
 	$(".sitetab").css("background-color","#D6C2AD");
 	$(".sitetab").css("border","2px inset gray");
-	$(this).css("background-color","rgba(210,180,140,0.4)");
+	$(this).css("background-color","rgb(210,180,140)");
 	$(this).css("border","2px outset gray");
 });
 
 <% if @open != nil && !@open.empty? %>
 $("[data-id=<%= @open %>]").click();
 <% else %>
-$(".sitetab")[0].click();
+$($(".sitetab")[0]).click();
 <% end %>
 
 </script>

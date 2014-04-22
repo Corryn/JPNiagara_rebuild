@@ -2,7 +2,7 @@ class Content < ActiveRecord::Base
 	has_many :attractions
 	belongs_to :picture
 	belongs_to :tour
-	attr_accessible :name, :content_type_id, :picture_id, :text, :link, :link_text, :tour_id
+	attr_accessible :name, :subheader, :content_type_id, :picture_id, :text, :link, :link_text, :tour_id
 	validates :name, :content_type_id, :text, presence: true
 	before_create :remove_blanks
 	#scope :getContent

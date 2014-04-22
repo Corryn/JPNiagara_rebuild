@@ -42,7 +42,10 @@
 
     <h1 id="opener"> Located in beautiful Niagara Falls Ontario, Canada!</h1>
 
-    <div id="forest"></div>
+    <div id="forest">
+
+        <a href="/home"><img id="logo" src="/images/header/logo3.png"></a>
+    </div>
 
     <% if session[:admin] %>
     <div id="functions">
@@ -63,55 +66,65 @@
                     <a href="/rates"><p>Rates</p></a>  
                 </li>
                 <li class="navigationbox">
-                    <a href="/lodging"><p>Lodging</p></a>
+                    <a href="/lodging/rvcampsites"><p>Lodging</p></a>
                     <ul class="innerbox">
-                        <li><a href="/lodging/rvcampsites"><p>RVs & Campsites</p></a></li>
-                        <li><a href="/lodging/moreinfo/15"><p>Bare Bones Habitats</p></a></li>
-                        <li><a href="/lodging/moreinfo/12"><p>Park Model Trailers</p></a></li>
-                        <li><a href="/lodging/moreinfo/13"><p>Boo Boo&#8482; Deluxe Cabins</p></a></li>
+                        <li><a href="/lodging/rvcampsites"><p>RVs & Campsites</p></a></li>                       
                         <li><a href="/lodging/moreinfo/14"><p>Yogi Bear&#8482; Cottages</p></a></li>
+                        <li><a href="/lodging/moreinfo/13"><p>Boo Boo&#8482; Deluxe Cabins</p></a></li>
+                        <li><a href="/lodging/moreinfo/12"><p>Park Model Trailers</p></a></li>
+                        <li><a href="/lodging/moreinfo/15"><p>Bare Bones Shelters</p></a></li>
+                        <li><a href="/lodging/moreinfo/17"><p>Habitat Shelters</p></a></li>  
+                        <!-- <li><a href="/groupsandrallies"><p>Groups and Rallies</p></a></li> -->
                     </ul>
                 </li>   
                 <li class="navigationbox">
                     <a href="/calendar"><p>Family Fun</p></a>
                     <ul class="innerbox">
-                        <li><a href="/camp"><p>Day Camp</p></a></li>
-                        <li><a href="/classtrips"><p>Class Trips</p></a></li>
                         <li><a href="/activities"><p>Activities</p></a></li>
                         <li><a href="/calendar"><p>Event Calendar</p></a></li>
+                        <li><a href="/camp"><p>Day Camp</p></a></li>
+                        <li><a href="/classtrips"><p>Class Trips</p></a></li>
                     </ul>
                 </li>
                 <li class="navigationbox">
-                    <a href="/toursandshuttles"><p>Area Attractions</p></a>
+                    <a href="/facilities"><p>Facilities</p></a>
                     <ul class="innerbox">
-                        <li><a href="/toursandshuttles"><p>Tours & Shuttles</p></a></li>
-                        <li><a href="/attractionsandcoupons"><p>Attractions & Coupons</p></a></li>
-                        <li><a href="/areamap"><p>Area Map</p></a></li>
+                        <li><a href="/facilities"><p>Park Facilities</p></a></li>
+                        <li><a href="/parkmap"><p>Park Map</p></a></li>
+                    </ul>
+                </li>   
+                <li class="navigationbox">
+                    <a href="/tours"><p>Area Attractions</p></a>
+                    <ul class="innerbox">
+                        <li><a href="/tours"><p>Tours and Packages</p></a></li>                  
+                        <li><a href="/areamap"><p>Attraction Map</p></a></li>
+                        <li><a href="/attractions"><p>Area Attractions</p></a></li>
                     </ul>
                 </li>
                 <li class="navigationbox">
                     <a href="/imagegallery"><p>Image Gallery</p></a>
-                </li>
+                </li>                        
                 <li class="navigationbox">
-                    <a href="/brochure" target="_blank"><p>Park Info</p></a>
+                    <a href="/contact"><p>Contact Us</p></a>
                     <ul class="innerbox">
+                        <li><a href="/contact"><p>Directions</p></a></li>
                         <li><a href="/brochure" target="_blank"><p>Brochure</p></a></li>
-                        <li><a href="/facilities"><p>Facilities</p></a></li>
-                        <li><a href="/parkmap"><p>Park Map</p></a></li>
+                        <li><a href="http://gocanada.about.com/od/canadatraveloverview/qt/uscitizenborder.htm" target="_blank" onclick="leaveSite()"><p>Border Crossing</p></a></li>
                     </ul>
                 </li>
                 <li class="navigationbox">
-                    <a href="/specials"><p>Specials</p></a>
-                </li>
-                <li class="navigationbox">
-                    <a href="/contact"><p>Contact Us</p></a>
+                    <a href="/specials"><p style="color:red;">Specials</p></a>
+                    <ul class="innerbox">
+                        <li><a href="/specials"><p>Specials and Discounts</p></a></li>
+                    </ul>
                 </li>
             </ul>
             <div id="reservation">
+                
                 <noscript>
-                    <a href="https://v3.bookyoursite.com/jellystoneniagara/reservation">RESERVATIONS</a>
+                <a href="https://v3.bookyoursite.com/jellystoneniagara/reservation"><p>RESERVATIONS</p></a>
                 </noscript>
-                <p>RESERVATIONS</p>
+                <p>RESERVATIONS</p><img class="regdropdown" src="/images/slider/leftarrow.png"/>
             </div>
             <iframe id="BYSframe" height="310" width="255" src="https://v3.bookyoursite.com/jellystoneniagara/reservation_mini"></iframe>
         </nav>
@@ -130,5 +143,16 @@ $("#navencap").find("a").click(function(e){
 $(".innerbox li").click(function() {
     $(this).children()[0].click();
 });
+</script>
+
+<script>
+function switchRegArrow(bar) {
+    if($(bar).find(".regdropdown").attr("src").search("downarrow") != -1) {
+        $(bar).find(".regdropdown").attr("src","/images/slider/leftarrow.png");
+    }
+    else {
+        $(bar).find(".regdropdown").attr("src","/images/slider/downarrow.png");
+    }
+}
 </script>
 

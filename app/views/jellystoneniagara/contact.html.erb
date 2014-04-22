@@ -1,8 +1,8 @@
 <div id="contactpage">
-	<div class="contactbox">
+	<div class="contactbox insets">
 		<img id="contactimage" src="images/yogi_01.png" alt="yogi">
 	</div>
-	<div id="directions">
+	<div id="directions" class="insets">
 		<h2>Contact Information</h2>
 		<p><b> Mailing Address:</b><br>
 		Jellystone Park<br>
@@ -18,7 +18,7 @@
         Fort Erie exit for 1-1/2 miles(exit 27). Turn east(left) on McLeod Road, 
         cross over the QEW and turn right on Oakwood Drive(1st set of lights).</p>
        
-        <p> <strong>From Toronto</strong> - take QEW. Fort Erie for 1-1/2 
+        <p><strong>From Toronto</strong> - take QEW. Fort Erie for 1-1/2 
         miles(exit 27). Turn east(left) on McLeod Road, cross over QEW and turn 
         right on Oakwood Drive(1st set of lights).</p>
       
@@ -30,14 +30,25 @@
         McLeod Road. Turn left, cross over QEW and turn right on Oakwood Drive 
         (1st set of lights).</p>
 
+        <p><strong>Jellystone Park is the last driveway on the left hand side of the road, past the car dealerships and landscaping businesses.</strong></p>
+
         <p> <a href="images/jellystone_map.pdf" target="_blank">Click 
         here for a printable driving map and directions.</a>
         </p>
 
-        <a id="borderinfo" href="http://gocanada.about.com/od/canadatraveloverview/qt/uscitizenborder.htm" target="_blank"><img src="images/border-info-americans.gif" alt="borderinfo"></a>
+        <h2>GPS Coordinates</h2>
+        <p><strong>Latitude:</strong> 43.050995, <strong>Longitude:</strong> -79.1215498 <br/>
+            or <br/> 
+            <strong>N43° 3.0597', W079° 7.293'</strong>
+        </p>
+        <p>When Travelling from the USA or QEW using a GPS please make sure to take the McLeod Road Exit instead of Lyons Creek Road Exit!</p>
+
+        <h2>Border Crossing Information for Americans</h2>
+
+        <a id="borderinfo" href="http://gocanada.about.com/od/canadatraveloverview/qt/uscitizenborder.htm" target="_blank"><img src="images/border-info-americans.gif" alt="borderinfo" onclick="leaveSite()"></a>
 	</div>
-	<div class="contactbox">
-		<h3>Submit a Comment</h3>
+	<div class="contactbox insets">
+		<h3>Leave us a Message</h3>
 		<%= render :partial => '/layouts/contact' %>
 		<p id="commentnotice"><% if flash[:notice] %>
 			<%= flash[:notice] %>

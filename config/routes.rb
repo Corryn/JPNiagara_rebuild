@@ -15,16 +15,19 @@ BookYourSiteWebNew::Application.routes.draw do
   match "calendar/:date" => "jellystoneniagara#calendar"
     match "description/:data/:data2/:date" => "jellystoneniagara#description"
   match "areaattractions" => "jellystoneniagara#areaattractions"
-    match "toursandshuttles" => "jellystoneniagara#toursandshuttles"
-    match "attractionsandcoupons" => "jellystoneniagara#attractionsandcoupons"
+    match "tours" => "jellystoneniagara#tours"
+    match "attractions" => "jellystoneniagara#attractions"
     match "areamap" => "jellystoneniagara#areamap"
   match "brochure" => redirect("#{Resource.where(:use => "brochure").first[:path]}")
   match "parkmap" => "jellystoneniagara#parkmap"
     match "parkmapinfo/:data" => "jellystoneniagara#parkmapinfo"
+    match "parkmapfacility/:data" => "jellystoneniagara#parkmapfacility"
   match "camp" => "jellystoneniagara#camp"
   match "imagegallery" => "jellystoneniagara#imagegallery"
   match "gallery" => "jellystoneniagara#gallery"
   match "specials" => "jellystoneniagara#specials"
+  match "day_camp" => redirect("/camp")
+  match "class_trip" => redirect("/classtrips")
 
   match "camp/home" => "summerdaycamp#home"
   match "camp/about" => "summerdaycamp#about"

@@ -1,0 +1,81 @@
+<h2><%= @siteinfo[:name].gsub("(tm)","&#8482").html_safe %></h2>
+<div id="upper">
+	<div id="infotext">
+		<%= @siteinfo[:desc_long].html_safe %>
+	</div>
+	<div id="images">
+			
+		<div class="slider-container">
+			<div class="slider">
+				<% @siteimages.each do |image| %>
+					<p><img width=400 height=300 src="<%= image[:file] %>"></p>
+				<% end %>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+		$(function() {
+		  $('.slider').miniSlider({
+		  	delay: 8000,
+		  	transitionSpeed: 1500
+		  });
+		});
+		</script>
+
+		<script>
+		$('.slider').miniSlider({
+		  delay: 8000,
+		  transitionSpeed: 1500
+		});
+		</script>
+
+	</div>
+	<div id="seasonsbox">
+		<div class="purple"></div><p class="season">In Season: Jun 20-Aug 31</p><div class="blue"></div><p>Holiday Dates: May 16-18, May 23-25, Jun 27-Jul 6, Aug 1-3, Aug 29-31</p><div class="orange"></div><p>Off Season: Apr 18-Jun 19, Sept 1-Oct 15</p>
+	</div>
+	
+</div>
+<div id="ratesbox"><h3>Rates:</h3>
+	<div id="ratesinner">
+		<div class="longbox purple">IN-SEASON NIGHTLY</div>
+		<div class="box blue"></div>
+		<% if @siteinfo[:inseason_weekly] != nil %>
+		<div class="box purple"></div>
+		<% end %>
+		<div class="longbox orange">OFF-SEASON NIGHTLY</div>
+		<% if @siteinfo[:offseason_weekly] != nil %>
+		<div class="box orange"></div>
+		<% end %>
+		<div class="longbox green">CLUB YOGI</div>
+
+		<div class="box purple">Sun-Thurs</div>
+		<div class="box purple">Fri-Sat</div>
+		<div class="box blue">Holiday</div>
+		<% if @siteinfo[:inseason_weekly] != nil %><div class="box purple">Weekly</div><% end %>
+		<div class="box orange">Sun-Thurs</div>
+		<div class="box orange">Fri-Sat</div>
+		<% if @siteinfo[:offseason_weekly] != nil %><div class="box orange">Weekly</div><% end %>
+		<div class="box green">Rewards Tier</div>
+		<div class="box green">Suitable for:</div>
+
+		<div class="box purple">$<%= @siteinfo[:inseason_weekday] %></div>
+		<div class="box purple">$<%= @siteinfo[:inseason_weekend] %></div>		
+		<div class="box blue">$<%= @siteinfo[:holiday] %></div>
+		<% if @siteinfo[:inseason_weekly] != nil %><div class="box purple">$<%= @siteinfo[:inseason_weekly] %></div><% end %>
+		<div class="box orange">$<%= @siteinfo[:offseason_weekday] %></div>
+		<div class="box orange">$<%= @siteinfo[:offseason_weekend] %></div>
+		<% if @siteinfo[:offseason_weekly] != nil %><div class="box orange">$<%= @siteinfo[:offseason_weekly] %></div><% end %>
+		<div class="box green"><%= @siteinfo[:rewards_tier] %></div>
+		<div class="box green"><%= @siteinfo[:suitability] %></div>
+	</div>
+
+	<% if @siteinfo[:inseason_weekly] != nil %>
+	<script>
+		$(".box").css("width","96");
+		$(".longbox").css("width","194");
+	</script>
+	<% end %>
+
+</div>
+
+<div id="spacer"></div>

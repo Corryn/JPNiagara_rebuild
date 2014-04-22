@@ -1,7 +1,7 @@
 <div id="spectabs">
 	<div class="spectab" id="discounttab" data-page="discounts">Discounts</div><div class="spectab" id="specialtab" data-page="specials">Specials</div>
 </div>
-<div id="dealbox" class="wood">
+<div id="dealbox" class="insets">
 </div>
 
 <script>
@@ -18,3 +18,9 @@ $(".spectab").click(function(){
 disableSelection($("#spectabs")[0]);
 $($(".spectab")[0]).click();
 </script>
+
+<% if params[:page] == "2" %>
+<script>
+$(".spectab")[1].click();
+</script>
+<% end %>

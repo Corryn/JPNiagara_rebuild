@@ -1,0 +1,7 @@
+<div id="sitecolor" style="background-color:#0D2576;"></div>
+<div id="sitename"><h3> <%= @facility[:name].gsub("(tm)","&#8482").html_safe %> </h3></div>
+<div class="clear"></div>
+<img id="picture" src="<%= @facility.picture.file %>">
+<div id="description"> <%= @facility[:description].gsub("(tm)","&#8482").html_safe %></div>
+
+</div>

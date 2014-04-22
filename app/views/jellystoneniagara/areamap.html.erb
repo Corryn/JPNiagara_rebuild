@@ -2,8 +2,8 @@
 
   <div id="googleMap"><!--[if lt IE 9]><img src="/images/attractions/iemapfinished.png"><![endif]--></div>
     
-  <div id="legend">
-    <p id="legendnotice">Click on a color to see it on the map!</p><br/>
+  <div id="legend" class="insets">
+    <p id="legendnotice">Click on an attraction for its description below!</p><br/>
     <% @mapAttractions.each do |attraction| %>
       <div class="legendcolorbox" style="background-color:#<%= attraction[:color] %>;"></div><p class="legendtext"><%= attraction[:name] %></p>
     <% end %>
@@ -11,7 +11,7 @@
 
   <div id="belowmap">
     <h2>Click on a marker to see more information!</h2>
-    <div id="attractioncontent" class="wood"></div>
+    <div id="attractioncontent" class="insets"></div>
   </div>
 
 </div>
@@ -38,27 +38,21 @@ var infowindow = new google.maps.InfoWindow({content: "blank"});
       position: new google.maps.LatLng(<%= attraction[:latitude] %>, <%= attraction[:longitude] %>),
       map: map,
       title: "<%= attraction[:name] %>",
+      id: "<%= attraction[:id] %>",
       animation: google.maps.Animation.DROP,
-      id: <%= attraction[:id] %>
-      <% infoheader = '<p>' + attraction.name + '</p>' %>
-      <% if attraction.content != nil && attraction.content.link != nil %>
-      <% infoheader = "<a target='_blank' href='" + attraction.content.link + "'>" + infoheader + "</a>" %>
-      <% end %>
+      <% infoheader = "<a href='javascript:scrollToContent(" + attraction[:id].to_s + ")'>" + attraction[:name] + "</a>" %>
     }); 
     markers[pos++] = marker;
     google.maps.event.addListener(marker,"click",function(){
       infowindow.close();
       infowindow.setContent("<%= infoheader.html_safe %>");
       infowindow.setOptions({maxWidth: "500"});
-      $("#attractioncontent").load("getAttraction?id=" + this.id);
       infowindow.open(map,this);
     });
     $(marker).click(function(){
       infowindow.close();
       infowindow.setContent("<%= infoheader.html_safe %>");
       infowindow.setOptions({maxWidth: "500"});
-      $("#attractioncontent").load("getAttraction?id=" + this.id);
-      $(".content")
       infowindow.open(map,this);
     });
   <% end %>
@@ -80,9 +74,44 @@ $(".legendcolorbox").click(function() {
   markers.forEach(function(entry){
     if (entry.title == $(temp).next().text()) {
       $(entry).click();
+      $("#attractioncontent").show();
+      $("#attractioncontent").load("getAttraction?id=" + entry.id);
     }
   });
 });
 
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+
+<script>
+function scrollToContent(id) {
+  $("#attractioncontent").show();
+  $("#attractioncontent").load("getAttraction?id=" + id, function(){window.scrollBy(0,$("#attractioncontent")[0].getBoundingClientRect().bottom - $(window.top).height() + 4);});
+}
+</script>
+
+<script>
+if(<%= @id %> != null && <%= @id %> != "") {
+  scrollToContent(<%= @id %>)
+}
+</script>
+
+<script>
+$("#googleMap").css("height",$("#legend").css("height"));
+</script>
+
+<script>
+$(".legendtext").each(function(entry){
+  if($($(".legendtext")[entry]).text().indexOf("Jellystone") >= 0){
+    $($(".legendtext")[entry]).css("font-weight","bold");
+  }
+});
+</script>
+
+<!--[if lt IE 9]>
+  <script>
+    $("#belowmap").hide();
+    $("#legend").hide();
+    $("#mappage").css("height","600px");
+  </script>
+<![endif]-->

@@ -1,15 +1,47 @@
+<script>
+pictures = new Array();
+var i = 0
+<% @pictures.each do |pic| %>
+	<% if !pic.nil? %>
+	pictures[i++] = "<%= pic %>";
+	<% end %>
+<% end %>
+preloadImages(pictures);
+</script>
+
 <script type="text/javascript">
 function getSiteInfo(text,sc) {
 	var txt = "parkmapinfo?id=" + text;
 	$("#infobar").load(txt ,function () {
+		$('#sitecolor').css("visibility","visible");
 		$('#sitecolor').css("background-color", sc);
 	});
+}
+
+function getFacilityInfo(num) {
+	var txt = "parkmapfacility?id=" + num;
+	$("#infobar").load(txt);
 }
 </script>
 
 <img id="parkmap" src="/jellystone-full-map.jpg" alt="Map" width="1024" usemap="#parkmapmap">
 
 <map id="parkmapmap" name="parkmapmap">
+
+	<!-- Facilities -->
+	
+	<area alt="map" shape="circle" coords="139,368,10" onclick="getFacilityInfo('21')">
+	<area alt="map" shape="circle" coords="249,436,10" onclick="getFacilityInfo('34')">
+	<area alt="map" shape="circle" coords="328,201,10" onclick="getFacilityInfo('35')">
+	<!-- <area alt="map" shape="circle" coords="345,103,10" onclick="getFacilityInfo('35')"> -->
+	<area alt="map" shape="circle" coords="384,112,10" onclick="getFacilityInfo('33')">
+	<area alt="map" shape="circle" coords="458,114,10" onclick="getFacilityInfo('23')">
+	<area alt="map" shape="circle" coords="405,135,10" onclick="getFacilityInfo('11')">
+	<!-- <area alt="map" shape="circle" coords="533,122,10" onclick="getFacilityInfo('18')"> -->
+	<area alt="map" shape="circle" coords="710,364,10" onclick="getFacilityInfo('33')">
+	<area alt="map" shape="circle" coords="55,490,10" onclick="getFacilityInfo('18')">
+	<!-- <area alt="map" shape="circle" coords="304,535,10" onclick="getFacilityInfo('35')"> -->
+
 	<!-- preferred 30 -->
 	<area alt="map" shape="rect" coords="42,170,66,345" onclick="getSiteInfo('6','#ff8c35')"> <!-- leftOrange -->
 	<area alt="map" shape="rect" coords="339,294,392,432" onclick="getSiteInfo('6','#ff8c35')"> <!-- rightOrange -->
@@ -116,12 +148,13 @@ function getSiteInfo(text,sc) {
 </map>*/
 </script>
 
-<div id="infobar" class="wood">
-	<div id="sitecolor"></div>
+<div id="infobar" class="insets">
+	<div id="sitecolor" class="hidden"></div>
 	<div id="sitename"><h3></h3></div>
 	<div id="sitelink"><a href=""></a></div>
-	<div id="description">Click on a site type for more information!</div>
-	<div id="picture"><img id="pic" src="/images/logo.jpg" alt="logo"></div>
+	<div class="clear"></div>
+	<img id="picture" src="/images/logo.jpg" alt="logo">
+	<div id="description">Click on a site to see more information and pictures!</div>
 </div>
 
 <!-- IMAGE RATIO:12:7><!-->

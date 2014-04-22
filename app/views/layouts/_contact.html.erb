@@ -1,9 +1,10 @@
 <form id="commentform" action="postcomment" method="post">
 	<label for="name">Name:&nbsp;</label><br/><input id="name" type="text" name="name"><br/>
 	<label for="email">E-Mail:&nbsp;</label><br/><input id="email" type="text" name="email"><br/>
+	<label for="subject">Subject:&nbsp;</label><br/><input id="subject" type="text" name="subject"><br/>
 	<label for="message">Message:&nbsp;</label><br/><textarea id="message" name="message" draggable="false"></textarea><br/><br/>
 	<img src="http://captchator.com/captcha/image/<%= @captcha_code %>" alt="captcha" /><br/>
 	Please enter the text seen in the picture:
-	<input class="fieldcell" name="captcha[answer]" type="text" size="25" maxlength="10">
+	<input class="fieldcell" id="captcha" name="captcha[answer]" type="text" size="25" maxlength="10">
 	<input name="submit" type="submit" value="Send">
 </form>

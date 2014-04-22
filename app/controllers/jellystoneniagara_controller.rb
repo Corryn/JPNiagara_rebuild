@@ -39,7 +39,9 @@ class JellystoneniagaraController < ApplicationController
     # Content Type ID: 4
     @title = "RVs & Campsites"
     @siteinfo = Sitetype.where("id < ?",11)
+    @pictures = Picture.where("sitetype_id < ?",11)
     @open = params[:id]
+    puts @pictures.inspect
   end
 
   def getSite
@@ -64,11 +66,9 @@ class JellystoneniagaraController < ApplicationController
   def activities
     # Content Type ID: 7
     @title = "Activities"
-    @renderContent = true
-    @contentRecs = Content.getContent(7)
-    @alternate = true
-    @renderSlider = true
+    @renderSlider = false
     @sliderFolder = "activities"
+    @activities = Picture.where(:gallery_id => 1)
   end
 
   def calendar
@@ -158,7 +158,7 @@ class JellystoneniagaraController < ApplicationController
     @renderSlider = true
   end
 
-  def toursandshuttles
+  def tours
     # Content Type ID: 10
     @title = "Tours and Shuttles"
     @renderContent = true
@@ -169,9 +169,9 @@ class JellystoneniagaraController < ApplicationController
     @tours = Tour.all
   end
 
-  def attractionsandcoupons
+  def attractions
     # Content Type ID: 11
-    @title = "Attractions and Coupons"
+    @title = "Area Attractions"
     @renderContent = true
     @contentRecs = Content.getContent(11)
     @alternate = true
@@ -181,6 +181,7 @@ class JellystoneniagaraController < ApplicationController
     # Content Type ID: 12
     @title = "Area Map"
     @mapAttractions = Attraction.where(Attraction.arel_table[:latitude].not_eq(nil)).where(Attraction.arel_table[:longitude].not_eq(nil)).order(:name)
+    @id = params[:id]
   end
 
   def getAttraction
@@ -192,6 +193,16 @@ class JellystoneniagaraController < ApplicationController
     # Content Type ID: 13
     @title = "Park Map"
     @renderSlider = false
+    recs = Sitetype.all
+    @pictures = []
+    
+    recs.each do |rec|
+      @pictures.push(Picture.where(:sitetype_id => rec[:id]).limit(1).first[:file])
+    end
+    mapfacs = [21,34,35,33,23,11,18]
+    mapfacs.each do |fac|
+      @pictures.push(Facility.where(:id => fac).limit(1).first.picture.file)
+    end
   end
 
   def parkmapinfo
@@ -200,12 +211,16 @@ class JellystoneniagaraController < ApplicationController
     render :partial => 'layouts/parkmapinfo'
   end
 
+  def parkmapfacility
+    @facility = Facility.where(:id => params[:id].to_i).first
+    render :partial => 'layouts/parkmapfacility'
+  end
+
   def imagegallery
     # Content Type ID: 14
     @title = "Image Gallery"
     @renderSlider = false
     @items = Gallery.select([:id, :name])
-    puts @items.inspect
   end
 
   def gallery
@@ -217,6 +232,7 @@ class JellystoneniagaraController < ApplicationController
     # Content Type ID: 15
     @title = "Specials"
     @renderSlider = false
+    @page = params[:page]
   end
 
   def getDeal
@@ -265,7 +281,7 @@ class JellystoneniagaraController < ApplicationController
     captcha_answer = params[:captcha][:answer][/[a-z0-9]+/i]#just take letters and numbers
     response  = open("http://captchator.com/captcha/check_answer/#{session[:session_id][0..10]}/#{captcha_answer}") {|f| f.read }
     if response == "1"
-      c = Comment.create(:name => params["name"], :email => params["email"], :message => params["message"])
+      c = Comment.create(:name => params["name"], :email => params["email"], :subject => params["subject"], :message => params["message"])
       puts "\033[1;31m #{c.errors.messages}\033[0m\n"
       if c.errors.messages == {} then flash[:notice] = "Comment posted successfully."
       else flash[:notice] = "Error posting comment."
@@ -291,8 +307,10 @@ class JellystoneniagaraController < ApplicationController
 
   def facilities
     # Content Type ID: 27
-    @renderSlider = true
+    @title = "Facilities"
+    @renderSlider = false
     @sliderFolder = "facilities"
+    # @facilities = Facility.where(Facility.arel_table[:picture_id].not_eq(110))
     @facilities = Facility.all
   end
 
@@ -311,7 +329,7 @@ class JellystoneniagaraController < ApplicationController
   end
 
   def formcontententer
-    c = Content.create(:name => params["cname"], :content_type_id => params["ctype"], :picture_id => params["cpic"], :text => params["ctext"], :link => params["clink"], :link_text => params["clinktext"], :tour_id => params["ctid"])
+    c = Content.create(:name => params["cname"],:subheader => params["csub"], :content_type_id => params["ctype"], :picture_id => params["cpic"], :text => params["ctext"], :link => params["clink"], :link_text => params["clinktext"], :tour_id => params["ctid"])
     puts "\033[1;31m #{c.errors.messages}\033[0m\n"
     if c.errors.messages == {} then flash[:notice] = "Row created successfully."
     else flash[:notice] = "Error creating row."
@@ -330,7 +348,7 @@ class JellystoneniagaraController < ApplicationController
 
   def formevententer
     if params["elink"] == "" then params["elink"] = nil end
-    e = CalendarEvent.create(:name => params["ename"], :picture_id => params["epic"], :tag => params["etag"], :text => params["etext"], :link => params["elink"], :start_date => params["esdate"].to_date, :end_date => params["eedate"].to_date)
+    e = CalendarEvent.create(:name => params["ename"], :picture_id => params["epic"], :color => params["ecolor"], :text => params["etext"], :link => params["elink"], :start_date => params["esdate"].to_date, :end_date => params["eedate"].to_date)
     puts "\033[1;31m #{e.errors.messages}\033[0m\n"
     if e.errors.messages == {} then flash[:notice] = "Row created successfully."
     else flash[:notice] = "Error creating row."
@@ -470,7 +488,7 @@ class JellystoneniagaraController < ApplicationController
       item = Picture.find_by_id(params["fid"].to_i).update_attributes(:description => params["fdescription"], :file => params["ffile"], :sitetype_id => params["fsitetype_id"], :gallery_id => params["fgallery_id"])
       puts "\033[1;31m #{item}\033[0m\n"
     elsif params["bdata"] == "be"
-      item = CalendarEvent.find_by_id(params["fid"].to_i).update_attributes(:picture_id => params["fpicture_id"], :name => params["fname"], :tag => params["ftag"], :text => params["ftext"], :link => params["flink"], :start_date => params["fstart_date"], :end_date => params["fend_date"])
+      item = CalendarEvent.find_by_id(params["fid"].to_i).update_attributes(:picture_id => params["fpicture_id"], :name => params["fname"], :color => params["fcolor"], :text => params["ftext"], :link => params["flink"], :start_date => params["fstart_date"], :end_date => params["fend_date"])
       puts "\033[1;31m #{item}\033[0m\n"
     elsif params["bdata"] == "bs"
       item = Special.find_by_id(params["fid"].to_i).update_attributes(:name => params["fname"], :description => params["fdescription"], :link_id => params["flink_id"], :view_id => params["fview_id"], :start_date => params["fstart_date"], :end_date => params["fend_date"], :resource_id => params["fresource_id"])
@@ -514,7 +532,7 @@ class JellystoneniagaraController < ApplicationController
   end
 
   def login
-    if params[:pass] == "banana"
+    if params[:pass] == "2008"
       session[:admin] = true
     else
       session[:admin] = false

@@ -1,0 +1,30 @@
+<h1 class="pagetitle">Other Attractions</h1>
+
+<!-- <div id="quicknav">
+<p>Quicknav</p>
+	<div id="sections">
+		<% @contentRecs.each do |cRecs| %>
+			<a class="quicknavlink" href="#<%= cRecs[:content_name] %>"><%= cRecs[:content_name] %></a> </br>
+		<% end %>
+	</div>
+</div> -->
+
+<%= render :partial => '/layouts/content' %>
+
+<script>
+$("#quicknav").hover(function(){
+$("#sections").toggle();
+});
+</script>
+
+<script>
+$(".quicknavlink").click(function(){
+	var x = $(this).attr("href").substring(1);
+	var myArray = $(".bar h2");
+	for(var i = 0; i<myArray.length;i++){
+		if($(myArray[i]).text() == x) {
+			$(myArray[i]).next().trigger('click');
+		}
+	}
+})
+</script>

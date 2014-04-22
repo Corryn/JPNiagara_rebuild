@@ -89,12 +89,21 @@
 }
 #reservation p {
 	font-weight: bolder;
-	color: #000066;
+	color: #FF0000;
 }
 #reservation a {
 	text-decoration: none;
 	font-weight: bolder;
 	color: #000066;
+}
+.regdropdown {
+	position: absolute;
+	right: 0px;
+	top: 3px;
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	opacity: 0.2;
 }
 #BYSframe {
 	display: none;
@@ -103,6 +112,5 @@
 	right: 0px;
 	width: 265px;
 	height: 385px;
-	opacity: 0.8;
 	box-shadow: 5px 5px 5px;
 }

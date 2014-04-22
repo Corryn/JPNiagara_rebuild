@@ -1,7 +1,7 @@
 class CalendarEvent < ActiveRecord::Base
 	belongs_to :picture
-	attr_accessible :name, :tag, :text, :picture_id, :link, :start_date, :end_date
-	validates :name, :tag, :text, :start_date, :end_date, presence: true
+	attr_accessible :name, :color, :text, :picture_id, :link, :start_date, :end_date
+	validates :name, :text, :start_date, :end_date, presence: true
 
 	def self.getCurrMonth(startOfMonth,endOfMonth)
 		x = "'#{startOfMonth}' AND '#{endOfMonth}'"

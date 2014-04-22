@@ -1,0 +1,12 @@
+<% @dir = "left" %>
+<% def swapDir() %>
+<% dirh = {:left => "right", :right => "left"}%>
+<% @dir = dirh[@dir.to_sym] %>
+<% end %>
+
+<% count = 0 %>
+<% @images.each do |img| %>
+<div class="gpic <%= @dir %>"><img class="gimg" src="<%= img[:file] %>" data-index=<%= count %>></div>
+<% count = count + 1 %>
+<% swapDir() %>
+<% end %>

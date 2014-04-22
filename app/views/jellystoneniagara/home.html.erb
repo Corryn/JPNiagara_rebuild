@@ -1,32 +1,13 @@
-<script>
-setTimeout(function(){$('#reservation').trigger('click');},1000);
-</script>
-
-<div class="bearpaws1 homebox">
-	<h1>“One of the Top Family Camping Spots in North America…”<br/>– Good Sam Camping</h1>
-	<p class="firstp">Hello and welcome to Yogi Bear’s Jellystone Park in Niagara Falls, Ontario. In 2013, Jellystone Park was rated as one of the “Top 50 Family Camping Spots in North America” by Good Sam and is the highest rated campground in Niagara Falls with a score of (9.5/10*/9)! Jellystone Park is the closest campground to the falls, situated just 3.5 miles away from the majestic Niagara Falls! Our family owned and operated facility is dedicated to offering a fun and relaxing camping experience for the entire family.</p>
-	<p class="secondp"><br/>Choose between one of our large wooded camping sites, big rig pull-thru lots, furnished cabins and cottages, or park model trailer rentals – Jellystone Niagara has the perfect lodging option for your family! For your convenience we offer a private shuttle bus service to the falls and Marineland that makes multiple trips every day (May thru October).  We also offer tour packages for the falls and other area attractions!  Make sure you check out our activities schedule to see the action packed schedule of events and exciting themed weekends that are planned during your stay at the campground.  With all the events going on and facilities at the park you are sure to enjoy your time at the park just as much as your adventures at the Falls!</p>
-	<div class="readmore"><span>Read More</span></div>
-</div>
-<div class="bearpaws1 homebox">
-	<h1>“Excellent Experience all the way around!” – Trip Advisor</h1>
-	<p class="firstp">A true smorgasbord of fun with “an exceptional amount of organized activity” for kids .  Jellystone Niagara features themed weekends from May until October with activities and themed weeks every day starting June 21st!  Regular activities include Chocolate Bar Bingo, outdoor movie nights, karaoke, Parades, family friendly DJ Dances (with special bear appearances that really bring the experience to life!), Campfire Nights, Daily Wagon Rides with the Park Mascots, scavenger hunts, family races/contests, themed crafts, sports and fun games led by a friendly, energetic recreation staff!</p>
-	<p class="secondp"><br/>At Jellystone Park there is a large heated swimming pool, small wading pool, giant jumping pillow, large playground area, bearpaws1ball court, volleyball court, shuffleboard court, Horseshoe Pits, bocce ball included in your admission plus an 18 hole mini golf course, pedal bike rentals, arcade room (with satellite tv set up) and convenience/souvenir store (open 8am-11pm during the summer) for your family to enjoy. There are three clean, modern washroom facilities, a laundry room, and a shuttle service to transport you and your family the short 3.5 mile ride down the road to the Falls or Marineland!  Jellystone Park is an excellent place to vacation with your family in Niagara Falls.</p>
-	<div class="readmore"><span>Read More</span></div>
-</p>
-</div>
-
 <%= render :partial => '/layouts/content' %>
 
 <div id="homepics">
 	<div id="p1" class="photo"><a href="/lodging"><img src="/images/lodging/bare_bones_cabin.jpg"></a></div>
-	<div id="p2" class="photo"><a href="/activities"><img src="/images/logo.jpg"></a></div>
-	<div id="p3" class="photo"><a href="/toursandshuttles"><img src="/images/tours/adventurepass.jpg"></a></div>
+	<div id="p2" class="photo"><a href="/activities"><img src="/images/activities/TshirtColoring.jpg"></a></div>
+	<div id="p3" class="photo"><a href="/tours"><img src="/images/tours/adventurepass.jpg"></a></div>
 </div>
 
-<script>
-$(".readmore").click(function(){
-	$(this).parent().find(".secondp").show();
-	$(this).hide();
-});
-</script>
+<style>
+#logo {
+	visibility:hidden;
+}
+</style>

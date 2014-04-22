@@ -1,17 +1,12 @@
-<% @bg = "wood" %>
 <% @dir = "left" %>
-<% def swapbg() %>
-<% bgh = {:wood => "bearpaws1", :bearpaws1 => "wood"} %>
-<% @bg = bgh[@bg.to_sym] %>
-<% end %>
 <% def swapdir() %>
 <% dirh = {:left => "right", :right => "left"}%>
 <% @dir = dirh[@dir.to_sym] %>
 <% end %>
 <% @contentRecs.each do |contentRec|%>
 
-<div class="bar"><h2><%= contentRec[:name].gsub("(tm)","&#8482").html_safe %></h2><div class="dropdown"></div></div>	
-	<div class="content <%= @bg %>">
+<div class="bar"><h2><%= contentRec[:name].gsub("(tm)","&#8482").html_safe %></h2><img class="dropdown" src="/images/slider/leftarrow.png"></div>	
+	<div class="content insets">
 		<div class="content<%= @dir %>">
 			<% if contentRec[:subheader] != nil && contentRec[:subheader] != "" %>
 				<h3><%= contentRec[:subheader] %></h3>
@@ -22,12 +17,10 @@
 			<p><%= contentRec[:text].gsub("(tm)","&#8482").html_safe %></p> 					
 		</div>
 		<% if contentRec[:link] != nil && contentRec[:link] != "" %>
-			<a class="<%= @dir %>link" href="<%= contentRec[:link] %>"><%= contentRec[:link_text] %></a>
+			<a class="<%= @dir %>link contentlink" target="_blank" href="<%= contentRec[:link] %>"><%= contentRec[:link_text] %></a>
 		<% end %>
 	</div>
-
-
-	<% swapbg() %>
+	
 	<% if @alternate then swapdir() end %>
 <% end %>
 
@@ -53,11 +46,11 @@ function toggleDropdown(){
 
 <script>
 function switchArrow(bar) {
-	if($(bar).find(".dropdown").css("background-image").search("downarrow") != -1) {
-		$(bar).find(".dropdown").css("background-image","url('/images/slider/leftarrow.png')");
+	if($(bar).find(".dropdown").attr("src").search("downarrow") != -1) {
+		$(bar).find(".dropdown").attr("src","/images/slider/leftarrow.png");
 	}
 	else {
-		$(bar).find(".dropdown").css("background-image","url('/images/slider/downarrow.png')");
+		$(bar).find(".dropdown").attr("src","/images/slider/downarrow.png");
 	}
 }
 </script>

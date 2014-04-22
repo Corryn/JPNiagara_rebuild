@@ -3,11 +3,24 @@
 		if(num == 0){
 			$(name).css("visibility","hidden");
 		};
-	}
+	};
+
+	temp = new Array();
+	<% count = 0 %>
+	<% @currMonthEvents.each do |e| %>
+		<% if e.picture != nil %>
+			temp[<%= count %>] = "<%= e.picture[:file] %>";
+			<% count = count + 1 %>
+		<% end %>
+	<% end %>
+	preloadImages(temp);
 </script>
-<% colorArray = ['transparent','red','green','blue','cyan','magenta','yellow','orange','lime'] %>
+
+
+
+<% colorArray = ['transparent','#FF6666','#66FF66','#6666FF','#66FFFF','#FF66FF','#FFFF66','#FF9900','#00FF99','#9900FF','#00FF00'] %>
 <div id="calendarcontainer">
-<div id="leftcontent" class="wood">
+<div id="leftcontent" class="insets">
 	<div id="eventhead">
 	<h3 id="eventtitle">EVENT</h3>
 	</div>
@@ -18,34 +31,39 @@
 	</div>
 </div>
 <% a = Array.new(32,0) %>
+<% b = Array.new(32,0) %>
 <% text = Array.new(33,' ') %>
+<% othertext = Array.new(33,' ') %>
 <% if @currMonthEvents != nil %>
 	<% colorNum = 1 %>
 	<% @currMonthEvents.each do |cme| %>
+	<% colorArray[colorNum] = cme[:color] %>
 		<% words = cme[:name].split(/\s/).delete_if(&:blank?) %>
+		<% words.each do |w| %>
+			<% w.gsub!("_"," ") %>
+		<% end %>
 		<% if cme[:start_date].to_date.month != @currDate.to_date.month %>
 			<% startDate = @currDate.beginning_of_month %>
-			<% puts "1" %>
 		<% else %>
 			<% startDate = cme[:start_date] %>
-			<% puts "2" %>
 		<% end %>
 		<% if cme[:end_date].to_date.month != @currDate.to_date.month %>
 			<% endDate = @currDate.end_of_month %>
-			<% puts "3" %>
 		<% else %>
 			<% endDate = cme[:end_date] %>
-			<% puts "4" %>
 		<% end %>
-		<% puts "Start: #{startDate}, End: #{endDate}" %>
 		<% days = endDate.mday - startDate.mday + 1 %>
 		<% count = 0 %>
 		<% temp = a %>
+		<% temptext = text %>
+		<% if a[startDate.mday] != 0 %>
+		<% temp = b; %>
+		<% temptext = othertext %>
+		<% end %>
 		<% days.times do %>
 		<% temp[startDate.mday + count] = colorNum %>
-		<% text[startDate.mday + count] = words[count] || "" %>
+		<% temptext[startDate.mday + count] = words[count] || "" %>
 		<% count = count + 1 %>
-		<% puts "7" %>
 		<% end %>
 		<% colorNum = colorNum + 1 %>
 	<% end %>
@@ -84,7 +102,10 @@
 					<div class="spacer"></div>
 					<div id="a<%= day.to_date.mday%>" class="a" style="background-color: <%= colorArray[a[day.mday]] %>"
 						data-event-number="<%= a[day.mday]-1 %>"><%= text[day.mday] %></div>
+					<div id="b<%= day.to_date.mday%>" class="b" style="background-color: <%= colorArray[b[day.mday]] %>"
+						data-event-number="<%= b[day.mday]-1 %>"><%= othertext[day.mday] %></div>
 					<script type="text/javascript">setVisible("#a<%= day.to_date.mday%>","<%= a[day.mday] %>")</script>
+					<script type="text/javascript">setVisible("#b<%= day.to_date.mday%>","<%= b[day.mday] %>")</script>
 				</td>
 				<% colcount = colcount + 1 %>
 				<% if colcount == 7 && day.mday != day.end_of_month.mday %>
@@ -113,6 +134,23 @@
 				});
 			}
 			);
+		$(".b").hover(
+			function() {
+				c = this.style.backgroundColor;
+				$(".b").each(function() {
+					if(this.style.backgroundColor == c) {
+						this.style.backgroundImage = "url('/darken.png')";
+					}
+				});	
+			}, 
+			function() {
+				$(".b").each(function() {
+					if(this.style.backgroundColor == c) {
+						this.style.backgroundImage = "none";
+					}
+				});
+			}
+			);
 		</script>
 	</tbody>
 </table>
@@ -125,7 +163,19 @@ $(".a").click(function(){
 	date = "<%= @currDate %>"
 	num = $(this).data("event-number");
 	info = $.get("/getData?date=" + date + "&num=" + num,function(data){
-		$("#etitle").text(data["event"]["name"]);
+		$("#etitle").text(data["event"]["name"].split("_").join(" "));
+		$("#edesc").text(data["event"]["text"]);
+		$("#epic")[0].src = "";
+		if (data["picture"] != undefined) {
+			$("#epic")[0].src = data["picture"];
+		}
+	}, "json");
+})
+$(".b").click(function(){
+	date = "<%= @currDate %>"
+	num = $(this).data("event-number");
+	info = $.get("/getData?date=" + date + "&num=" + num,function(data){
+		$("#etitle").text(data["event"]["name"].split("_").join(" "));
 		$("#edesc").text(data["event"]["text"]);
 		$("#epic")[0].src = "";
 		if (data["picture"] != undefined) {

@@ -1,15 +1,15 @@
 <div id="sliderbox">
 	<img id="backgroundImage" src="/images/slider/JellystoneTOPImageNoLogo.jpg">
 	<img id="visibleImage" src="" alt="">
-	<div id="leftButton" class="button" onclick="prevImageClick()"></div>
-	<div id="rightButton" class="button" onclick="nextImageClick()"></div>
+	<img id="leftButton" class="button" src="images/slider/leftarrow.png" onclick="prevImageClick()"/>
+	<img id="rightButton" class="button" src="images/slider/rightarrow.png" onclick="nextImageClick()"/>
 </div>
 
 <script>
 
 var url = "<%= @sliderFolder %>";
 var pics = new Array();
-var index = 0;
+var sliderIndex = 0;
 var autoplay = true;
 
 <% count = 0 %>
@@ -33,28 +33,28 @@ function prevImageClick() {
 }
 
 function nextImage() {
-	index = (index + 1) % (pics.length);
-	change(index);
+	sliderIndex = (sliderIndex + 1) % (pics.length);
+	change(sliderIndex);
 }
 
 function prevImage() {
-	index = index-1;
-	if(index < 0){
-		index = pics.length - 1;
+	sliderIndex = sliderIndex-1;
+	if(sliderIndex < 0){
+		sliderIndex = pics.length - 1;
 	}
-	change(index);
+	change(sliderIndex);
 }
 
 function indexImage(num) {
 	autoplay = false;
-	index = num;
-	change(index);
+	sliderIndex = num;
+	change(sliderIndex);
 }
 
 function change (num) {
 	$("#visibleImage").fadeOut(500,function () {
 		$("#visibleImage").attr('src','');
-		$("#visibleImage").attr('src',pics[index]);
+		$("#visibleImage").attr('src',pics[sliderIndex]);
 		$("#visibleImage").fadeIn(500);
 	});
 }
@@ -66,7 +66,7 @@ function play(){
 			nextImage();
 			play();
 			}	
-		},10000);
+		},9000);
 	}
 }
 

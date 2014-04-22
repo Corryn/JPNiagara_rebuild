@@ -9,6 +9,7 @@ function hideElement(id) {
 /* Reservation box animation */
 
 function toggleReservation () {
+    switchRegArrow(this);
 	$("#reservation").unbind("click");
 	$("#BYSframe").slideToggle(1000,function(){
 		$("#reservation").bind('click',toggleReservation);
@@ -60,6 +61,16 @@ function lightenHex(hex,l){
     console.log(g);
     console.log(b);
 
+    if (r == undefined) {
+        r = 0;
+    };
+    if (g == undefined) {
+        g = 0;
+    };
+    if (b == undefined) {
+        b = 0;
+    };
+
     if(l == undefined){
         l = 1.0;
     } else {
@@ -93,4 +104,8 @@ function lightenHex(hex,l){
     console.log(b);
 
     return "#" + r + g + b;
+}
+
+function leaveSite() {
+    alert("You are now navigating to an external site.  Jellystone Niagara is not responsible for content displayed on these pages.");
 }

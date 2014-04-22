@@ -1,30 +1,32 @@
-<div id="gallerypage" class="wood">
-
+<div id="gallerypage" class="insets">
 	<div id="albums">
 		<% @items.each do |item| %>
 		<div class="album" data-album="<%= item[:id] %>"><%= item[:name] %></div>
 		<% end %>
+		<div style="clear:both;"></div>
 	</div>
 	<div id="pictures">
 	</div>
+	<div class="clear" style="width:100%;"></div>
 </div>
 
 <div id="blackout">
 	<div id="gallery">
-		<div id="gclose"></div>
-		<div id="gleftarrow" class="arrow"></div>
-		<img src="" alt="galleryimage">
-		<div id="grightarrow" class="arrow"></div>
+		<img id="gclose" src="images/footer/close.png">
+		<img id="gleftarrow" class="arrow" src="/images/slider/leftarrow.png">
+		<span></span>
+		<img id="img" src="" alt="galleryimage">
+		<img id="grightarrow" class="arrow" src="/images/slider/rightarrow.png">
 	</div>
 </div>
 
 <script type="text/javascript">
 	var images = new Array();
-	var index = 0;
+	var picindex = 0;
 
 	
 	function centerImage(){
-		$($("#gallery img")[0]).css("top", (600 - $($("#gallery img")[0]).height()) / 2 + "px");
+		//$($("#gallery img")[0]).css("top", (600 - $($("#gallery img")[0]).height()) / 2 + "px");
 	}
 
 	function closeit(){
@@ -34,51 +36,51 @@
 
 	function imgSelect(){
 		$(".gimg").unbind("click");
-		index = $(this).data("index");
-		$("#gallery img")[0].src = this.src;
+		picindex = $(this).data("index");
+		$("#img")[0].src = this.src;
 		$("#blackout").show();
-		centerImage();
+		centerImage()
 	}
 
 	$("#gleftarrow").click(function(){
-		index = (index-1);
-		if(index == -1){
-			index = images.length - 1;
+		picindex = (picindex-1);
+		if(picindex == -1){
+			picindex = images.length - 1;
 		}
-		$("#gallery img")[0].src = images[index];
+		$("#img")[0].src = images[picindex];
 		centerImage();
 	});
 
 	$("#grightarrow").click(function(){
-		index = (index+1) % images.length;
-		$("#gallery img")[0].src = images[index];
+		picindex = (picindex+1) % images.length;
+		$("#img")[0].src = images[picindex];
 		centerImage();
 	});
 
 	$(".album").click(function(){
+		$("#pictures").css("height","initial");
 		$(".album").css("border","2px outset gray");
 		$(".album").css("background-color","rgb(236,199,1)");
 		$(this).css("border","2px inset gray");
 		$(this).css("background-color","#CCA300");
 		$("#pictures").load("/gallery",{gallery: $(this).data("album")},function(){
-			index = 0;
+			picindex = 0;
 			images = new Array();
 			$(".gimg").each(function(){
-				images[index] = this.src;
-				index = index + 1;
+				images[picindex] = this.src;
+				picindex = picindex + 1;
 			});
-
+			$("#albums").height($("#pictures").height());
 			$(".gimg").click(imgSelect);
 			addEventListener("click",function(event){
 				if(event.target.id == "blackout" || event.target.id == "gclose"){
 					closeit();
 				}
 			});
-		})
+		});
 	});
 
 	$($(".album")[0]).click();
-
+	$("#gclose").click(closeit);
 	disableSelection($("#gallery")[0]);
 </script>
-

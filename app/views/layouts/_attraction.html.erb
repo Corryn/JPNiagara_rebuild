@@ -1,0 +1,18 @@
+<% if !@attraction.content.nil? %>
+	<h2><%= @attraction.content.name %></h2>
+	<% if @attraction.content.subheader != nil && @attraction.content.subheader != "" %>
+		<h3><%= @attraction.content.subheader %></h3>
+	<% end %>
+	<div id="attractioninner">
+		<% if @attraction.content.picture != nil %>
+			<img src= <%= @attraction.content.picture.file %> alt="<%= @attraction.content.picture.description %>">
+		<% end %>
+		<p><%= @attraction.content.text.gsub("(tm)","&#8482").html_safe %></p> 					
+		<% if @attraction.content.link != nil && @attraction.content.link != "" %>
+			<a class="<%= @dir %>link" target="_blank" href="<%= @attraction.content.link %>"><%= @attraction.content.link_text %></a>
+		<% end %>
+	</div>
+	<div id="attractionspacer"></div>
+<% else %>
+	<h2>No information available</h2>
+<% end %>

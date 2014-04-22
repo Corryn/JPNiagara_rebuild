@@ -74,7 +74,7 @@ td {
 
 #container {
 	width: 1500px;
-	height: 754px;
+	height: 810px;
 	margin: 0px auto;
 }
 
@@ -101,4 +101,8 @@ td:focus {
 	cursor:pointer;
 	color:blue;
 	text-decoration: underline;
+}
+
+[contenteditable=true] {
+background: white; 
 }

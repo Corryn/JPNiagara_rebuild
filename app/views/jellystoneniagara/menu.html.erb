@@ -1,0 +1,16 @@
+<div id="adminbox">
+	<form id="login" action="login" method="post">
+		<label for="user">User:&nbsp;</label><br/><input id="user" type="text" name="user"><br/>
+		<label for="pass">Password:&nbsp;</label><br/><input id="pass" type="text" name="pass"><br/>
+		<input name="submit" type="submit" value="Login">
+	</form>
+</div>
+<div id="loginnotice">
+	<% if flash[:notice] %>
+	<%= flash[:notice] %>
+	<% end %>
+</div>
+<% puts session[:admin] %>
+<% if session[:admin] %>
+<%= render :partial => '/layouts/menu' %>
+<% end %>

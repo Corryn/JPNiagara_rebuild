@@ -4,8 +4,9 @@
 	<div class="comment">
 		<p class="horiz">Name:&nbsp</p><p class="horiz"><%= comment[:name] %></p><br/>
 		<p class="horiz">E-Mail:&nbsp</p><p class="horiz"><%= comment[:email] %></p><br/>
+		<p class="horiz">Subject:&nbsp</p><p class="horiz"><%= comment[:subject] %></p><br/>
 		<p>Message:</p><p class="message"><%= comment[:message] %></p>
-		<a class="deletelink" href="deletecomment?id=<%= comment[:id] %>">Delete</a>
+		<a class="deletelink" href="/deletecomment?id=<%= comment[:id] %>">Delete</a>
 	</div>
 <% end %>
 

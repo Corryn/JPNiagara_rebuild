@@ -5,9 +5,8 @@
 <% else %>
 <div id="sitelink"><a href="lodging/rvcampsites?id=<%= @parkMapInfo[:id] %>">More Info</a></div>
 <% end %>
+<div class="clear"></div>
+<img id="picture" src="<%= @picture[:file] %>">
 <div id="description"> <%= @parkMapInfo[:desc_long].gsub("(tm)","&#8482").html_safe %></div>
-<div id="picture">
-	<% if @picture != nil %>
-	<img id="pic" src="<%= @picture[:file] %>">
-	<% end %>
+
 </div>
